@@ -352,3 +352,114 @@
     radial-gradient(circle at 75% 75%, rgba(201,168,76,0.025) 0%, transparent 25%);
   background-size: 120px 120px, 120px 120px, 240px 240px, 240px 240px;
 }
+
+/* ─────────────────────────────────────────────
+   ACCESSIBILITY - FOCUS STATES
+───────────────────────────────────────────── */
+*:focus-visible {
+  outline: 2px solid rgba(201, 168, 76, 0.6);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(201, 168, 76, 0.6);
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────────────
+   MOBILE OPTIMIZATIONS (< 768px)
+───────────────────────────────────────────── */
+@media (max-width: 767px) {
+  /* Reduce vertical spacing on mobile */
+  section {
+    padding-top: clamp(3rem, 8vw, 5rem);
+    padding-bottom: clamp(3rem, 8vw, 5rem);
+  }
+
+  /* Ensure touch targets are at least 48px */
+  button,
+  a,
+  input[type="checkbox"],
+  input[type="radio"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improve text readability */
+  body {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Prevent awkward text wrapping */
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    hyphens: auto;
+  }
+
+  /* Timeline optimizations for mobile */
+  .timeline-item {
+    padding-left: 0;
+  }
+
+  /* Slightly larger icons on mobile for touch */
+  svg:not(.keep-size) {
+    flex-shrink: 0;
+  }
+
+  /* Card consistent spacing */
+  .premium-card,
+  .glass,
+  .glass-premium,
+  .glass-dark,
+  .border {
+    margin-bottom: 0;
+  }
+
+  /* Form input touch targets */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important; /* Prevents iOS zoom on focus */
+  }
+
+  /* Section header improvements */
+  .section-title {
+    text-wrap: balance;
+  }
+
+  /* Smooth animations with reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ─────────────────────────────────────────────
+   SMALL MOBILE ADJUSTMENTS (< 480px)
+───────────────────────────────────────────── */
+@media (max-width: 479px) {
+  /* Tighter spacing for very small screens */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Stack buttons vertically */
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+    justify-content: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

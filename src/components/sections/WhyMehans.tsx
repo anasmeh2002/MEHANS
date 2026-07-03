@@ -98,16 +98,17 @@ export function WhyMehans() {
                     <motion.div
                       whileHover={{ x: 6 }}
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="group py-9 flex gap-7 cursor-default"
+                      className="group py-7 md:py-9 flex gap-5 md:gap-7 cursor-default"
                     >
-                      <div className="flex-shrink-0 w-[90px] pt-1">
-                        <div className="font-display text-[24px] font-medium text-gold-500 leading-none group-hover:text-gold-400 transition-colors duration-300">
+                      <div className="flex-shrink-0 w-[70px] md:w-[90px] pt-1">
+                        <div className="font-display text-[22px] md:text-[24px] font-medium text-gold-500 leading-none group-hover:text-gold-400 transition-colors duration-300">
                           {p.stat}
                         </div>
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-3">
-                          <Icon size={15} className="text-gold-500/55" strokeWidth={1.5} />
+                          <Icon size={17} className="md:hidden text-gold-500/55" strokeWidth={1.5} />
+                          <Icon size={15} className="hidden md:block text-gold-500/55" strokeWidth={1.5} />
                           <div className="text-stone-200 font-medium text-[15px] group-hover:text-stone-100 transition-colors duration-300">
                             {p.label}
                           </div>
@@ -115,7 +116,8 @@ export function WhyMehans() {
                         <div className="flex flex-col gap-2">
                           {p.bullets.map((bullet, bi) => (
                             <div key={bi} className="flex items-center gap-3 text-stone-400 text-[13px]">
-                              <Check size={11} className="text-gold-500/50 flex-shrink-0" />
+                              <Check size={12} className="md:hidden text-gold-500/50 flex-shrink-0" />
+                              <Check size={11} className="hidden md:block text-gold-500/50 flex-shrink-0" />
                               <span>{bullet}</span>
                             </div>
                           ))}
@@ -128,10 +130,11 @@ export function WhyMehans() {
             </div>
 
             <AnimatedSection delay={0.55}>
-              <div className="pt-12">
+              <div className="pt-10 md:pt-12">
                 <button
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="btn-primary group"
+                  className="btn-primary group w-full md:w-auto"
+                  aria-label="Schedule a consultation"
                 >
                   Schedule Consultation
                   <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>

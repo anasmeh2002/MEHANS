@@ -96,9 +96,11 @@ export function Navbar() {
           {/* Mobile toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-stone-600 hover:text-stone-300 transition-colors duration-250 w-10 h-10 flex items-center justify-center border border-stone-800/50"
+            className="lg:hidden text-stone-600 hover:text-stone-300 transition-colors duration-250 w-11 h-11 flex items-center justify-center border border-stone-800/50"
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileOpen}
           >
-            {mobileOpen ? <X size={20} strokeWidth={1.5} /> : <Menu size={20} strokeWidth={1.5} />}
+            {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
           </button>
         </div>
       </motion.header>
@@ -124,7 +126,7 @@ export function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 + 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   onClick={() => handleNav(l.href)}
-                  className="text-left text-[1.65rem] font-display text-stone-400 hover:text-gold-500 transition-colors duration-300 py-6"
+                  className="text-left text-[1.65rem] font-display text-stone-400 hover:text-gold-500 transition-colors duration-300 py-7 min-h-[56px]"
                 >
                   {l.label}
                 </motion.button>

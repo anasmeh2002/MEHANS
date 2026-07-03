@@ -54,7 +54,7 @@ export function Services() {
                     y: -4
                   }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative bg-stone-950 px-8 py-10 h-full flex flex-col gap-6 cursor-default
+                  className="group relative bg-stone-950 px-6 py-8 md:px-8 md:py-10 h-full flex flex-col gap-5 md:gap-6 cursor-default
                     border border-stone-800/50 hover:border-gold-500/25 transition-all duration-500 relative overflow-hidden"
                 >
                   {/* Corner accent on hover */}
@@ -69,13 +69,20 @@ export function Services() {
                     </span>
                   </div>
 
-                  {/* Icon */}
-                  <div className="w-12 h-12 border border-stone-700/60 group-hover:border-gold-500/35 flex items-center justify-center transition-all duration-500 rounded-sm">
+                  {/* Icon - larger on mobile */}
+                  <div className="w-12 h-12 md:w-12 md:h-12 border border-stone-700/60 group-hover:border-gold-500/35 flex items-center justify-center transition-all duration-500 rounded-sm">
+                    {Icon && (
+                      <Icon
+                        size={20}
+                        strokeWidth={1.5}
+                        className="md:hidden text-stone-500 group-hover:text-gold-500 transition-colors duration-500"
+                      />
+                    )}
                     {Icon && (
                       <Icon
                         size={18}
                         strokeWidth={1.5}
-                        className="text-stone-500 group-hover:text-gold-500 transition-colors duration-500"
+                        className="hidden md:block text-stone-500 group-hover:text-gold-500 transition-colors duration-500"
                       />
                     )}
                   </div>

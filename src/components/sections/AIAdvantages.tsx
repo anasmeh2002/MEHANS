@@ -39,7 +39,7 @@ export function AIAdvantages() {
           </AnimatedSection>
         </div>
 
-        {/* 2×2 feature cards */}
+        {/* 2x2 feature cards */}
         <div className="grid md:grid-cols-2 gap-px bg-stone-800/15 mb-px">
           {aiAdvantages.map((adv, i) => {
             const Icon = ICONS[i];
@@ -51,7 +51,7 @@ export function AIAdvantages() {
                     y: -3
                   }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="group bg-charcoal px-11 py-11 h-full flex flex-col gap-8 cursor-default
+                  className="group bg-charcoal px-6 py-8 md:px-11 md:py-11 h-full flex flex-col gap-6 md:gap-8 cursor-default
                     border border-transparent hover:border-gold-500/12 transition-all duration-500 relative overflow-hidden"
                 >
                   {/* Corner accent on hover */}
@@ -60,10 +60,11 @@ export function AIAdvantages() {
 
                   <div className="flex items-start justify-between">
                     <div className="w-11 h-11 border border-stone-700/60 group-hover:border-gold-500/25 flex items-center justify-center transition-colors duration-400">
-                      <Icon size={16} strokeWidth={1.5} className="text-stone-600 group-hover:text-gold-500 transition-colors duration-400" />
+                      <Icon size={18} strokeWidth={1.5} className="md:hidden text-stone-600 group-hover:text-gold-500 transition-colors duration-400" />
+                      <Icon size={16} strokeWidth={1.5} className="hidden md:block text-stone-600 group-hover:text-gold-500 transition-colors duration-400" />
                     </div>
                     <div className="text-right">
-                      <div className="font-display text-[2.5rem] font-medium text-gold-500 leading-none">
+                      <div className="font-display text-[2rem] md:text-[2.5rem] font-medium text-gold-500 leading-none">
                         {adv.metric}
                       </div>
                       <div className="text-stone-600 text-[10px] mt-1.5 tracking-wide">{adv.metricLabel}</div>
@@ -71,7 +72,7 @@ export function AIAdvantages() {
                   </div>
 
                   <div>
-                    <h3 className="text-stone-200 font-medium text-[16px] mb-3.5 leading-snug group-hover:text-stone-100 transition-colors duration-300">
+                    <h3 className="text-stone-200 font-medium text-[15px] md:text-[16px] mb-3 md:mb-3.5 leading-snug group-hover:text-stone-100 transition-colors duration-300">
                       {adv.title}
                     </h3>
                     <p className="text-stone-500 text-[13px] leading-[1.75]">{adv.description}</p>

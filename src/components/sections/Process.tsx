@@ -69,8 +69,8 @@ export function Process() {
 
           {/* Right: timeline */}
           <div className="relative">
-            {/* Animated connector line */}
-            <div className="absolute left-[22px] top-6 bottom-12 w-px bg-stone-800/50">
+            {/* Animated connector line - hidden on mobile */}
+            <div className="hidden md:block absolute left-[22px] top-6 bottom-12 w-px bg-stone-800/50">
               <motion.div style={{ height: lineH }} className="w-full bg-gradient-to-b from-gold-500 to-gold-500/20 origin-top" />
             </div>
 
@@ -82,17 +82,18 @@ export function Process() {
                     <motion.div
                       whileHover={{ x: 6 }}
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="group relative flex gap-7 pb-10 cursor-default last:pb-0"
+                      className="group relative flex gap-4 md:gap-7 pb-8 md:pb-10 cursor-default last:pb-0"
                     >
-                      {/* Circle node */}
-                      <div className="flex-shrink-0 w-12 h-12 border border-stone-700/60 group-hover:border-gold-500/45 bg-stone-950 flex items-center justify-center z-10 relative transition-all duration-400 rounded-sm">
-                        <Icon size={15} className="text-stone-500 group-hover:text-gold-500 transition-colors duration-300" strokeWidth={1.5} />
+                      {/* Circle node - larger on mobile */}
+                      <div className="flex-shrink-0 w-12 h-12 md:w-12 md:h-12 border border-stone-700/60 group-hover:border-gold-500/45 bg-stone-950 flex items-center justify-center z-10 relative transition-all duration-400 rounded-sm">
+                        <Icon size={18} className="md:hidden text-stone-500 group-hover:text-gold-500 transition-colors duration-300" strokeWidth={1.5} />
+                        <Icon size={15} className="hidden md:block text-stone-500 group-hover:text-gold-500 transition-colors duration-300" strokeWidth={1.5} />
                       </div>
 
                       {/* Content */}
                       <div className="pt-2.5 flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-stone-200 font-medium text-[15px] group-hover:text-stone-100 transition-colors duration-300">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-0 mb-2">
+                          <h3 className="text-stone-200 font-medium text-[15px] md:text-[15px] group-hover:text-stone-100 transition-colors duration-300">
                             {step.title}
                           </h3>
                           <div className="flex items-center gap-1.5 text-stone-600 text-[11px]">
@@ -100,7 +101,7 @@ export function Process() {
                             <span>{step.duration}</span>
                           </div>
                         </div>
-                        <p className="text-stone-500 text-[13px] leading-[1.75]">{step.description}</p>
+                        <p className="text-stone-500 text-[13px] md:text-[13px] leading-[1.75]">{step.description}</p>
                       </div>
                     </motion.div>
                   </AnimatedSection>
@@ -109,10 +110,11 @@ export function Process() {
             </div>
 
             <AnimatedSection delay={0.55}>
-              <div className="pl-[76px] pt-8">
+              <div className="pl-0 md:pl-[76px] pt-6 md:pt-8">
                 <button
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="btn-primary group"
+                  className="btn-primary group w-full md:w-auto"
+                  aria-label="Start your AI consultation journey"
                 >
                   Start With Step One
                   <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>

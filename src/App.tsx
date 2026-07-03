@@ -12,6 +12,7 @@ import { Process } from './components/sections/Process';
 import { FAQ } from './components/sections/FAQ';
 import { CTA } from './components/sections/CTA';
 import { Contact } from './components/sections/Contact';
+import { MobileStickyCTA } from './components/ui/MobileStickyCTA';
 
 export default function App() {
   return (
@@ -32,6 +33,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
+      <MobileStickyCTA />
     </>
   );
 }

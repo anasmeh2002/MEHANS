@@ -74,19 +74,24 @@ export function FAQ() {
                 <div className="group">
                   <button
                     onClick={() => setOpen(open === i ? null : i)}
-                    className="w-full flex items-start justify-between gap-8 py-9 text-left"
+                    className="w-full flex items-start justify-between gap-4 md:gap-8 py-7 md:py-9 text-left min-h-[56px] md:min-h-0"
+                    aria-expanded={open === i}
+                    aria-controls={`faq-answer-${i}`}
                   >
                     <span className={`font-medium text-[15px] md:text-[16px] leading-snug transition-colors duration-300 ${
                       open === i ? 'text-gold-500' : 'text-stone-300 group-hover:text-stone-100'
                     }`}>
                       {faq.question}
                     </span>
-                    <div className={`flex-shrink-0 w-8 h-8 border flex items-center justify-center transition-all duration-350 mt-0.5 ${
+                    <div className={`flex-shrink-0 w-10 h-10 md:w-8 md:h-8 border flex items-center justify-center transition-all duration-350 mt-0.5 ${
                       open === i
                         ? 'border-gold-500/40 bg-gold-500/8 rotate-45'
                         : 'border-stone-700/60 group-hover:border-stone-600'
                     }`}>
-                      <Plus size={13} strokeWidth={1.5} className={`transition-colors duration-300 ${
+                      <Plus size={16} strokeWidth={1.5} className={`md:hidden transition-colors duration-300 ${
+                        open === i ? 'text-gold-500' : 'text-stone-600 group-hover:text-stone-400'
+                      }`} />
+                      <Plus size={13} strokeWidth={1.5} className={`hidden md:block transition-colors duration-300 ${
                         open === i ? 'text-gold-500' : 'text-stone-600 group-hover:text-stone-400'
                       }`} />
                     </div>
@@ -94,13 +99,16 @@ export function FAQ() {
                   <AnimatePresence>
                     {open === i && (
                       <motion.div
+                        id={`faq-answer-${i}`}
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: 'auto', opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
                         className="overflow-hidden"
+                        role="region"
+                        aria-labelledby={`faq-question-${i}`}
                       >
-                        <p className="pb-9 text-stone-500 text-[13px] leading-[1.85] max-w-xl">
+                        <p className="pb-7 md:pb-9 text-stone-500 text-[13px] md:text-[13px] leading-[1.85] max-w-xl">
                           {faq.answer}
                         </p>
                       </motion.div>

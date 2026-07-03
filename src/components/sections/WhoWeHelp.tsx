@@ -52,7 +52,7 @@ export function WhoWeHelp() {
                     y: -4
                   }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="group bg-charcoal px-9 py-11 flex flex-col gap-6 cursor-default
+                  className="group bg-charcoal px-6 py-8 md:px-9 md:py-11 flex flex-col gap-5 md:gap-6 cursor-default
                     border border-transparent hover:border-gold-500/12 transition-all duration-500 relative overflow-hidden h-full"
                 >
                   {/* Large background number */}
@@ -67,11 +67,12 @@ export function WhoWeHelp() {
                   <div className="absolute top-0 left-0 w-12 h-px bg-gold-500/0 group-hover:bg-gold-500/40 transition-all duration-400" />
                   <div className="absolute top-0 left-0 w-px h-12 bg-gold-500/0 group-hover:bg-gold-500/40 transition-all duration-400" />
 
-                  <div className="relative z-10 flex flex-col gap-5 flex-1">
+                  <div className="relative z-10 flex flex-col gap-4 md:gap-5 flex-1">
                     {/* Icon and stat */}
                     <div className="flex items-center justify-between">
                       <div className="w-11 h-11 border border-stone-700/60 group-hover:border-gold-500/30 flex items-center justify-center transition-all duration-400">
-                        <Icon size={18} strokeWidth={1.5} className="text-stone-700 group-hover:text-gold-500 transition-colors duration-400" />
+                        <Icon size={20} strokeWidth={1.5} className="md:hidden text-stone-700 group-hover:text-gold-500 transition-colors duration-400" />
+                        <Icon size={18} strokeWidth={1.5} className="hidden md:block text-stone-700 group-hover:text-gold-500 transition-colors duration-400" />
                       </div>
                       <span className="inline-flex self-start text-[9px] font-bold tracking-[0.3em] uppercase text-gold-500 border border-gold-500/15 px-3 py-1.5 group-hover:border-gold-500/35 transition-colors duration-300">
                         {item.stat}
@@ -79,7 +80,7 @@ export function WhoWeHelp() {
                     </div>
 
                     <div className="flex-1">
-                      <h3 className="text-stone-200 font-medium text-[17px] leading-snug mb-3.5 group-hover:text-stone-100 transition-colors duration-300">
+                      <h3 className="text-stone-200 font-medium text-[16px] md:text-[17px] leading-snug mb-3 md:mb-3.5 group-hover:text-stone-100 transition-colors duration-300">
                         {item.title}
                       </h3>
                       <p className="text-stone-500 text-[13px] leading-[1.75]">{item.description}</p>
@@ -98,22 +99,23 @@ export function WhoWeHelp() {
 
         {/* CTA banner */}
         <AnimatedSection delay={0.55}>
-          <div className="mt-12 grid lg:grid-cols-2 gap-0 border border-stone-800/35 relative overflow-hidden">
+          <div className="mt-10 md:mt-12 grid lg:grid-cols-2 gap-0 border border-stone-800/35 relative overflow-hidden">
             {/* Gold accent bar */}
             <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gradient-to-b from-gold-500 via-gold-500/30 to-transparent" />
 
-            <div className="px-11 py-10 border-b lg:border-b-0 lg:border-r border-stone-800/35 relative z-10">
-              <p className="text-stone-200 font-medium text-[17px] mb-2.5">
+            <div className="px-6 py-8 md:px-11 md:py-10 border-b lg:border-b-0 lg:border-r border-stone-800/35 relative z-10">
+              <p className="text-stone-200 font-medium text-[16px] md:text-[17px] mb-2.5">
                 Not sure where to start?
               </p>
               <p className="text-stone-500 text-[13px] leading-[1.75]">
                 Book a free 30-minute discovery call. We'll map your workflow and show you exactly where AI delivers the highest return.
               </p>
             </div>
-            <div className="px-11 py-10 flex items-center relative z-10">
+            <div className="px-6 py-8 md:px-11 md:py-10 flex items-center relative z-10">
               <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn-primary group"
+                className="btn-primary group w-full md:w-auto"
+                aria-label="Book a discovery call"
               >
                 Book Discovery Call
                 <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>

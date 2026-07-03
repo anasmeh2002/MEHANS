@@ -63,22 +63,26 @@ export function Testimonials() {
           </div>
           <AnimatedSection delay={0.14}>
             <div className="flex items-center gap-4">
-              <button onClick={prev} className="w-9 h-9 border border-stone-700/60 hover:border-stone-600 flex items-center justify-center text-stone-600 hover:text-stone-400 transition-all duration-300">
-                <ChevronLeft size={15} strokeWidth={1.5} />
+              <button onClick={prev} className="w-11 h-11 md:w-9 md:h-9 border border-stone-700/60 hover:border-stone-600 flex items-center justify-center text-stone-600 hover:text-stone-400 transition-all duration-300" aria-label="Previous testimonial">
+                <ChevronLeft size={18} strokeWidth={1.5} className="md:hidden" />
+                <ChevronLeft size={15} strokeWidth={1.5} className="hidden md:block" />
               </button>
-              <button onClick={next} className="w-9 h-9 border border-stone-700/60 hover:border-stone-600 flex items-center justify-center text-stone-600 hover:text-stone-400 transition-all duration-300">
-                <ChevronRight size={15} strokeWidth={1.5} />
+              <button onClick={next} className="w-11 h-11 md:w-9 md:h-9 border border-stone-700/60 hover:border-stone-600 flex items-center justify-center text-stone-600 hover:text-stone-400 transition-all duration-300" aria-label="Next testimonial">
+                <ChevronRight size={18} strokeWidth={1.5} className="md:hidden" />
+                <ChevronRight size={15} strokeWidth={1.5} className="hidden md:block" />
               </button>
               <div className="flex gap-2">
                 {testimonials.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => go(i)}
-                    className={`transition-all duration-300 rounded-full ${
+                    className={`transition-all duration-300 rounded-full min-w-[20px] min-h-[20px] md:min-w-0 md:min-h-0 flex items-center justify-center ${
                       i === active
                         ? 'w-4 h-1 bg-gold-500'
-                        : 'w-1 h-1 bg-stone-700 hover:bg-stone-600'
+                        : 'w-2 h-2 md:w-1 md:h-1 bg-stone-700 hover:bg-stone-600'
                     }`}
+                    aria-label={`Go to testimonial ${i + 1}`}
+                    aria-current={i === active ? 'true' : undefined}
                   />
                 ))}
               </div>
@@ -150,11 +154,13 @@ export function Testimonials() {
                   onClick={() => go(i)}
                   whileHover={{ x: 4 }}
                   transition={{ duration: 0.25 }}
-                  className={`w-full text-left px-5 py-4 border transition-all duration-350 relative overflow-hidden ${
+                  className={`w-full text-left px-4 py-4 md:px-5 md:py-4 border transition-all duration-350 relative overflow-hidden min-h-[48px] ${
                     i === active
                       ? 'border-gold-500/20 bg-charcoal/70'
                       : 'border-stone-800/25 hover:border-stone-800/50 bg-transparent'
                   }`}
+                  aria-label={`View testimonial from ${t.name}`}
+                  aria-pressed={i === active}
                 >
                   {i === active && (
                     <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gold-500" />

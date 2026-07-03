@@ -20,7 +20,7 @@ const proof = [
 
 export function CTA() {
   return (
-    <section className="py-32 lg:py-40 bg-void relative overflow-hidden">
+    <section className="py-20 md:py-32 lg:py-40 bg-void relative overflow-hidden">
       {/* Premium grid */}
       <div className="absolute inset-0 grid-bg opacity-35 pointer-events-none" />
 
@@ -62,15 +62,15 @@ export function CTA() {
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 text-center">
 
         <AnimatedSection delay={0}>
-          <div className="flex items-center justify-center gap-4 mb-12">
-            <div className="w-12 h-px bg-gradient-to-r from-transparent to-stone-800" />
+          <div className="flex items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
+            <div className="w-10 md:w-12 h-px bg-gradient-to-r from-transparent to-stone-800" />
             <span className="section-label">Take the First Step</span>
-            <div className="w-12 h-px bg-gradient-to-l from-transparent to-stone-800" />
+            <div className="w-10 md:w-12 h-px bg-gradient-to-l from-transparent to-stone-800" />
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.08}>
-          <h2 className="font-display font-medium text-stone-100 leading-[1.02] mb-8"
+          <h2 className="font-display font-medium text-stone-100 leading-[1.02] mb-6 md:mb-8"
             style={{ fontSize: 'clamp(2.75rem, 7vw, 6rem)' }}
           >
             Your Business Runs Better{' '}
@@ -82,7 +82,7 @@ export function CTA() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.18}>
-          <p className="text-stone-500 leading-[1.85] mb-12 max-w-lg mx-auto"
+          <p className="text-stone-500 leading-[1.85] mb-10 md:mb-12 max-w-lg mx-auto px-2"
             style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.125rem)' }}
           >
             Book a free consultation with a MEHANS AI engineer. We'll analyse your workflow, identify the highest-impact automation opportunities, and show you exactly what your business looks like when AI is running it.
@@ -90,22 +90,23 @@ export function CTA() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.26}>
-          <div className="flex flex-col xs:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col xs:flex-row gap-3 md:gap-4 justify-center mb-12 md:mb-16">
             <button
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="btn-primary group"
+              className="btn-primary group w-full xs:w-auto"
+              aria-label="Schedule a consultation"
             >
               Schedule Consultation
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-300" />
             </button>
-            <a href="mailto:hello@mehans.space" className="btn-ghost">
+            <a href="mailto:hello@mehans.space" className="btn-ghost w-full xs:w-auto justify-center min-h-[52px]">
               hello@mehans.space
             </a>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.35}>
-          <div className="pt-10 border-t border-stone-800/35 flex flex-wrap items-center justify-center gap-6 lg:gap-10">
+          <div className="pt-8 md:pt-10 border-t border-stone-800/35 flex flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-10">
             {proof.map((item, i) => (
               <motion.div
                 key={item}

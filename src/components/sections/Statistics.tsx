@@ -51,20 +51,21 @@ export function Statistics() {
                 <motion.div
                   whileHover={{ y: -3 }}
                   transition={{ duration: 0.25 }}
-                  className="py-14 lg:py-16 px-6 lg:px-10 text-center group cursor-default relative overflow-hidden"
+                  className="py-10 md:py-14 lg:py-16 px-4 md:px-6 lg:px-10 text-center group cursor-default relative overflow-hidden"
                 >
                   <div className="absolute inset-0 bg-gradient-to-b from-gold-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                   <div className="relative z-10">
-                    <div className="w-11 h-11 border border-stone-700/60 group-hover:border-gold-500/35 mx-auto flex items-center justify-center mb-5 transition-colors duration-400 rounded-sm">
-                      <Icon size={18} strokeWidth={1.5} className="text-stone-500 group-hover:text-gold-500 transition-colors duration-400" />
+                    <div className="w-11 h-11 border border-stone-700/60 group-hover:border-gold-500/35 mx-auto flex items-center justify-center mb-4 md:mb-5 transition-colors duration-400 rounded-sm">
+                      <Icon size={20} strokeWidth={1.5} className="md:hidden text-stone-500 group-hover:text-gold-500 transition-colors duration-400" />
+                      <Icon size={18} strokeWidth={1.5} className="hidden md:block text-stone-500 group-hover:text-gold-500 transition-colors duration-400" />
                     </div>
 
-                    <div className="font-display text-4xl md:text-5xl font-medium text-gold-500 mb-2 leading-none group-hover:scale-[1.02] transition-transform duration-400 origin-bottom inline-block">
+                    <div className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-gold-500 mb-2 leading-none group-hover:scale-[1.02] transition-transform duration-400 origin-bottom inline-block">
                       <CountUp to={item.value} suffix={item.suffix} prefix={item.prefix} />
                     </div>
 
-                    <div className="text-stone-300 text-[13px] font-medium">{item.label}</div>
+                    <div className="text-stone-300 text-[12px] md:text-[13px] font-medium">{item.label}</div>
                   </div>
                 </motion.div>
               </AnimatedSection>
