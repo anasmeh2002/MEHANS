@@ -1,0 +1,286 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+
+  body {
+    background-color: #080808;
+    color: #e8e4de;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+    letter-spacing: -0.01em;
+  }
+
+  ::selection {
+    background-color: rgba(201, 168, 76, 0.25);
+    color: #C9A84C;
+  }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #080808; }
+  ::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #C9A84C; }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  /* Glass surfaces */
+  .glass {
+    background: rgba(255, 255, 255, 0.028);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.055);
+  }
+
+  .glass-gold {
+    background: rgba(201, 168, 76, 0.04);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(201, 168, 76, 0.12);
+  }
+
+  .glass-dark {
+    background: rgba(8, 8, 8, 0.75);
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .glass-charcoal {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Gold text gradient */
+  .text-gradient-gold {
+    background: linear-gradient(125deg, #B8960C 0%, #D4AF37 35%, #F0D060 60%, #C9A84C 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    @apply relative inline-flex items-center gap-2.5 px-8 py-[14px] font-semibold text-[11px] tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 cursor-pointer;
+    background: #C9A84C;
+    color: #080808;
+  }
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: #D4AF37;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .btn-primary:hover::after { opacity: 1; }
+  .btn-primary > * { position: relative; z-index: 1; }
+
+  .btn-ghost {
+    @apply relative inline-flex items-center gap-2.5 px-8 py-[14px] font-medium text-[11px] tracking-[0.2em] uppercase transition-all duration-400 cursor-pointer;
+    background: transparent;
+    color: #78716c;
+    border: 1px solid rgba(120, 113, 108, 0.3);
+  }
+  .btn-ghost:hover {
+    color: #C9A84C;
+    border-color: rgba(201, 168, 76, 0.4);
+  }
+
+  /* Section labels */
+  .section-label {
+    @apply inline-flex items-center text-[10px] font-bold tracking-[0.35em] uppercase;
+    color: #C9A84C;
+  }
+
+  /* Typography scale */
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.06;
+    color: #f5f0e8;
+    letter-spacing: -0.025em;
+  }
+
+  .section-subtitle {
+    color: #6b6560;
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    font-weight: 300;
+    letter-spacing: 0.005em;
+  }
+
+  /* Horizontal rule variants */
+  .rule-gold {
+    height: 1px;
+    background: linear-gradient(90deg, #C9A84C 0%, rgba(201,168,76,0.15) 60%, transparent 100%);
+  }
+
+  .rule-subtle {
+    height: 1px;
+    background: rgba(255,255,255,0.05);
+  }
+
+  /* Number label */
+  .num-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    color: #3a3630;
+  }
+
+  /* Form input */
+  .form-input {
+    @apply w-full px-4 py-3 text-sm font-light text-stone-300 placeholder-stone-800 outline-none transition-colors duration-300;
+    background: rgba(255,255,255,0.018);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .form-input:focus {
+    border-color: rgba(201,168,76,0.35);
+    background: rgba(255,255,255,0.025);
+  }
+
+  /* Noise grain */
+  .noise {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .tracking-luxury { letter-spacing: 0.22em; }
+  .text-balance { text-wrap: balance; }
+
+  /* Hide scrollbar */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .font-display { font-family: 'Playfair Display', Georgia, serif; }
+}
+
+/* ─────────────────────────────────────────────
+   PARTICLES
+───────────────────────────────────────────── */
+@keyframes particleDrift {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  8%   { opacity: 0.7; }
+  90%  { opacity: 0.3; }
+  100% { transform: translateY(-110vh) translateX(var(--drift-x, 20px)); opacity: 0; }
+}
+.particle {
+  animation: particleDrift var(--duration, 12s) ease-in infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+/* ─────────────────────────────────────────────
+   ORB FLOAT
+───────────────────────────────────────────── */
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(28px, -24px) scale(1.04); }
+  66%       { transform: translate(-18px, 16px) scale(0.97); }
+}
+.orb-animate  { animation: orbFloat 14s ease-in-out infinite; }
+.orb-animate-2 { animation: orbFloat 18s ease-in-out infinite reverse; }
+.orb-animate-3 { animation: orbFloat 11s ease-in-out infinite 4s; }
+
+/* ─────────────────────────────────────────────
+   GOLD SHIMMER TEXT
+───────────────────────────────────────────── */
+@keyframes goldShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+.animate-gold-shimmer {
+  background: linear-gradient(90deg, #B8960C 0%, #D4AF37 20%, #F0D060 40%, #C9A84C 60%, #B8960C 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: goldShimmer 5s linear infinite;
+}
+
+/* ─────────────────────────────────────────────
+   LOADING
+───────────────────────────────────────────── */
+@keyframes loadingBar {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ─────────────────────────────────────────────
+   WORD REVEAL
+───────────────────────────────────────────── */
+@keyframes wordReveal {
+  from { transform: translateY(105%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+.word-reveal {
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1.12;
+}
+.word-reveal > span {
+  display: inline-block;
+  animation: wordReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* ─────────────────────────────────────────────
+   CURSOR GLOW (optional enhancement)
+───────────────────────────────────────────── */
+.cursor-glow {
+  pointer-events: none;
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,168,76,0.06) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  transition: left 0.15s ease, top 0.15s ease;
+  z-index: 9999;
+}
+
+/* ─────────────────────────────────────────────
+   LINE DRAW ANIMATION
+───────────────────────────────────────────── */
+@keyframes lineDraw {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+.line-draw { animation: lineDraw 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+
+/* ─────────────────────────────────────────────
+   GRID BACKGROUND UTILITY
+───────────────────────────────────────────── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(201,168,76,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.07) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.grid-bg-fine {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
