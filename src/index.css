@@ -269,6 +269,39 @@
 .line-draw { animation: lineDraw 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
 
 /* ─────────────────────────────────────────────
+   FADE IN UP ANIMATION
+───────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─────────────────────────────────────────────
+   SCALE IN ANIMATION
+───────────────────────────────────────────── */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ─────────────────────────────────────────────
+   GLOW PULSE
+───────────────────────────────────────────── */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(201,168,76,0.1); }
+  50%       { box-shadow: 0 0 40px rgba(201,168,76,0.2); }
+}
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────
    GRID BACKGROUND UTILITY
 ───────────────────────────────────────────── */
 .grid-bg {
@@ -283,4 +316,21 @@
     linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+/* Neural network pattern */
+.neural-bg {
+  background-image: radial-gradient(circle at 20% 30%, rgba(201,168,76,0.03) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 70%, rgba(201,168,76,0.025) 0%, transparent 40%),
+                    radial-gradient(circle at 50% 50%, rgba(201,168,76,0.02) 0%, transparent 60%);
+}
+
+/* Circuit pattern overlay */
+.circuit-bg {
+  background-image:
+    linear-gradient(90deg, rgba(201,168,76,0.015) 1px, transparent 1px),
+    linear-gradient(rgba(201,168,76,0.015) 1px, transparent 1px),
+    radial-gradient(circle at 25% 25%, rgba(201,168,76,0.02) 0%, transparent 25%),
+    radial-gradient(circle at 75% 75%, rgba(201,168,76,0.02) 0%, transparent 25%);
+  background-size: 120px 120px, 120px 120px, 240px 240px, 240px 240px;
 }
