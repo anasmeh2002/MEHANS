@@ -13,13 +13,12 @@ export function Process() {
 
   return (
     <section id="process" ref={sectionRef} className="py-32 lg:py-40 bg-void relative overflow-hidden">
-      {/* Circuit pattern */}
       <div className="absolute inset-0 circuit-bg opacity-35 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-10 mb-18 lg:mb-26 items-end">
+        <div className="grid lg:grid-cols-2 gap-10 mb-18 lg:mb-22 items-end">
           <div>
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
@@ -29,19 +28,19 @@ export function Process() {
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                Discovery to Deployment{' '}
-                <span className="italic font-light text-stone-500">in Six Phases.</span>
+                From Discovery to Live<br />
+                <span className="italic font-light text-stone-500">in Six Steps.</span>
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.14}>
-            <p className="section-subtitle leading-[1.85]">
-              A structured process designed to eliminate implementation risk and guarantee measurable results from day one of going live.
+            <p className="text-stone-600 text-[13px] leading-[1.8]">
+              Structured process. Zero risk. Measurable results from day one.
             </p>
           </AnimatedSection>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-18 lg:gap-32 items-start">
+        <div className="grid lg:grid-cols-2 gap-18 lg:gap-28 items-start">
 
           {/* Left: image block */}
           <AnimatedSection delay={0.1} direction="right">
@@ -53,31 +52,19 @@ export function Process() {
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-void/80 via-void/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-void/85 via-void/30 to-transparent" />
               </div>
 
-              {/* Corner marks */}
-              <div className="absolute top-6 left-6 w-8 h-8 border-l border-t border-gold-500/35" />
-              <div className="absolute bottom-6 right-6 w-8 h-8 border-r border-b border-gold-500/35" />
+              <div className="absolute top-5 left-5 w-8 h-8 border-l border-t border-gold-500/35" />
+              <div className="absolute bottom-5 right-5 w-8 h-8 border-r border-b border-gold-500/35" />
 
-              {/* Overlay stat */}
-              <div className="absolute bottom-6 left-6">
-                <div className="glass-dark px-7 py-5 border border-white/[0.06]">
-                  <div className="font-display text-[32px] font-medium text-gold-500 leading-none">6 Weeks</div>
-                  <div className="text-stone-500 text-[12px] mt-1.5">average time to full deployment</div>
+              <div className="absolute bottom-5 left-5">
+                <div className="glass-dark px-6 py-4 border border-white/[0.06]">
+                  <div className="font-display text-[28px] font-medium text-gold-500 leading-none">≤ 2 Wks</div>
+                  <div className="text-stone-500 text-[11px] mt-1">average deployment</div>
                 </div>
               </div>
             </div>
-
-            {/* Quote below image */}
-            <AnimatedSection delay={0.25}>
-              <div className="mt-10 pl-8 border-l-2 border-gold-500/20">
-                <p className="text-stone-500 text-[13px] leading-[1.85] italic mb-3">
-                  "The MEHANS team mapped our entire workflow in two days and had a working prototype in the third week. Nothing like any agency we'd worked with before."
-                </p>
-                <span className="text-stone-700 text-[11px] tracking-wide">— Agency client, Casablanca</span>
-              </div>
-            </AnimatedSection>
           </AnimatedSection>
 
           {/* Right: timeline */}
@@ -93,9 +80,9 @@ export function Process() {
                 return (
                   <AnimatedSection key={step.number} delay={i * 0.08}>
                     <motion.div
-                      whileHover={{ x: 8 }}
+                      whileHover={{ x: 6 }}
                       transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                      className="group relative flex gap-8 pb-11 cursor-default last:pb-0"
+                      className="group relative flex gap-7 pb-9 cursor-default last:pb-0"
                     >
                       {/* Circle node */}
                       <div className="flex-shrink-0 w-11 h-11 border border-stone-800 group-hover:border-gold-500/40 bg-void flex items-center justify-center z-10 relative transition-all duration-400">
@@ -103,9 +90,9 @@ export function Process() {
                       </div>
 
                       {/* Content */}
-                      <div className="pt-2 flex-1">
-                        <div className="flex items-center justify-between mb-2">
-                          <h3 className="text-stone-300 font-medium text-[15px] group-hover:text-stone-100 transition-colors duration-300">
+                      <div className="pt-2.5 flex-1">
+                        <div className="flex items-center justify-between mb-1.5">
+                          <h3 className="text-stone-300 font-medium text-[14px] group-hover:text-stone-100 transition-colors duration-300">
                             {step.title}
                           </h3>
                           <div className="flex items-center gap-1.5 text-stone-700 text-[10px]">
@@ -113,7 +100,7 @@ export function Process() {
                             <span>{step.duration}</span>
                           </div>
                         </div>
-                        <p className="text-stone-600 text-[13px] leading-[1.75]">{step.description}</p>
+                        <p className="text-stone-600 text-[12px] leading-[1.7]">{step.description}</p>
                       </div>
                     </motion.div>
                   </AnimatedSection>
@@ -121,8 +108,8 @@ export function Process() {
               })}
             </div>
 
-            <AnimatedSection delay={0.65}>
-              <div className="pl-[76px] pt-8">
+            <AnimatedSection delay={0.55}>
+              <div className="pl-[72px] pt-6">
                 <button
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-primary group"

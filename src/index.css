@@ -74,32 +74,35 @@
     background-clip: text;
   }
 
-  /* Buttons */
+  /* Buttons - Premium luxury */
   .btn-primary {
-    @apply relative inline-flex items-center gap-2.5 px-8 py-[14px] font-semibold text-[11px] tracking-[0.2em] uppercase overflow-hidden transition-all duration-500 cursor-pointer;
-    background: #C9A84C;
+    @apply relative inline-flex items-center justify-center gap-3 px-10 py-[18px] font-semibold text-[11px] tracking-[0.22em] uppercase overflow-hidden cursor-pointer;
+    background: linear-gradient(135deg, #C9A84C 0%, #D4AF37 100%);
     color: #080808;
+    border: none;
+    box-shadow: 0 4px 24px rgba(201, 168, 76, 0.15), inset 0 1px 0 rgba(255,255,255,0.15);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
-  .btn-primary::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: #D4AF37;
-    opacity: 0;
-    transition: opacity 0.35s ease;
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 36px rgba(201, 168, 76, 0.25), inset 0 1px 0 rgba(255,255,255,0.2);
+    background: linear-gradient(135deg, #D4AF37 0%, #F0D060 100%);
   }
-  .btn-primary:hover::after { opacity: 1; }
-  .btn-primary > * { position: relative; z-index: 1; }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
 
   .btn-ghost {
-    @apply relative inline-flex items-center gap-2.5 px-8 py-[14px] font-medium text-[11px] tracking-[0.2em] uppercase transition-all duration-400 cursor-pointer;
+    @apply relative inline-flex items-center justify-center gap-3 px-10 py-[18px] font-medium text-[11px] tracking-[0.22em] uppercase cursor-pointer;
     background: transparent;
     color: #78716c;
-    border: 1px solid rgba(120, 113, 108, 0.3);
+    border: 1px solid rgba(120, 113, 108, 0.35);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   }
   .btn-ghost:hover {
     color: #C9A84C;
-    border-color: rgba(201, 168, 76, 0.4);
+    border-color: rgba(201, 168, 76, 0.5);
+    background: rgba(201, 168, 76, 0.05);
   }
 
   /* Section labels */
