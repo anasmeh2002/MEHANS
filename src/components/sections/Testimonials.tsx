@@ -63,10 +63,10 @@ export function Testimonials() {
           </div>
           <AnimatedSection delay={0.14}>
             <div className="flex items-center gap-4">
-              <button onClick={prev} className="w-9 h-9 border border-stone-800 hover:border-stone-600 flex items-center justify-center text-stone-700 hover:text-stone-400 transition-all duration-300">
+              <button onClick={prev} className="w-9 h-9 border border-stone-700/60 hover:border-stone-600 flex items-center justify-center text-stone-600 hover:text-stone-400 transition-all duration-300">
                 <ChevronLeft size={15} strokeWidth={1.5} />
               </button>
-              <button onClick={next} className="w-9 h-9 border border-stone-800 hover:border-stone-600 flex items-center justify-center text-stone-700 hover:text-stone-400 transition-all duration-300">
+              <button onClick={next} className="w-9 h-9 border border-stone-700/60 hover:border-stone-600 flex items-center justify-center text-stone-600 hover:text-stone-400 transition-all duration-300">
                 <ChevronRight size={15} strokeWidth={1.5} />
               </button>
               <div className="flex gap-2">
@@ -133,7 +133,7 @@ export function Testimonials() {
                       </div>
                       <div>
                         <div className="text-stone-200 font-medium text-[14px]">{current.name}</div>
-                        <div className="text-stone-600 text-[11px] mt-0.5">{current.role}</div>
+                        <div className="text-stone-500 text-[11px] mt-0.5">{current.role}</div>
                       </div>
                     </div>
                   </motion.div>
@@ -170,11 +170,11 @@ export function Testimonials() {
                       }`}>
                         {t.name}
                       </span>
-                      <span className="text-stone-700 text-[10px]">·</span>
-                      <span className="text-stone-700 text-[10px]">{t.role.split(',')[0]}</span>
+                      <span className="text-stone-600 text-[10px]">·</span>
+                      <span className="text-stone-600 text-[10px]">{t.role.split(',')[0]}</span>
                     </div>
                   </div>
-                  <p className="text-stone-600 text-[11px] leading-relaxed line-clamp-2 pl-[44px]">
+                  <p className="text-stone-500 text-[11px] leading-relaxed line-clamp-2 pl-[44px]">
                     "{t.text.slice(0, 80)}…"
                   </p>
                 </motion.button>

@@ -15,7 +15,7 @@ const proof = [
   'No commitment required',
   'Senior engineer assigned',
   'AI strategy in 7 days',
-  'Systems live in 6 weeks',
+  'Systems live in ≤ 2 weeks',
 ];
 
 export function CTA() {
@@ -82,7 +82,7 @@ export function CTA() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.18}>
-          <p className="text-stone-600 leading-[1.85] mb-12 max-w-lg mx-auto"
+          <p className="text-stone-500 leading-[1.85] mb-12 max-w-lg mx-auto"
             style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.125rem)' }}
           >
             Book a free consultation with a MEHANS AI engineer. We'll analyse your workflow, identify the highest-impact automation opportunities, and show you exactly what your business looks like when AI is running it.
@@ -105,7 +105,7 @@ export function CTA() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.35}>
-          <div className="pt-10 border-t border-stone-800/25 flex flex-wrap items-center justify-center gap-6 lg:gap-10">
+          <div className="pt-10 border-t border-stone-800/35 flex flex-wrap items-center justify-center gap-6 lg:gap-10">
             {proof.map((item, i) => (
               <motion.div
                 key={item}
@@ -115,7 +115,7 @@ export function CTA() {
                 className="flex items-center gap-2.5"
               >
                 <div className="w-1.5 h-1.5 rounded-full bg-gold-500/70" />
-                <span className="text-stone-700 text-[11px] tracking-wide">{item}</span>
+                <span className="text-stone-500 text-[11px] tracking-wide">{item}</span>
               </motion.div>
             ))}
           </div>

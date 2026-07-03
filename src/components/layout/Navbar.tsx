@@ -124,7 +124,7 @@ export function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 + 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                   onClick={() => handleNav(l.href)}
-                  className="text-left text-[1.65rem] font-display text-stone-500 hover:text-gold-500 transition-colors duration-300 py-6"
+                  className="text-left text-[1.65rem] font-display text-stone-400 hover:text-gold-500 transition-colors duration-300 py-6"
                 >
                   {l.label}
                 </motion.button>
@@ -140,7 +140,7 @@ export function Navbar() {
                 Schedule Consultation
                 <ArrowRight size={13} />
               </button>
-              <a href="tel:+212710891662" className="text-center text-stone-700 text-sm py-3 hover:text-gold-500 transition-colors duration-250">
+              <a href="tel:+212710891662" className="text-center text-stone-500 text-sm py-3 hover:text-gold-500 transition-colors duration-250">
                 +212 710 891 662
               </a>
             </motion.div>

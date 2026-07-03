@@ -82,7 +82,7 @@ export function WhoWeHelp() {
                       <h3 className="text-stone-200 font-medium text-[17px] leading-snug mb-3.5 group-hover:text-stone-100 transition-colors duration-300">
                         {item.title}
                       </h3>
-                      <p className="text-stone-600 text-[13px] leading-[1.75]">{item.description}</p>
+                      <p className="text-stone-500 text-[13px] leading-[1.75]">{item.description}</p>
                     </div>
 
                     {/* Expanding gold line */}
@@ -106,7 +106,7 @@ export function WhoWeHelp() {
               <p className="text-stone-200 font-medium text-[17px] mb-2.5">
                 Not sure where to start?
               </p>
-              <p className="text-stone-600 text-[13px] leading-[1.75]">
+              <p className="text-stone-500 text-[13px] leading-[1.75]">
                 Book a free 30-minute discovery call. We'll map your workflow and show you exactly where AI delivers the highest return.
               </p>
             </div>

@@ -106,7 +106,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={headlineIn ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-stone-500 font-light leading-[1.7] mb-12 max-w-[520px]"
+            className="text-stone-400 font-light leading-[1.75] mb-12 max-w-[520px]"
             style={{ fontSize: 'clamp(1rem, 1.4vw, 1.125rem)' }}
           >
             Enterprise AI automation that captures leads, qualifies prospects,
@@ -134,7 +134,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={headlineIn ? { opacity: 1 } : {}}
           transition={{ duration: 0.9, delay: 0.5 }}
-          className="mt-32 pt-10 border-t border-stone-800/35 flex flex-wrap gap-12 lg:gap-20"
+          className="mt-32 pt-10 border-t border-stone-700/40 flex flex-wrap gap-12 lg:gap-20"
         >
           {[
             { v: '< 90s', l: 'Lead Response' },
@@ -143,7 +143,7 @@ export function Hero() {
           ].map((s) => (
             <div key={s.l} className="flex flex-col gap-2">
               <span className="font-display text-2xl md:text-[1.75rem] font-medium text-gold-500 leading-none">{s.v}</span>
-              <span className="text-stone-700 text-[10px] font-semibold tracking-[0.2em] uppercase">{s.l}</span>
+              <span className="text-stone-500 text-[10px] font-semibold tracking-[0.2em] uppercase">{s.l}</span>
             </div>
           ))}
         </motion.div>

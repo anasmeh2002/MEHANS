@@ -30,7 +30,7 @@ export function FAQ() {
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.14}>
-              <p className="text-stone-600 text-[13px] leading-[1.85] mb-12">
+              <p className="text-stone-500 text-[13px] leading-[1.85] mb-12">
                 Everything you need to know about implementing AI automation in your real estate business — answered without jargon.
               </p>
             </AnimatedSection>
@@ -45,7 +45,7 @@ export function FAQ() {
                 <div className="text-[9px] font-bold tracking-[0.35em] uppercase text-stone-700 mb-5">
                   Have a specific question?
                 </div>
-                <p className="text-stone-600 text-[13px] mb-6 leading-[1.75]">
+                <p className="text-stone-500 text-[13px] mb-6 leading-[1.75]">
                   Speak directly with a MEHANS AI engineer. Free, no pitch.
                 </p>
                 <div className="flex flex-col gap-3">
@@ -77,17 +77,17 @@ export function FAQ() {
                     className="w-full flex items-start justify-between gap-8 py-9 text-left"
                   >
                     <span className={`font-medium text-[15px] md:text-[16px] leading-snug transition-colors duration-300 ${
-                      open === i ? 'text-gold-500' : 'text-stone-400 group-hover:text-stone-200'
+                      open === i ? 'text-gold-500' : 'text-stone-300 group-hover:text-stone-100'
                     }`}>
                       {faq.question}
                     </span>
                     <div className={`flex-shrink-0 w-8 h-8 border flex items-center justify-center transition-all duration-350 mt-0.5 ${
                       open === i
                         ? 'border-gold-500/40 bg-gold-500/8 rotate-45'
-                        : 'border-stone-800 group-hover:border-stone-700'
+                        : 'border-stone-700/60 group-hover:border-stone-600'
                     }`}>
                       <Plus size={13} strokeWidth={1.5} className={`transition-colors duration-300 ${
-                        open === i ? 'text-gold-500' : 'text-stone-700 group-hover:text-stone-500'
+                        open === i ? 'text-gold-500' : 'text-stone-600 group-hover:text-stone-400'
                       }`} />
                     </div>
                   </button>
