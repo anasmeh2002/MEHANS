@@ -94,11 +94,11 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={headlineIn ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-medium text-stone-100 leading-[1.02] mb-10"
-            style={{ fontSize: 'clamp(3.2rem, 7.5vw, 6.5rem)' }}
+            className="font-display font-semibold text-stone-100 leading-[1.0] mb-14"
+            style={{ fontSize: 'clamp(3.5rem, 8vw, 7.5rem)', letterSpacing: '-0.02em' }}
           >
             AI That Runs<br />
-            <span className="italic font-light text-gradient-gold">Your Business.</span>
+            <span className="italic font-light text-gradient-gold">Your Real Estate Business.</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -106,7 +106,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={headlineIn ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-stone-400 font-light leading-[1.75] mb-12 max-w-[520px]"
+            className="text-stone-400 font-light leading-[1.7] mb-14 max-w-[480px]"
             style={{ fontSize: 'clamp(1rem, 1.4vw, 1.125rem)' }}
           >
             Enterprise AI automation that captures leads, qualifies prospects,
