@@ -94,8 +94,8 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={headlineIn ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display font-semibold text-stone-100 leading-[1.0] mb-14"
-            style={{ fontSize: 'clamp(3.5rem, 8vw, 7.5rem)', letterSpacing: '-0.02em' }}
+            className="font-display font-semibold text-stone-100 leading-[1.05] mb-14 max-w-[600px]"
+            style={{ fontSize: 'clamp(2.8rem, 6.5vw, 6rem)', letterSpacing: '-0.02em' }}
           >
             AI That Runs<br />
             <span className="italic font-light text-gradient-gold">Your Real Estate Business.</span>
@@ -106,11 +106,10 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={headlineIn ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-stone-400 font-light leading-[1.7] mb-14 max-w-[480px]"
+            className="text-stone-400 font-light leading-[1.7] mb-14 max-w-[600px]"
             style={{ fontSize: 'clamp(1rem, 1.4vw, 1.125rem)' }}
           >
-            Enterprise AI automation that captures leads, qualifies prospects,
-            and scales real estate businesses with less manual work.
+            MEHANS builds enterprise AI automation systems that capture leads, qualify prospects, automate follow-ups, schedule meetings, synchronize CRMs, and help real estate businesses scale with less manual work.
           </motion.p>
 
           {/* CTA */}
