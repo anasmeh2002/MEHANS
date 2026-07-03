@@ -89,6 +89,19 @@ export function Hero() {
       >
         <div className="max-w-[680px]">
 
+          {/* Eyebrow label */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={headlineIn ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="flex items-center gap-4 mb-8"
+          >
+            <div className="w-10 h-px bg-gold-500/70" />
+            <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-gold-500">
+              AI Automation for Real Estate
+            </span>
+          </motion.div>
+
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -106,11 +119,33 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={headlineIn ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            className="text-stone-400 font-light leading-[1.7] mb-14 max-w-[600px]"
+            className="text-stone-400 font-light leading-[1.7] mb-8 max-w-[600px]"
             style={{ fontSize: 'clamp(1rem, 1.4vw, 1.125rem)' }}
           >
             MEHANS builds enterprise AI automation systems that capture leads, qualify prospects, automate follow-ups, schedule meetings, synchronize CRMs, and help real estate businesses scale with less manual work.
           </motion.p>
+
+          {/* Premium badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={headlineIn ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.9, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-wrap gap-3 mb-14"
+          >
+            {[
+              { icon: '⚡', label: 'Instant Lead Response' },
+              { icon: '🕒', label: '24/7 AI Operation' },
+              { icon: '🛡', label: 'Enterprise Security' },
+            ].map((badge) => (
+              <div
+                key={badge.label}
+                className="flex items-center gap-2.5 px-4 py-2.5 border border-gold-500/25 bg-gold-500/[0.04] rounded-sm"
+              >
+                <span className="text-[14px]">{badge.icon}</span>
+                <span className="text-stone-300 text-[11px] font-medium tracking-wide">{badge.label}</span>
+              </div>
+            ))}
+          </motion.div>
 
           {/* CTA */}
           <motion.div
