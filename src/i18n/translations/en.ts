@@ -1,0 +1,343 @@
+export const en = {
+  // Meta
+  meta: {
+    title: 'MEHANS — AI Automation for Real Estate Leaders',
+    description: 'MEHANS builds enterprise AI automation systems for real estate agencies, brokers, and developers. Capture leads, automate follow-ups, sync CRMs, and scale your business with AI.',
+  },
+
+  // Navigation
+  nav: {
+    services: 'Services',
+    solutions: 'Solutions',
+    platform: 'Platform',
+    process: 'Process',
+    about: 'About',
+    scheduleConsultation: 'Schedule Consultation',
+  },
+
+  // Hero Section
+  hero: {
+    eyebrow: 'Enterprise AI for Real Estate',
+    headline1: 'Every Property Lead Matters.',
+    headline2: 'We Make Sure None Are Lost.',
+    subheadline: 'MEHANS engineers bespoke AI automation for real estate businesses that want to respond faster, close more deals, and scale without hiring. Every lead answered in seconds. Every follow-up automated. Every opportunity captured.',
+    badge1: 'Never Lose Another Lead',
+    badge2: 'Respond in Under 90 Seconds',
+    badge3: 'Enterprise-Grade Security',
+    cta: 'Book Your Free AI Strategy Session',
+    stat1Value: '< 90s',
+    stat1Label: 'Avg. Lead Response',
+    stat2Value: '80%',
+    stat2Label: 'Less Manual Work',
+    stat3Value: '24/7',
+    stat3Label: 'Always On',
+    scroll: 'Scroll',
+  },
+
+  // Statistics Section
+  stats: {
+    satisfaction: 'Client Satisfaction',
+    satisfactionDesc: 'Enterprise-grade delivery',
+    reduction: 'Reduction in Manual Tasks',
+    reductionDesc: 'Average within 90 days',
+    availability: 'AI Availability',
+    availabilityDesc: 'Never miss a lead',
+    deployment: 'Average Deployment',
+    deploymentDesc: 'From signed to live',
+  },
+
+  // Section Labels
+  labels: {
+    whatWeBuild: 'What We Build',
+    whoWeServe: 'Who We Serve',
+    whyMehans: 'Why MEHANS',
+    theMehansDifference: 'The MEHANS Difference',
+    clientResults: 'Client Results',
+    howItWorks: 'How It Works',
+    faq: 'FAQ',
+    takeFirstStep: 'Take the First Step',
+    getStarted: 'Get Started',
+  },
+
+  // Services Section
+  services: {
+    headline1: 'Twelve AI Systems.',
+    headline2: 'Every Revenue Gap Closed.',
+    description: 'Purpose-built automation for every stage of the real estate pipeline — so no lead is lost, no follow-up is missed, and no deal is left on the table.',
+    note: 'All systems are custom-engineered for your agency — dedicated support, zero templates.',
+    cta: 'Discuss your automation needs',
+    // Service tags
+    acquisition: 'Acquisition',
+    intelligence: 'Intelligence',
+    operations: 'Operations',
+    communication: 'Communication',
+    voiceAI: 'Voice AI',
+    nurturing: 'Nurturing',
+    revenue: 'Revenue',
+    scheduling: 'Scheduling',
+    efficiency: 'Efficiency',
+    documents: 'Documents',
+    reporting: 'Reporting',
+    custom: 'Custom',
+    // Services
+    leadGenTitle: 'AI Lead Generation',
+    leadGenDesc: 'Never miss a high-intent buyer. AI captures and qualifies prospects across every digital channel around the clock.',
+    leadQualTitle: 'AI Lead Qualification',
+    leadQualDesc: 'Your agents only speak with serious buyers. AI scores intent, filters tire-kickers, and routes warm prospects instantly.',
+    crmTitle: 'CRM Automation',
+    crmDesc: 'Eliminate manual data entry. Every lead, follow-up, and status update is handled automatically across your pipeline.',
+    whatsappTitle: 'WhatsApp AI',
+    whatsappDesc: 'Respond to every WhatsApp inquiry in seconds — even at midnight. AI qualifies and nurtures leads before your team logs in.',
+    voiceTitle: 'Voice AI Receptionists',
+    voiceDesc: 'Every inbound call is answered, qualified, and booked. No lead goes to voicemail. No opportunity is lost.',
+    emailTitle: 'Email Automation',
+    emailDesc: 'Intelligent follow-up sequences that keep your agency top of mind — sent at the right moment without manual effort.',
+    salesTitle: 'Sales Automation',
+    salesDesc: 'Close more deals with automated workflows that ensure every prospect receives timely, personalized engagement.',
+    appointmentTitle: 'Appointment Scheduling',
+    appointmentDesc: 'AI books, confirms, and reminds. Your calendar fills itself while your agents focus on what closes deals.',
+    workflowTitle: 'Workflow Automation',
+    workflowDesc: 'Eliminate the repetitive manual work consuming your team. Scale your output without scaling your headcount.',
+    documentTitle: 'Document Automation',
+    documentDesc: 'Contracts, listings, and client documents generated and processed automatically — reducing errors and admin time.',
+    analyticsTitle: 'AI Analytics',
+    analyticsDesc: 'Real-time visibility into every lead, conversion, and revenue opportunity. Make decisions based on data, not instinct.',
+    agentsTitle: 'Custom AI Agents',
+    agentsDesc: 'Bespoke intelligent agents built precisely for your agency — handling tasks your competitors still do manually.',
+  },
+
+  // Who We Help Section
+  whoWeHelp: {
+    headline1: "Built for Real Estate's",
+    headline2: 'Highest-Stakes',
+    headline3: 'Operations.',
+    description: "Whether you run a boutique agency or a continental investment firm, MEHANS engineers AI systems that eliminate manual work, accelerate deal flow, and grow your revenue without growing your headcount.",
+    ctaBannerTitle: 'Not sure where to start?',
+    ctaBannerDesc: "Book a free 30-minute Automation Audit. We'll map your lead pipeline and show you exactly where revenue is being lost — and how to recover it.",
+    ctaBannerButton: 'Schedule Your Automation Audit',
+    // Client types
+    agenciesTitle: 'Real Estate Agencies',
+    agenciesDesc: 'Stop losing leads to slow response. AI qualifies every inquiry instantly so your agents focus exclusively on closing.',
+    agenciesStat: '3x Conversion',
+    developersTitle: 'Property Developers',
+    developersDesc: 'Manage hundreds of buyer inquiries across multiple developments without adding headcount.',
+    developersStat: '80% Admin Cut',
+    brokersTitle: 'Real Estate Brokers',
+    brokersDesc: 'Operate with the capacity of a full team. AI handles lead intake, follow-up, and scheduling so you focus on deals.',
+    brokersStat: '10x Capacity',
+    investmentTitle: 'Investment Firms',
+    investmentDesc: 'Automate deal flow management and due diligence coordination. Move faster than competitors on every opportunity.',
+    investmentStat: '60% Faster',
+    consultantsTitle: 'Luxury Consultants',
+    consultantsDesc: 'Deliver white-glove client experiences at scale. AI handles the process — your team delivers the expertise.',
+    consultantsStat: 'Premium Scale',
+    constructionTitle: 'Construction Firms',
+    constructionDesc: 'AI manages the entire client journey from pre-launch registration to handover — with zero manual follow-up.',
+    constructionStat: 'End-to-End',
+  },
+
+  // Why Mehans Section
+  whyMehans: {
+    headline1: 'The Results',
+    headline2: 'Real Estate Demands.',
+    description: 'Strategic partner, not a SaaS subscription. We build and own the AI backbone that powers elite real estate operations — with dedicated support and custom implementation every step of the way.',
+    cta: 'Book Your Free AI Strategy Session',
+    deploymentLabel: 'average deployment',
+    // Pillars
+    pillar1Stat: '24/7',
+    pillar1Label: 'Always Available',
+    pillar1Bullet1: 'Zero missed leads',
+    pillar1Bullet2: 'Responds in under 90 seconds',
+    pillar1Bullet3: 'Nights, weekends, holidays',
+    pillar2Stat: '80%',
+    pillar2Label: 'Less Manual Work',
+    pillar2Bullet1: 'Team focuses exclusively on closing',
+    pillar2Bullet2: 'Follow-ups run automatically',
+    pillar2Bullet3: 'Scale without extra headcount',
+    pillar3Stat: '3×',
+    pillar3Label: 'More Deals Closed',
+    pillar3Bullet1: 'First response wins the deal',
+    pillar3Bullet2: 'No lead left uncontacted',
+    pillar3Bullet3: 'Higher pipeline conversion',
+    pillar4Stat: '100%',
+    pillar4Label: 'Custom Built',
+    pillar4Bullet1: 'Engineered for your workflow',
+    pillar4Bullet2: 'Zero off-the-shelf templates',
+    pillar4Bullet3: 'Dedicated implementation team',
+    pillar5Stat: '256-bit',
+    pillar5Label: 'Enterprise Security',
+    pillar5Bullet1: 'Bank-grade encryption',
+    pillar5Bullet2: 'GDPR-compliant by design',
+    pillar5Bullet3: 'Role-based access controls',
+  },
+
+  // AI Advantages Section
+  aiAdvantages: {
+    headline1: 'Built to Close Deals,',
+    headline2: 'Not Just Automate Tasks.',
+    description: 'Four principles that make MEHANS systems deliver measurable results — not just activity — for elite real estate operations.',
+    calloutLabel: 'Enterprise-Grade Infrastructure',
+    calloutHeadline1: 'Custom implementation.',
+    calloutHeadline2: 'ROI you can measure.',
+    calloutDesc: 'Every MEHANS deployment is a bespoke engineering project. We design, build, test, and maintain AI systems wired precisely into how your business operates — with dedicated support and full transparency from day one.',
+    calloutStat1Value: '≤ 2 Wks',
+    calloutStat1Label: 'Avg. Deployment',
+    calloutStat2Value: '99.9%',
+    calloutStat2Label: 'System Uptime',
+    calloutStat3Value: 'Zero',
+    calloutStat3Label: 'Template Code',
+    calloutStat4Value: 'Full',
+    calloutStat4Label: 'CRM Sync',
+    // Advantages
+    adv1Title: 'Every Lead Answered in Seconds',
+    adv1Desc: 'No lead waits. AI responds to every WhatsApp, email, or web inquiry within 90 seconds — at 2am, weekends, and public holidays. First response wins the deal.',
+    adv1Metric: '<90s',
+    adv1MetricLabel: 'Response',
+    adv2Title: 'Built for Your Business, Not the Market',
+    adv2Desc: 'Every system is trained on your qualification criteria, your tone, and your workflow. No generic templates. No off-the-shelf logic. An exact fit from day one.',
+    adv2Metric: '100%',
+    adv2MetricLabel: 'Custom',
+    adv3Title: 'All Channels. One Intelligent System.',
+    adv3Desc: 'WhatsApp, email, voice, and CRM — fully synchronized and automated. Your team sees one unified pipeline with no manual handoffs and no leads falling through the cracks.',
+    adv3Metric: '4+',
+    adv3MetricLabel: 'Channels',
+    adv4Title: 'ROI You Can Measure From Week One',
+    adv4Desc: 'Every automation is instrumented with performance metrics. Track leads saved, time reclaimed, and deals accelerated — with full visibility from the moment you go live.',
+    adv4Metric: 'Week 1',
+    adv4MetricLabel: 'Insights',
+  },
+
+  // Testimonials Section
+  testimonials: {
+    headline: 'What Leaders Say',
+    // Testimonial 1
+    t1Name: 'Youssef Alaoui',
+    t1Role: 'Founder, Alaoui Development Group',
+    t1Text: "MEHANS deployed a WhatsApp AI that qualifies leads 24/7. Our agents now only speak with prospects ready to move. Closed 40% more deals this quarter with the same team size.",
+    // Testimonial 2
+    t2Name: 'Sara Benjelloun',
+    t2Role: 'CEO, Benjelloun Properties, Rabat',
+    t2Text: "Our CRM was a graveyard of uncontacted leads. MEHANS automated our entire follow-up sequence and resurrected 22% of dormant contacts in month one. Immediate ROI.",
+    // Testimonial 3
+    t3Name: 'Omar Tazi',
+    t3Role: 'Partner, Tazi & Associates Real Estate',
+    t3Text: "The AI receptionist answers calls, qualifies buyers, and books viewings without human involvement. We capture leads at 11pm on Sunday that would've gone cold by Monday.",
+  },
+
+  // Process Section
+  process: {
+    headline1: 'From First Call to Revenue',
+    headline2: 'in Six Steps.',
+    description: 'A structured, low-risk deployment that delivers measurable results from the moment your system goes live.',
+    deploymentLabel: 'average deployment',
+    cta: 'Start Your Free Discovery Call',
+    // Steps
+    step1Title: 'Discovery Call',
+    step1Desc: "We map your entire lead pipeline and pinpoint exactly where revenue is being lost to slow response times and manual tasks.",
+    step1Duration: '1 Hour',
+    step2Title: 'Business Analysis',
+    step2Desc: "Deep audit of your workflows, CRM, team structure, and conversion gaps — so every automation solves a real business problem.",
+    step2Duration: '3–5 Days',
+    step3Title: 'AI Strategy',
+    step3Desc: "A complete technical blueprint with recommended systems, integrations, projected time savings, and measurable ROI targets.",
+    step3Duration: '1 Week',
+    step4Title: 'Development',
+    step4Desc: "Custom-built and tested in a staging environment. Nothing goes live until it performs exactly as designed.",
+    step4Duration: '1 Week',
+    step5Title: 'Deployment',
+    step5Desc: "Zero-downtime launch with full team onboarding. Your agents start closing more deals from day one.",
+    step5Duration: '2 Days',
+    step6Title: 'Optimization',
+    step6Desc: "Continuous monitoring, performance reporting, and system evolution as your agency scales.",
+    step6Duration: 'Ongoing',
+  },
+
+  // FAQ Section
+  faq: {
+    headline1: 'Common Questions,',
+    headline2: 'Direct Answers.',
+    description: 'Everything real estate leaders ask before deploying AI automation — answered clearly, without technical jargon.',
+    sidebarLabel: 'Have a specific question?',
+    sidebarDesc: 'Speak directly with a MEHANS senior engineer. Free Automation Audit, no pitch, no obligation.',
+    // Questions
+    q1: 'How quickly can we go live?',
+    a1: "Most agencies are fully operational within two weeks. We handle every aspect of implementation — from CRM integration to team training — so your team experiences zero disruption.",
+    q2: 'Which CRMs do you integrate with?',
+    a2: "We integrate with Salesforce, HubSpot, Zoho, and most regional CRMs used across the Middle East and North Africa. Custom integrations are available for proprietary systems.",
+    q3: 'Is everything built custom for our agency?',
+    a3: "Yes — without exception. Every workflow, qualification script, and automation is engineered specifically for how your business operates. We do not use templates or off-the-shelf packages.",
+    q4: 'Can AI respond to WhatsApp inquiries automatically?',
+    a4: "Yes. Our WhatsApp AI engages every inbound lead within seconds, qualifies intent using your criteria, and routes high-value prospects directly to the right agent — day or night.",
+    q5: 'Can the AI book property viewings automatically?',
+    a5: "Yes. The AI connects to your team's calendar, proposes available slots, confirms appointments, and sends reminders — all without any human involvement.",
+    q6: 'What does enterprise-grade security mean in practice?',
+    a6: "All systems are built with 256-bit encryption, role-based access controls, and GDPR-compliant data handling. Your client data never leaves a secure, auditable environment.",
+  },
+
+  // CTA Section
+  cta: {
+    headline1: 'Stop Losing Deals',
+    headline2: 'to Slow Response.',
+    description: "Book a free AI Strategy Session with a MEHANS senior engineer. We'll audit your lead pipeline, identify where revenue is being lost, and deliver a custom automation roadmap — at no cost and no obligation.",
+    cta: 'Book Your Free AI Strategy Session',
+    proof1: 'No commitment required',
+    proof2: 'Dedicated senior engineer',
+    proof3: 'Custom AI roadmap in 7 days',
+    proof4: 'Live in ≤ 2 weeks',
+  },
+
+  // Contact Section
+  contact: {
+    headline1: 'Book Your Free',
+    headline2: 'AI Strategy Session.',
+    description: "Speak with a MEHANS senior engineer. We'll audit your lead pipeline, identify where deals are being lost, and deliver a custom automation roadmap — free, with no obligation.",
+    // Trust badges
+    badge1: 'Free Strategy Session',
+    badge2: 'Response Within 24 Hours',
+    badge3: 'Custom AI Roadmap Included',
+    badge4: 'No Commitment Required',
+    // Form
+    formLabel: 'AI System Needed',
+    formNamePlaceholder: 'Full Name',
+    formEmailPlaceholder: 'Email Address',
+    formPhonePlaceholder: 'Phone Number (optional)',
+    formMessagePlaceholder: 'Tell us about your workflow and what you\'d like automated...',
+    formSubmit: 'Book Your Free AI Strategy Session',
+    // Form interests
+    interest1: 'Lead Gen AI',
+    interest2: 'WhatsApp AI',
+    interest3: 'CRM Automation',
+    interest4: 'Voice AI',
+    interest5: 'Full-Stack AI',
+    interest6: 'Custom System',
+    // Success
+    successTitle: 'Request Received',
+    successDesc: "We'll reach out within 24 hours to schedule your strategy session.",
+    successCta: 'Submit another request',
+    // Contact info
+    location: 'Mahaj Riad, Rabat',
+  },
+
+  // Footer
+  footer: {
+    tagline: 'AI Automation for Real Estate Leaders.',
+    quickLinks: 'Quick Links',
+    contact: 'Contact',
+    copyright: '© 2025 MEHANS. All rights reserved.',
+    privacy: 'Privacy',
+    terms: 'Terms',
+  },
+
+  // Mobile Sticky CTA
+  mobileCta: {
+    title: 'Free AI Consultation',
+    subtitle: 'Response within 24 Hours',
+    button: 'Book Free Consultation',
+  },
+
+  // Loading screen
+  loading: {
+    text: 'MEHANS',
+    tagline: 'AI Automation',
+  },
+};

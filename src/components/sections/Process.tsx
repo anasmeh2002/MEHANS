@@ -1,15 +1,25 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Clock, Phone, Search, Settings, Rocket, LineChart } from 'lucide-react';
-import { processSteps } from '../../data';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 const icons = [Phone, Search, Settings, Settings, Rocket, LineChart];
 
 export function Process() {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
   const lineH = useTransform(scrollYProgress, [0.08, 0.88], ['0%', '100%']);
+
+  const steps = [
+    { number: '01', title: t.process.step1Title, description: t.process.step1Desc, duration: t.process.step1Duration },
+    { number: '02', title: t.process.step2Title, description: t.process.step2Desc, duration: t.process.step2Duration },
+    { number: '03', title: t.process.step3Title, description: t.process.step3Desc, duration: t.process.step3Duration },
+    { number: '04', title: t.process.step4Title, description: t.process.step4Desc, duration: t.process.step4Duration },
+    { number: '05', title: t.process.step5Title, description: t.process.step5Desc, duration: t.process.step5Duration },
+    { number: '06', title: t.process.step6Title, description: t.process.step6Desc, duration: t.process.step6Duration },
+  ];
 
   return (
     <section id="process" ref={sectionRef} className="py-36 lg:py-44 bg-stone-950 relative overflow-hidden">
@@ -23,19 +33,19 @@ export function Process() {
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-gold-500" />
-                <span className="section-label">How It Works</span>
+                <span className="section-label">{t.labels.howItWorks}</span>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                From First Call to Revenue<br />
-                <span className="italic font-light text-stone-500">in Six Steps.</span>
+                {t.process.headline1}<br />
+                <span className="italic font-light text-stone-500">{t.process.headline2}</span>
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.14}>
             <p className="text-stone-500 text-[14px] leading-[1.85]">
-              A structured, low-risk deployment that delivers measurable results from the moment your system goes live.
+              {t.process.description}
             </p>
           </AnimatedSection>
         </div>
@@ -61,7 +71,7 @@ export function Process() {
               <div className="absolute bottom-5 left-5">
                 <div className="glass-dark px-7 py-5 border border-gold-500/15 rounded-sm">
                   <div className="font-display text-[28px] font-medium text-gold-500 leading-none">≤ 2 Wks</div>
-                  <div className="text-stone-400 text-[12px] mt-1.5">average deployment</div>
+                  <div className="text-stone-400 text-[12px] mt-1.5">{t.process.deploymentLabel}</div>
                 </div>
               </div>
             </div>
@@ -75,7 +85,7 @@ export function Process() {
             </div>
 
             <div className="flex flex-col">
-              {processSteps.map((step, i) => {
+              {steps.map((step, i) => {
                 const Icon = icons[i];
                 return (
                   <AnimatedSection key={step.number} delay={i * 0.08}>
@@ -114,10 +124,10 @@ export function Process() {
                 <button
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-primary group w-full md:w-auto"
-                  aria-label="Start your AI consultation journey"
+                  aria-label={t.process.cta}
                 >
-                  Start Your Free Discovery Call
-                  <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>
+                  {t.process.cta}
+                  <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block flip-rtl">→</span>
                 </button>
               </div>
             </AnimatedSection>

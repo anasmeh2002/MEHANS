@@ -1,0 +1,343 @@
+export const fr = {
+  // Meta
+  meta: {
+    title: 'MEHANS — Automatisation IA pour Leaders Immobiliers',
+    description: 'MEHANS conçoit des systèmes d\'automatisation IA enterprise pour agences immobilières, courtiers et promoteurs. Capturez des prospects, automatisez les relances, synchronisez vos CRM et développez votre activité avec l\'IA.',
+  },
+
+  // Navigation
+  nav: {
+    services: 'Services',
+    solutions: 'Solutions',
+    platform: 'Plateforme',
+    process: 'Processus',
+    about: 'À propos',
+    scheduleConsultation: 'Planifier une Consultation',
+  },
+
+  // Hero Section
+  hero: {
+    eyebrow: 'IA Enterprise pour l\'Immobilier',
+    headline1: 'Chaque Prospect Compte.',
+    headline2: 'Aucun N\'est Jamais Perdu.',
+    subheadline: 'MEHANS conçoit des solutions d\'automatisation IA sur mesure pour les entreprises immobilières qui souhaitent répondre plus vite, conclure davantage de transactions et se développer sans recruter. Chaque prospect répondu en quelques secondes. Chaque relance automatisée. Chaque opportunité captée.',
+    badge1: 'Ne Perdez Aucun Prospect',
+    badge2: 'Réponse en Moins de 90 Secondes',
+    badge3: 'Sécurité Niveau Enterprise',
+    cta: 'Réservez Votre Session Stratégique IA Gratuite',
+    stat1Value: '< 90s',
+    stat1Label: 'Temps de Réponse Moyen',
+    stat2Value: '80%',
+    stat2Label: 'Moins de Travail Manuel',
+    stat3Value: '24/7',
+    stat3Label: 'Toujours Actif',
+    scroll: 'Défiler',
+  },
+
+  // Statistics Section
+  stats: {
+    satisfaction: 'Satisfaction Client',
+    satisfactionDesc: 'Excellence enterprise',
+    reduction: 'Réduction des Tâches Manuelles',
+    reductionDesc: 'Moyenne en 90 jours',
+    availability: 'Disponibilité IA',
+    availabilityDesc: 'Aucun prospect manqué',
+    deployment: 'Déploiement Moyen',
+    deploymentDesc: 'Du contrat au déploiement',
+  },
+
+  // Section Labels
+  labels: {
+    whatWeBuild: 'Ce Que Nous Créons',
+    whoWeServe: 'Qui Nous Servons',
+    whyMehans: 'Pourquoi MEHANS',
+    theMehansDifference: 'La Différence MEHANS',
+    clientResults: 'Résultats Clients',
+    howItWorks: 'Comment Ça Marche',
+    faq: 'FAQ',
+    takeFirstStep: 'Faites le Premier Pas',
+    getStarted: 'Commencer',
+  },
+
+  // Services Section
+  services: {
+    headline1: 'Douze Systèmes IA.',
+    headline2: 'Chaque Fuite de Revenus Comblée.',
+    description: 'Automatisation conçue pour chaque étape du pipeline immobilier — ainsi aucun prospect n\'est perdu, aucune relance n\'est oubliée, et aucune transaction n\'est laissée de côté.',
+    note: 'Tous les systèmes sont conçus sur mesure pour votre agence — support dédié, zéro template.',
+    cta: 'Discutez de vos besoins d\'automatisation',
+    // Service tags
+    acquisition: 'Acquisition',
+    intelligence: 'Intelligence',
+    operations: 'Opérations',
+    communication: 'Communication',
+    voiceAI: 'IA Vocale',
+    nurturing: 'Nurturing',
+    revenue: 'Revenus',
+    scheduling: 'Planification',
+    efficiency: 'Efficacité',
+    documents: 'Documents',
+    reporting: 'Reporting',
+    custom: 'Personnalisé',
+    // Services
+    leadGenTitle: 'IA Génération de Prospects',
+    leadGenDesc: 'Ne manquez jamais un acheteur qualifié. L\'IA capture et qualifie les prospects sur tous les canaux digitaux, 24h/24.',
+    leadQualTitle: 'IA Qualification de Prospects',
+    leadQualDesc: 'Vos agents ne parlent qu\'aux acheteurs sérieux. L\'IA évalue l\'intention, filtre les curieux, et oriente les prospects chauds instantanément.',
+    crmTitle: 'Automatisation CRM',
+    crmDesc: 'Éliminez la saisie manuelle. Chaque prospect, relance et mise à jour de statut est géré automatiquement dans votre pipeline.',
+    whatsappTitle: 'IA WhatsApp',
+    whatsappDesc: 'Répondez à chaque demande WhatsApp en quelques secondes — même à minuit. L\'IA qualifie et nurture les prospects avant même que votre équipe ne se connecte.',
+    voiceTitle: 'Réceptionnistes IA Vocaux',
+    voiceDesc: 'Chaque appel entrant est répondu, qualifié, et planifié. Aucun prospect ne tombe sur la messagerie. Aucune opportunité n\'est perdue.',
+    emailTitle: 'Automatisation Email',
+    emailDesc: 'Séquences de relance intelligentes qui gardent votre agence en tête — envoyées au bon moment, sans effort manuel.',
+    salesTitle: 'Automatisation Commerciale',
+    salesDesc: 'Concluez plus de transactions avec des workflows automatisés qui assurent un engagement personnalisé et opportun pour chaque prospect.',
+    appointmentTitle: 'Planification de Rendez-vous',
+    appointmentDesc: 'L\'IA réserve, confirme et rappelle. Votre agenda se remplit automatiquement pendant que vos agents se concentrent sur la conclusion.',
+    workflowTitle: 'Automatisation des Workflows',
+    workflowDesc: 'Éliminez le travail manuel répétitif qui consume votre équipe. Augmentez votre production sans augmenter vos effectifs.',
+    documentTitle: 'Automatisation Documentaire',
+    documentDesc: 'Contrats, annonces et documents clients générés et traités automatiquement — réduisant erreurs et temps administratif.',
+    analyticsTitle: 'IA Analytique',
+    analyticsDesc: 'Visibilité temps réel sur chaque prospect, conversion et opportunité de revenus. Prenez des décisions basées sur les données, pas sur l\'instinct.',
+    agentsTitle: 'Agents IA Personnalisés',
+    agentsDesc: 'Agents intelligents sur mesure, conçus précisément pour votre agence — gérant des tâches que vos concurrents font encore manuellement.',
+  },
+
+  // Who We Help Section
+  whoWeHelp: {
+    headline1: 'Conçu pour les Opérations',
+    headline2: 'les Plus Critiques',
+    headline3: 'de l\'Immobilier.',
+    description: 'Que vous dirigiez une agence boutique ou une firme d\'investissement continentale, MEHANS conçoit des systèmes IA qui éliminent le travail manuel, accélèrent le flux de transactions et augmentent vos revenus sans augmenter vos effectifs.',
+    ctaBannerTitle: 'Par où commencer ?',
+    ctaBannerDesc: 'Réservez un Audit d\'Automatisation gratuit de 30 minutes. Nous cartographierons votre pipeline de prospects et vous montrerons exactement où les revenus sont perdus — et comment les récupérer.',
+    ctaBannerButton: 'Planifiez Votre Audit d\'Automatisation',
+    // Client types
+    agenciesTitle: 'Agences Immobilières',
+    agenciesDesc: 'Arrêtez de perdre des prospects à cause de réponses lentes. L\'IA qualifie chaque demande instantanément pour que vos agents se concentrent uniquement sur la conclusion.',
+    agenciesStat: '3x Conversion',
+    developersTitle: 'Promoteurs Immobiliers',
+    developersDesc: 'Gérez des centaines de demandes d\'acheteurs sur plusieurs développements sans augmenter vos effectifs.',
+    developersStat: '80% Admin Réduit',
+    brokersTitle: 'Courtiers Immobiliers',
+    brokersDesc: 'Opérez avec la capacité d\'une équipe complète. L\'IA gère la réception, les relances et la planification pour que vous vous concentriez sur les transactions.',
+    brokersStat: '10x Capacité',
+    investmentTitle: 'Firmes d\'Investissement',
+    investmentDesc: 'Automatisez la gestion du flux de transactions et la coordination du due diligence. Soyez plus rapides que vos concurrents sur chaque opportunité.',
+    investmentStat: '60% Plus Rapide',
+    consultantsTitle: 'Consultants Luxe',
+    consultantsDesc: 'Offrez des expériences client premium à grande échelle. L\'IA gère le processus — votre équipe apporte l\'expertise.',
+    consultantsStat: 'Échelle Premium',
+    constructionTitle: 'Entreprises de Construction',
+    constructionDesc: 'L\'IA gère tout le parcours client, de l\'inscription pré-lancement à la remise des clés — sans aucune relance manuelle.',
+    constructionStat: 'End-to-End',
+  },
+
+  // Why Mehans Section
+  whyMehans: {
+    headline1: 'Les Résultats',
+    headline2: 'Que l\'Immobilier Exige.',
+    description: 'Partenaire stratégique, pas un abonnement SaaS. Nous construisons et gérons l\'infrastructure IA qui propulse les opérations immobilières d\'élite — avec un support dédié et une implémentation personnalisée à chaque étape.',
+    cta: 'Réservez Votre Session Stratégique IA Gratuite',
+    deploymentLabel: 'déploiement moyen',
+    // Pillars
+    pillar1Stat: '24/7',
+    pillar1Label: 'Toujours Disponible',
+    pillar1Bullet1: 'Zéro prospect manqué',
+    pillar1Bullet2: 'Répond en moins de 90 secondes',
+    pillar1Bullet3: 'Nuits, week-ends, jours fériés',
+    pillar2Stat: '80%',
+    pillar2Label: 'Moins de Travail Manuel',
+    pillar2Bullet1: 'L\'équipe se concentre sur la conclusion',
+    pillar2Bullet2: 'Les relances sont automatiques',
+    pillar2Bullet3: 'Évoluez sans recruter',
+    pillar3Stat: '3×',
+    pillar3Label: 'Plus de Transactions Conclues',
+    pillar3Bullet1: 'La première réponse gagne la transaction',
+    pillar3Bullet2: 'Aucun prospect non contacté',
+    pillar3Bullet3: 'Meilleure conversion du pipeline',
+    pillar4Stat: '100%',
+    pillar4Label: 'Construit Sur Mesure',
+    pillar4Bullet1: 'Conçu pour votre workflow',
+    pillar4Bullet2: 'Zéro template standardisé',
+    pillar4Bullet3: 'Équipe d\'implémentation dédiée',
+    pillar5Stat: '256-bit',
+    pillar5Label: 'Sécurité Enterprise',
+    pillar5Bullet1: 'Chiffrement bancaire',
+    pillar5Bullet2: 'Conforme RGPD par conception',
+    pillar5Bullet3: 'Contrôles d\'accès par rôle',
+  },
+
+  // AI Advantages Section
+  aiAdvantages: {
+    headline1: 'Conçu pour Conclure des Transactions,',
+    headline2: 'Pas Juste Automatiser des Tâches.',
+    description: 'Quatre principes qui font que les systèmes MEHANS délivrent des résultats mesurables — pas juste de l\'activité — pour les opérations immobilières d\'élite.',
+    calloutLabel: 'Infrastructure Niveau Enterprise',
+    calloutHeadline1: 'Implémentation personnalisée.',
+    calloutHeadline2: 'ROI mesurable.',
+    calloutDesc: 'Chaque déploiement MEHANS est un projet d\'ingénierie sur mesure. Nous concevons, construisons, testons et maintenons des systèmes IA branchés précisément sur le fonctionnement de votre entreprise — avec un support dédié et une transparence totale dès le premier jour.',
+    calloutStat1Value: '≤ 2 Sem',
+    calloutStat1Label: 'Déploiement Moyen',
+    calloutStat2Value: '99,9%',
+    calloutStat2Label: 'Uptime Système',
+    calloutStat3Value: 'Zéro',
+    calloutStat3Label: 'Code Template',
+    calloutStat4Value: 'Complet',
+    calloutStat4Label: 'Sync CRM',
+    // Advantages
+    adv1Title: 'Chaque Prospect Répondu en Secondes',
+    adv1Desc: 'Aucun prospect n\'attend. L\'IA répond à chaque demande WhatsApp, email ou web en moins de 90 secondes — à 2h du matin, le week-end et les jours fériés. La première réponse gagne la transaction.',
+    adv1Metric: '<90s',
+    adv1MetricLabel: 'Réponse',
+    adv2Title: 'Conçu Pour Votre Entreprise, Pas Pour le Marché',
+    adv2Desc: 'Chaque système est entraîné sur vos critères de qualification, votre ton et votre workflow. Pas de templates génériques. Pas de logique standardisée. Un ajustement exact dès le premier jour.',
+    adv2Metric: '100%',
+    adv2MetricLabel: 'Personnalisé',
+    adv3Title: 'Tous Canaux. Un Système Intelligent.',
+    adv3Desc: 'WhatsApp, email, vocal et CRM — entièrement synchronisés et automatisés. Votre équipe voit un pipeline unifié sans transferts manuels et sans prospects perdus.',
+    adv3Metric: '4+',
+    adv3MetricLabel: 'Canaux',
+    adv4Title: 'ROI Mesurable Dès la Première Semaine',
+    adv4Desc: 'Chaque automatisation est instrumentée avec des métriques de performance. Suivez les prospects sauvés, le temps récupéré et les transactions accélérées — avec une visibilité totale dès la mise en service.',
+    adv4Metric: 'Semaine 1',
+    adv4MetricLabel: 'Insights',
+  },
+
+  // Testimonials Section
+  testimonials: {
+    headline: 'Ce Que Disent les Leaders',
+    // Testimonial 1
+    t1Name: 'Youssef Alaoui',
+    t1Role: 'Fondateur, Alaoui Development Group',
+    t1Text: "MEHANS a déployé une IA WhatsApp qui qualifie les prospects 24/7. Nos agents ne parlent désormais qu'aux prospects prêts à agir. 40% de transactions en clôturant ce trimestre avec la même équipe.",
+    // Testimonial 2
+    t2Name: 'Sara Benjelloun',
+    t2Role: 'PDG, Benjelloun Properties, Rabat',
+    t2Text: "Notre CRM était un cimetière de prospects non contactés. MEHANS a automatisé toute notre séquence de relance et a ressuscité 22% des contacts dormants dès le premier mois. ROI immédiat.",
+    // Testimonial 3
+    t3Name: 'Omar Tazi',
+    t3Role: 'Associé, Tazi & Associates Real Estate',
+    t3Text: "Le réceptionniste IA répond aux appels, qualifie les acheteurs et réserve les visites sans intervention humaine. Nous capturons des prospects à 23h le dimanche qui seraient froids dès le lundi.",
+  },
+
+  // Process Section
+  process: {
+    headline1: 'Du Premier Appel aux Revenus',
+    headline2: 'en Six Étapes.',
+    description: 'Un déploiement structuré et à faible risque qui délivre des résultats mesurables dès la mise en service de votre système.',
+    deploymentLabel: 'déploiement moyen',
+    cta: 'Commencez Votre Appel de Découverte Gratuit',
+    // Steps
+    step1Title: 'Appel de Découverte',
+    step1Desc: "Nous cartographions l'intégralité de votre pipeline de prospects et identifions précisément où les revenus sont perdus à cause des temps de réponse lents et des tâches manuelles.",
+    step1Duration: '1 Heure',
+    step2Title: 'Analyse Business',
+    step2Desc: 'Audit approfondi de vos workflows, CRM, structure d\'équipe et lacunes de conversion — pour que chaque automatisation résolve un vrai problème business.',
+    step2Duration: '3–5 Jours',
+    step3Title: 'Stratégie IA',
+    step3Desc: 'Un blueprint technique complet avec les systèmes recommandés, intégrations, gains de temps projetés et objectifs ROI mesurables.',
+    step3Duration: '1 Semaine',
+    step4Title: 'Développement',
+    step4Desc: 'Construit sur mesure et testé dans un environnement staging. Rien ne passe en production avant de fonctionner exactement comme conçu.',
+    step4Duration: '1 Semaine',
+    step5Title: 'Déploiement',
+    step5Desc: 'Lancement sans interruption avec formation complète de l\'équipe. Vos agents commencent à conclure plus de transactions dès le premier jour.',
+    step5Duration: '2 Jours',
+    step6Title: 'Optimisation',
+    step6Desc: "Monitoring continu, reporting de performance et évolution du système à mesure que votre agence se développe.",
+    step6Duration: 'Continu',
+  },
+
+  // FAQ Section
+  faq: {
+    headline1: 'Questions Fréquentes,',
+    headline2: 'Réponses Directes.',
+    description: 'Tout ce que les leaders immobiliers demandent avant de déployer l\'automatisation IA — réponses claires, sans jargon technique.',
+    sidebarLabel: 'Une question spécifique ?',
+    sidebarDesc: 'Parlez directement avec un ingénieur senior MEHANS. Audit d\'Automatisation Gratuit, sans pitch, sans obligation.',
+    // Questions
+    q1: 'À quelle vitesse pouvons-nous être opérationnels ?',
+    a1: "La plupart des agences sont entièrement opérationnelles en deux semaines. Nous gérons tous les aspects de l'implémentation — de l'intégration CRM à la formation de l'équipe — pour que votre équipe ne subisse aucune interruption.",
+    q2: 'Avec quels CRM vous intégrez-vous ?',
+    a2: "Nous nous intégrons avec Salesforce, HubSpot, Zoho et la plupart des CRM régionaux utilisés au Moyen-Orient et en Afrique du Nord. Des intégrations personnalisées sont disponibles pour les systèmes propriétaires.",
+    q3: 'Tout est-il construit sur mesure pour notre agence ?',
+    a3: "Oui — sans exception. Chaque workflow, script de qualification et automatisation est conçu spécifiquement pour le fonctionnement de votre entreprise. Nous n'utilisons pas de templates ni de packages standardisés.",
+    q4: 'L\'IA peut-elle répondre automatiquement aux demandes WhatsApp ?',
+    a4: "Oui. Notre IA WhatsApp engage chaque prospect entrant en quelques secondes, qualifie l'intention selon vos critères et oriente les prospects à haute valeur vers le bon agent — de jour comme de nuit.",
+    q5: 'L\'IA peut-elle réserver automatiquement des visites de biens ?',
+    a5: "Oui. L'IA se connecte au calendrier de votre équipe, propose des créneaux disponibles, confirme les rendez-vous et envoie des rappels — le tout sans aucune intervention humaine.",
+    q6: 'Que signifie concrètement la sécurité de niveau enterprise ?',
+    a6: "Tous les systèmes sont construits avec un chiffrement 256-bit, des contrôles d'accès basés sur les rôles et une gestion des données conforme RGPD. Les données de vos clients ne quittent jamais un environnement sécurisé et auditable.",
+  },
+
+  // CTA Section
+  cta: {
+    headline1: 'Arrêtez de Perdre des Transactions',
+    headline2: 'Due aux Réponses Lentes.',
+    description: "Réservez une Session Stratégique IA gratuite avec un ingénieur senior MEHANS. Nous auditerons votre pipeline de prospects, identifierons où les revenus sont perdus et vous livrerons une roadmap d'automatisation personnalisée — sans coût et sans obligation.",
+    cta: 'Réservez Votre Session Stratégique IA Gratuite',
+    proof1: 'Sans engagement requis',
+    proof2: 'Ingénieur senior dédié',
+    proof3: 'Roadmap IA personnalisée en 7 jours',
+    proof4: 'Opérationnel en ≤ 2 semaines',
+  },
+
+  // Contact Section
+  contact: {
+    headline1: 'Réservez Votre Session',
+    headline2: 'Stratégique IA Gratuite.',
+    description: "Parlez avec un ingénieur senior MEHANS. Nous auditerons votre pipeline de prospects, identifierons où les transactions sont perdues et vous livrerons une roadmap d'automatisation personnalisée — gratuite, sans obligation.",
+    // Trust badges
+    badge1: 'Session Stratégique Gratuite',
+    badge2: 'Réponse Sous 24 Heures',
+    badge3: 'Roadmap IA Personnalisée Incluse',
+    badge4: 'Aucun Engagement Requis',
+    // Form
+    formLabel: 'Système IA Nécessaire',
+    formNamePlaceholder: 'Nom Complet',
+    formEmailPlaceholder: 'Adresse Email',
+    formPhonePlaceholder: 'Numéro de Téléphone (optionnel)',
+    formMessagePlaceholder: 'Parlez-nous de votre workflow et de ce que vous aimeriez automatiser...',
+    formSubmit: 'Réservez Votre Session Stratégique IA Gratuite',
+    // Form interests
+    interest1: 'IA Génération Prospects',
+    interest2: 'IA WhatsApp',
+    interest3: 'Automatisation CRM',
+    interest4: 'IA Vocale',
+    interest5: 'IA Full-Stack',
+    interest6: 'Système Personnalisé',
+    // Success
+    successTitle: 'Demande Reçue',
+    successDesc: 'Nous vous contacterons sous 24 heures pour planifier votre session stratégique.',
+    successCta: 'Soumettre une autre demande',
+    // Contact info
+    location: 'Mahaj Riad, Rabat',
+  },
+
+  // Footer
+  footer: {
+    tagline: 'Automatisation IA pour Leaders Immobiliers.',
+    quickLinks: 'Liens Rapides',
+    contact: 'Contact',
+    copyright: '© 2025 MEHANS. Tous droits réservés.',
+    privacy: 'Confidentialité',
+    terms: 'Conditions',
+  },
+
+  // Mobile Sticky CTA
+  mobileCta: {
+    title: 'Consultation IA Gratuite',
+    subtitle: 'Réponse sous 24 Heures',
+    button: 'Réserver Consultation Gratuite',
+  },
+
+  // Loading screen
+  loading: {
+    text: 'MEHANS',
+    tagline: 'Automatisation IA',
+  },
+};

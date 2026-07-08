@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────
+   RTL SUPPORT - Arabic Typography
+───────────────────────────────────────────── */
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
 
@@ -19,6 +22,84 @@
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
     letter-spacing: -0.01em;
+  }
+
+  /* RTL Arabic styling */
+  html.rtl {
+    direction: rtl;
+  }
+
+  html.rtl body {
+    font-family: 'IBM Plex Sans Arabic', 'Inter', system-ui, sans-serif;
+    letter-spacing: 0;
+  }
+
+  html.rtl h1,
+  html.rtl h2,
+  html.rtl h3,
+  html.rtl h4,
+  html.rtl .font-display {
+    font-family: 'IBM Plex Sans Arabic', 'Amiri', 'Playfair Display', Georgia, serif;
+  }
+
+  /* Flip animations for RTL */
+  html.rtl .particle {
+    animation-direction: reverse;
+  }
+
+  /* Mirror transforms for RTL */
+  html.rtl [style*="translate-x"] {
+    transform: scaleX(-1);
+  }
+
+  /* RTL-specific spacing adjustments */
+  html.rtl .pl-14 { padding-left: 0; padding-right: 3.5rem; }
+  html.rtl .pl-4 { padding-left: 0; padding-right: 1rem; }
+  html.rtl .pl-5 { padding-left: 0; padding-right: 1.25rem; }
+  html.rtl .pl-6 { padding-left: 0; padding-right: 1.5rem; }
+  html.rtl .pl-7 { padding-left: 0; padding-right: 1.75rem; }
+  html.rtl .pl-8 { padding-left: 0; padding-right: 2rem; }
+  html.rtl .pl-10 { padding-left: 0; padding-right: 2.5rem; }
+  html.rtl .pl-11 { padding-left: 0; padding-right: 2.75rem; }
+  html.rtl .pl-12 { padding-left: 0; padding-right: 3rem; }
+  html.rtl .pl-px { padding-left: 0; padding-right: 1px; }
+
+  html.rtl .pr-4 { padding-right: 0; padding-left: 1rem; }
+  html.rtl .pr-5 { padding-right: 0; padding-left: 1.25rem; }
+  html.rtl .pr-6 { padding-right: 0; padding-left: 1.5rem; }
+  html.rtl .pr-7 { padding-right: 0; padding-left: 1.75rem; }
+  html.rtl .pr-8 { padding-right: 0; padding-left: 2rem; }
+  html.rtl .pr-10 { padding-right: 0; padding-left: 2.5rem; }
+  html.rtl .pr-11 { padding-right: 0; padding-left: 2.75rem; }
+  html.rtl .pr-12 { padding-right: 0; padding-left: 3rem; }
+  html.rtl .pr-14 { padding-right: 0; padding-left: 3.5rem; }
+
+  html.rtl .ml-1 { margin-left: 0; margin-right: 0.25rem; }
+  html.rtl .ml-2 { margin-left: 0; margin-right: 0.5rem; }
+  html.rtl .ml-3 { margin-left: 0; margin-right: 0.75rem; }
+  html.rtl .ml-4 { margin-left: 0; margin-right: 1rem; }
+
+  html.rtl .mr-1 { margin-right: 0; margin-left: 0.25rem; }
+  html.rtl .mr-2 { margin-right: 0; margin-left: 0.5rem; }
+  html.rtl .mr-3 { margin-right: 0; margin-left: 0.75rem; }
+  html.rtl .mr-4 { margin-right: 0; margin-left: 1rem; }
+
+  /* Flip text alignment for RTL */
+  html.rtl .text-left { text-align: right; }
+  html.rtl .text-right { text-align: left; }
+
+  /* Flip flex direction helpers */
+  html.rtl .flex-row { flex-direction: row-reverse; }
+  html.rtl .flex-row-reverse { flex-direction: row; }
+
+  /* Keep specific elements from flipping */
+  html.rtl .no-flip {
+    direction: ltr;
+  }
+
+  /* Icon flipping for directional icons */
+  html.rtl .flip-rtl {
+    transform: scaleX(-1);
   }
 
   ::selection {

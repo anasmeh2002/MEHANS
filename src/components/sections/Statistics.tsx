@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { ThumbsUp, TrendingDown, Clock, Rocket } from 'lucide-react';
-import { stats } from '../../data';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 const icons = [ThumbsUp, TrendingDown, Clock, Rocket];
@@ -28,12 +28,13 @@ function CountUp({ to, suffix, prefix }: { to: number; suffix: string; prefix: s
 }
 
 export function Statistics() {
-  // Map stats to component data
+  const { t } = useLanguage();
+
   const items = [
-    { value: 98, suffix: '%', prefix: '', label: 'Client Satisfaction', icon: icons[0] },
-    { value: 80, suffix: '%', prefix: '', label: 'Reduction in Manual Tasks', icon: icons[1] },
-    { value: 24, suffix: '/7', prefix: '', label: 'AI Availability', icon: icons[2] },
-    { value: 2, suffix: '', prefix: '≤ ', label: 'Weeks to Deploy', icon: icons[3] },
+    { value: 98, suffix: '%', prefix: '', label: t.stats.satisfaction, icon: icons[0] },
+    { value: 80, suffix: '%', prefix: '', label: t.stats.reduction, icon: icons[1] },
+    { value: 24, suffix: '/7', prefix: '', label: t.stats.availability, icon: icons[2] },
+    { value: 2, suffix: '', prefix: '≤ ', label: t.stats.deployment, icon: icons[3] },
   ];
 
   return (

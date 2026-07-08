@@ -1,11 +1,22 @@
 import { motion } from 'framer-motion';
 import { Building2, Building, Briefcase, TrendingUp, Crown, HardHat } from 'lucide-react';
-import { whoWeHelp } from '../../data';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 const icons = [Building2, Building, Briefcase, TrendingUp, Crown, HardHat];
 
 export function WhoWeHelp() {
+  const { t } = useLanguage();
+
+  const clientTypes = [
+    { title: t.whoWeHelp.agenciesTitle, description: t.whoWeHelp.agenciesDesc, stat: t.whoWeHelp.agenciesStat },
+    { title: t.whoWeHelp.developersTitle, description: t.whoWeHelp.developersDesc, stat: t.whoWeHelp.developersStat },
+    { title: t.whoWeHelp.brokersTitle, description: t.whoWeHelp.brokersDesc, stat: t.whoWeHelp.brokersStat },
+    { title: t.whoWeHelp.investmentTitle, description: t.whoWeHelp.investmentDesc, stat: t.whoWeHelp.investmentStat },
+    { title: t.whoWeHelp.consultantsTitle, description: t.whoWeHelp.consultantsDesc, stat: t.whoWeHelp.consultantsStat },
+    { title: t.whoWeHelp.constructionTitle, description: t.whoWeHelp.constructionDesc, stat: t.whoWeHelp.constructionStat },
+  ];
+
   return (
     <section id="solutions" className="py-32 lg:py-40 bg-charcoal relative overflow-hidden">
       {/* Vertical rule left */}
@@ -22,27 +33,27 @@ export function WhoWeHelp() {
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-gold-500" />
-                <span className="section-label">Who We Serve</span>
+                <span className="section-label">{t.labels.whoWeServe}</span>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                Built for Real Estate's{' '}
-                <span className="italic font-light text-stone-500">Highest-Stakes</span>{' '}
-                Operations.
+                {t.whoWeHelp.headline1}{' '}
+                <span className="italic font-light text-stone-500">{t.whoWeHelp.headline2}</span>{' '}
+                {t.whoWeHelp.headline3}
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.14}>
             <p className="section-subtitle leading-[1.85]">
-              Whether you run a boutique agency or a continental investment firm, MEHANS engineers AI systems that eliminate manual work, accelerate deal flow, and grow your revenue without growing your headcount.
+              {t.whoWeHelp.description}
             </p>
           </AnimatedSection>
         </div>
 
         {/* Premium cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-800/15">
-          {whoWeHelp.map((item, i) => {
+          {clientTypes.map((item, i) => {
             const Icon = icons[i];
             return (
               <AnimatedSection key={item.title} delay={i * 0.07}>
@@ -105,20 +116,20 @@ export function WhoWeHelp() {
 
             <div className="px-6 py-8 md:px-11 md:py-10 border-b lg:border-b-0 lg:border-r border-stone-800/35 relative z-10">
               <p className="text-stone-200 font-medium text-[16px] md:text-[17px] mb-2.5">
-                Not sure where to start?
+                {t.whoWeHelp.ctaBannerTitle}
               </p>
               <p className="text-stone-500 text-[13px] leading-[1.75]">
-                Book a free 30-minute Automation Audit. We'll map your lead pipeline and show you exactly where revenue is being lost — and how to recover it.
+                {t.whoWeHelp.ctaBannerDesc}
               </p>
             </div>
             <div className="px-6 py-8 md:px-11 md:py-10 flex items-center relative z-10">
               <button
                 onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                 className="btn-primary group w-full md:w-auto"
-                aria-label="Book a discovery call"
+                aria-label={t.whoWeHelp.ctaBannerButton}
               >
-                Schedule Your Automation Audit
-                <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>
+                {t.whoWeHelp.ctaBannerButton}
+                <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block flip-rtl">→</span>
               </button>
             </div>
           </div>

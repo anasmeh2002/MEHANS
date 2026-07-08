@@ -1,11 +1,21 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus, MessageCircle } from 'lucide-react';
-import { faqs } from '../../data';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export function FAQ() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState<number | null>(null);
+
+  const faqs = [
+    { question: t.faq.q1, answer: t.faq.a1 },
+    { question: t.faq.q2, answer: t.faq.a2 },
+    { question: t.faq.q3, answer: t.faq.a3 },
+    { question: t.faq.q4, answer: t.faq.a4 },
+    { question: t.faq.q5, answer: t.faq.a5 },
+    { question: t.faq.q6, answer: t.faq.a6 },
+  ];
 
   return (
     <section id="faq" className="py-32 lg:py-40 bg-charcoal relative overflow-hidden">
@@ -20,18 +30,18 @@ export function FAQ() {
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-gold-500" />
-                <span className="section-label">FAQ</span>
+                <span className="section-label">{t.labels.faq}</span>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title mb-7" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                Common Questions,{' '}
-                <span className="italic font-light text-stone-500">Direct Answers.</span>
+                {t.faq.headline1}{' '}
+                <span className="italic font-light text-stone-500">{t.faq.headline2}</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.14}>
               <p className="text-stone-500 text-[13px] leading-[1.85] mb-12">
-                Everything real estate leaders ask before deploying AI automation — answered clearly, without technical jargon.
+                {t.faq.description}
               </p>
             </AnimatedSection>
 
@@ -43,10 +53,10 @@ export function FAQ() {
                 <div className="h-px w-12 bg-gold-500/50 mb-6" />
 
                 <div className="text-[9px] font-bold tracking-[0.35em] uppercase text-stone-700 mb-5">
-                  Have a specific question?
+                  {t.faq.sidebarLabel}
                 </div>
                 <p className="text-stone-500 text-[13px] mb-6 leading-[1.75]">
-                  Speak directly with a MEHANS senior engineer. Free Automation Audit, no pitch, no obligation.
+                  {t.faq.sidebarDesc}
                 </p>
                 <div className="flex flex-col gap-3">
                   <a
@@ -58,7 +68,7 @@ export function FAQ() {
                   </a>
                   <a
                     href="tel:+212710891662"
-                    className="text-stone-600 hover:text-stone-400 text-[13px] transition-colors duration-200"
+                    className="text-stone-600 hover:text-stone-400 text-[13px] transition-colors duration-200 no-flip"
                   >
                     +212 710 891 662
                   </a>

@@ -3,7 +3,7 @@ import {
   Magnet, Filter, Database, MessageSquare, Phone, Mail,
   TrendingUp, Calendar, GitBranch, FileText, BarChart3, Bot,
 } from 'lucide-react';
-import { services } from '../../data';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 const iconMap = {
@@ -11,7 +11,26 @@ const iconMap = {
   TrendingUp, Calendar, GitBranch, FileText, BarChart3, Bot,
 };
 
+const serviceKeys = [
+  'leadGen', 'leadQual', 'crm', 'whatsapp', 'voice', 'email',
+  'sales', 'appointment', 'workflow', 'document', 'analytics', 'agents',
+] as const;
+
+const tagKeys = [
+  'acquisition', 'intelligence', 'operations', 'communication', 'voiceAI', 'nurturing',
+  'revenue', 'scheduling', 'efficiency', 'documents', 'reporting', 'custom',
+] as const;
+
 export function Services() {
+  const { t } = useLanguage();
+
+  const services = serviceKeys.map((key, i) => ({
+    icon: Object.keys(iconMap)[i],
+    title: t.services[`${key}Title` as keyof typeof t.services] || key,
+    description: t.services[`${key}Desc` as keyof typeof t.services] || key,
+    tag: t.services[tagKeys[i]] || tagKeys[i],
+  }));
+
   return (
     <section id="services" className="py-36 lg:py-44 bg-stone-950 relative overflow-hidden">
       {/* Circuit pattern */}
@@ -25,19 +44,19 @@ export function Services() {
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-gold-500" />
-                <span className="section-label">What We Build</span>
+                <span className="section-label">{t.labels.whatWeBuild}</span>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                Twelve AI Systems.<br />
-                <span className="italic font-light text-stone-500">Every Revenue Gap Closed.</span>
+                {t.services.headline1}<br />
+                <span className="italic font-light text-stone-500">{t.services.headline2}</span>
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.12}>
             <p className="text-stone-500 text-sm leading-[1.8] max-w-sm lg:text-right">
-              Purpose-built automation for every stage of the real estate pipeline — so no lead is lost, no follow-up is missed, and no deal is left on the table.
+              {t.services.description}
             </p>
           </AnimatedSection>
         </div>
@@ -111,14 +130,14 @@ export function Services() {
             <div className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-gold-500" />
               <p className="text-stone-500 text-[13px]">
-                All systems are custom-engineered for your agency — dedicated support, zero templates.
+                {t.services.note}
               </p>
             </div>
             <button
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-gold-500/80 hover:text-gold-500 text-[13px] font-medium tracking-wide flex items-center gap-2 group transition-colors duration-300 flex-shrink-0"
             >
-              Discuss your automation needs →
+              {t.services.cta}
               <span className="group-hover:translate-x-1 transition-transform duration-300 inline-block">→</span>
             </button>
           </div>

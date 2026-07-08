@@ -1,16 +1,24 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { useLanguage } from '../../i18n';
 
 const links = [
-  { label: 'Services', href: '#services' },
-  { label: 'Solutions', href: '#solutions' },
-  { label: 'Platform', href: '#ai-advantages' },
-  { label: 'Process', href: '#process' },
-  { label: 'About', href: '#why-mehans' },
+  { labelKey: 'services', href: '#services' },
+  { labelKey: 'solutions', href: '#solutions' },
+  { labelKey: 'platform', href: '#ai-advantages' },
+  { labelKey: 'process', href: '#process' },
+  { labelKey: 'about', href: '#why-mehans' },
 ];
 
+const languages = [
+  { code: 'en', label: 'EN' },
+  { code: 'fr', label: 'FR' },
+  { code: 'ar', label: 'AR' },
+] as const;
+
 export function Navbar() {
+  const { t, language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHref, setActiveHref] = useState('');
@@ -55,7 +63,7 @@ export function Navbar() {
                 MEHANS
               </span>
               <div className="text-[8px] font-semibold tracking-[0.3em] uppercase text-gold-500/50 leading-none mt-1 hidden sm:block">
-                AI Automation
+                {t.loading.tagline}
               </div>
             </div>
           </button>
@@ -69,17 +77,36 @@ export function Navbar() {
                 className="relative text-[12px] font-medium tracking-[0.04em] transition-colors duration-350 group"
                 style={{ color: activeHref === l.href ? '#C9A84C' : '#6b6560' }}
               >
-                {l.label}
+                {t.nav[l.labelKey as keyof typeof t.nav] || l.labelKey}
                 <span className="absolute -bottom-1.5 left-0 h-px bg-gold-500 w-0 group-hover:w-full transition-all duration-400" />
               </button>
             ))}
           </nav>
 
-          {/* Desktop CTA */}
+          {/* Desktop CTA + Language Switcher */}
           <div className="hidden lg:flex items-center gap-6 flex-shrink-0">
+            {/* Language Switcher */}
+            <div className="flex items-center gap-1.5 border border-stone-800/50 px-2 py-1.5 rounded-sm">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => setLanguage(lang.code)}
+                  className={`text-[10px] font-semibold tracking-[0.15em] uppercase px-2.5 py-1 transition-all duration-300 rounded-sm ${
+                    language === lang.code
+                      ? 'text-void bg-gold-500'
+                      : 'text-stone-500 hover:text-stone-300'
+                  }`}
+                  aria-label={`Switch to ${lang.label}`}
+                  aria-current={language === lang.code ? 'true' : undefined}
+                >
+                  {lang.label}
+                </button>
+              ))}
+            </div>
+
             <a
               href="tel:+212710891662"
-              className="text-[11px] tracking-wide font-medium transition-colors duration-300"
+              className="text-[11px] tracking-wide font-medium transition-colors duration-300 no-flip"
               style={{ color: '#4a453f' }}
             >
               +212 710 891 662
@@ -88,20 +115,41 @@ export function Navbar() {
               onClick={() => handleNav('#contact')}
               className="btn-primary py-3 px-6 text-[10px] group"
             >
-              Schedule Consultation
-              <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform duration-200" />
+              {t.nav.scheduleConsultation}
+              <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform duration-200 flip-rtl" />
             </button>
           </div>
 
-          {/* Mobile toggle */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden text-stone-600 hover:text-stone-300 transition-colors duration-250 w-11 h-11 flex items-center justify-center border border-stone-800/50"
-            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileOpen}
-          >
-            {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
-          </button>
+          {/* Mobile: Language + Menu */}
+          <div className="lg:hidden flex items-center gap-3">
+            {/* Mobile Language Switcher */}
+            <div className="flex items-center gap-0.5 border border-stone-800/50 px-1.5 py-1 rounded-sm">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => setLanguage(lang.code)}
+                  className={`text-[9px] font-semibold tracking-[0.1em] uppercase px-2 py-1.5 transition-all duration-300 rounded-sm min-h-[36px] min-w-[36px] ${
+                    language === lang.code
+                      ? 'text-void bg-gold-500'
+                      : 'text-stone-500 hover:text-stone-300'
+                  }`}
+                  aria-label={`Switch to ${lang.label}`}
+                >
+                  {lang.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Mobile toggle */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="text-stone-600 hover:text-stone-300 transition-colors duration-250 w-11 h-11 flex items-center justify-center border border-stone-800/50"
+              aria-label={mobileOpen ? t.nav.close || 'Close menu' : t.nav.open || 'Open menu'}
+              aria-expanded={mobileOpen}
+            >
+              {mobileOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
+            </button>
+          </div>
         </div>
       </motion.header>
 
@@ -128,7 +176,7 @@ export function Navbar() {
                   onClick={() => handleNav(l.href)}
                   className="text-left text-[1.65rem] font-display text-stone-400 hover:text-gold-500 transition-colors duration-300 py-7 min-h-[56px]"
                 >
-                  {l.label}
+                  {t.nav[l.labelKey as keyof typeof t.nav] || l.labelKey}
                 </motion.button>
               ))}
             </div>
@@ -139,10 +187,10 @@ export function Navbar() {
               className="px-10 mt-10 flex flex-col gap-4 relative z-10"
             >
               <button onClick={() => handleNav('#contact')} className="btn-primary justify-center py-4 text-[11px]">
-                Schedule Consultation
+                {t.nav.scheduleConsultation}
                 <ArrowRight size={13} />
               </button>
-              <a href="tel:+212710891662" className="text-center text-stone-500 text-sm py-3 hover:text-gold-500 transition-colors duration-250">
+              <a href="tel:+212710891662" className="text-center text-stone-500 text-sm py-3 hover:text-gold-500 transition-colors duration-250 no-flip">
                 +212 710 891 662
               </a>
             </motion.div>

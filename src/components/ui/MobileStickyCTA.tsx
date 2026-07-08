@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../../i18n';
 
 export function MobileStickyCTA() {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(false);
   const [contactVisible, setContactVisible] = useState(false);
 
@@ -61,10 +63,10 @@ export function MobileStickyCTA() {
               {/* Left text */}
               <div className="flex flex-col gap-0.5">
                 <span className="text-stone-200 text-[13px] font-medium leading-tight">
-                  Free AI Consultation
+                  {t.mobileCta.title}
                 </span>
                 <span className="text-gold-500/80 text-[11px] leading-tight">
-                  Response within 24 Hours
+                  {t.mobileCta.subtitle}
                 </span>
               </div>
 
@@ -72,9 +74,9 @@ export function MobileStickyCTA() {
               <button
                 onClick={scrollToContact}
                 className="flex items-center gap-2 px-5 py-3 bg-gradient-to-r from-gold-500 to-gold-400 text-[#080808] text-[11px] font-semibold tracking-[0.15em] uppercase rounded-sm shadow-lg shadow-gold-500/20 active:scale-[0.98] transition-transform duration-150 min-h-[48px]"
-                aria-label="Book free consultation"
+                aria-label={t.mobileCta.button}
               >
-                <span>Book Free Consultation</span>
+                <span>{t.mobileCta.button}</span>
                 <ArrowRight size={14} className="group-hover:translate-x-0.5" />
               </button>
             </div>

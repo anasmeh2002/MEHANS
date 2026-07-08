@@ -1,41 +1,44 @@
 import { motion } from 'framer-motion';
 import { Clock, TrendingDown, Settings, Shield, Zap, Check } from 'lucide-react';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
-const pillars = [
-  {
-    stat: '24/7',
-    label: 'Always Available',
-    bullets: ['Zero missed leads', 'Responds in under 90 seconds', 'Nights, weekends, holidays'],
-    icon: Clock,
-  },
-  {
-    stat: '80%',
-    label: 'Less Manual Work',
-    bullets: ['Team focuses exclusively on closing', 'Follow-ups run automatically', 'Scale without extra headcount'],
-    icon: TrendingDown,
-  },
-  {
-    stat: '3×',
-    label: 'More Deals Closed',
-    bullets: ['First response wins the deal', 'No lead left uncontacted', 'Higher pipeline conversion'],
-    icon: Zap,
-  },
-  {
-    stat: '100%',
-    label: 'Custom Built',
-    bullets: ['Engineered for your workflow', 'Zero off-the-shelf templates', 'Dedicated implementation team'],
-    icon: Settings,
-  },
-  {
-    stat: '256-bit',
-    label: 'Enterprise Security',
-    bullets: ['Bank-grade encryption', 'GDPR-compliant by design', 'Role-based access controls'],
-    icon: Shield,
-  },
-];
-
 export function WhyMehans() {
+  const { t } = useLanguage();
+
+  const pillars = [
+    {
+      stat: t.whyMehans.pillar1Stat,
+      label: t.whyMehans.pillar1Label,
+      bullets: [t.whyMehans.pillar1Bullet1, t.whyMehans.pillar1Bullet2, t.whyMehans.pillar1Bullet3],
+      icon: Clock,
+    },
+    {
+      stat: t.whyMehans.pillar2Stat,
+      label: t.whyMehans.pillar2Label,
+      bullets: [t.whyMehans.pillar2Bullet1, t.whyMehans.pillar2Bullet2, t.whyMehans.pillar2Bullet3],
+      icon: TrendingDown,
+    },
+    {
+      stat: t.whyMehans.pillar3Stat,
+      label: t.whyMehans.pillar3Label,
+      bullets: [t.whyMehans.pillar3Bullet1, t.whyMehans.pillar3Bullet2, t.whyMehans.pillar3Bullet3],
+      icon: Zap,
+    },
+    {
+      stat: t.whyMehans.pillar4Stat,
+      label: t.whyMehans.pillar4Label,
+      bullets: [t.whyMehans.pillar4Bullet1, t.whyMehans.pillar4Bullet2, t.whyMehans.pillar4Bullet3],
+      icon: Settings,
+    },
+    {
+      stat: t.whyMehans.pillar5Stat,
+      label: t.whyMehans.pillar5Label,
+      bullets: [t.whyMehans.pillar5Bullet1, t.whyMehans.pillar5Bullet2, t.whyMehans.pillar5Bullet3],
+      icon: Shield,
+    },
+  ];
+
   return (
     <section id="why-mehans" className="py-36 lg:py-44 bg-stone-950 relative overflow-hidden">
       {/* Right fade gradient */}
@@ -50,18 +53,18 @@ export function WhyMehans() {
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-gold-500" />
-                <span className="section-label">Why MEHANS</span>
+                <span className="section-label">{t.labels.whyMehans}</span>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title mb-8" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                The Results<br />
-                <span className="italic font-light text-stone-500">Real Estate Demands.</span>
+                {t.whyMehans.headline1}<br />
+                <span className="italic font-light text-stone-500">{t.whyMehans.headline2}</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.14}>
               <p className="text-stone-500 leading-[1.85] mb-12 text-[14px]">
-                Strategic partner, not a SaaS subscription. We build and own the AI backbone that powers elite real estate operations — with dedicated support and custom implementation every step of the way.
+                {t.whyMehans.description}
               </p>
             </AnimatedSection>
 
@@ -81,7 +84,7 @@ export function WhyMehans() {
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <div className="glass-dark inline-block px-7 py-5 border border-gold-500/15 rounded-sm">
                     <div className="font-display text-[28px] font-medium text-gold-500 leading-none">≤ 2 Wks</div>
-                    <div className="text-stone-400 text-[12px] mt-1.5">average deployment</div>
+                    <div className="text-stone-400 text-[12px] mt-1.5">{t.whyMehans.deploymentLabel}</div>
                   </div>
                 </div>
               </div>
@@ -134,9 +137,9 @@ export function WhyMehans() {
                 <button
                   onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="btn-primary group w-full md:w-auto"
-                  aria-label="Schedule a consultation"
+                  aria-label={t.whyMehans.cta}
                 >
-                  Book Your Free AI Strategy Session
+                  {t.whyMehans.cta}
                   <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>
                 </button>
               </div>

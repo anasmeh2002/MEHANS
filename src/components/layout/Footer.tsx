@@ -1,14 +1,17 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
-const NAV = [
-  { label: 'Services', href: '#services' },
-  { label: 'Solutions', href: '#solutions' },
-  { label: 'Process', href: '#process' },
-  { label: 'Contact', href: '#contact' },
-];
-
 export function Footer() {
+  const { t } = useLanguage();
+
+  const NAV = [
+    { label: t.nav.services, href: '#services' },
+    { label: t.nav.solutions, href: '#solutions' },
+    { label: t.nav.process, href: '#process' },
+    { label: t.nav.scheduleConsultation, href: '#contact' },
+  ];
+
   const go = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
@@ -27,13 +30,13 @@ export function Footer() {
               <span className="font-display text-[17px] font-medium tracking-[0.2em] text-stone-100">MEHANS</span>
             </div>
             <p className="text-stone-700 text-[12px] leading-relaxed">
-              AI Automation for Real Estate Leaders.
+              {t.footer.tagline}
             </p>
           </AnimatedSection>
 
           {/* Quick links */}
           <AnimatedSection delay={0.07}>
-            <h4 className="text-[9px] font-bold tracking-[0.3em] uppercase text-stone-700 mb-5">Quick Links</h4>
+            <h4 className="text-[9px] font-bold tracking-[0.3em] uppercase text-stone-700 mb-5">{t.footer.quickLinks}</h4>
             <div className="flex flex-wrap gap-x-8 gap-y-3">
               {NAV.map((l) => (
                 <button key={l.href} onClick={() => go(l.href)}
@@ -46,19 +49,19 @@ export function Footer() {
 
           {/* Contact */}
           <AnimatedSection delay={0.14}>
-            <h4 className="text-[9px] font-bold tracking-[0.3em] uppercase text-stone-700 mb-5">Contact</h4>
+            <h4 className="text-[9px] font-bold tracking-[0.3em] uppercase text-stone-700 mb-5">{t.footer.contact}</h4>
             <div className="flex flex-col gap-3">
               <a href="mailto:hello@mehans.space" className="flex items-center gap-2.5 text-stone-600 hover:text-gold-500 text-[12px] transition-colors duration-300">
                 <Mail size={12} className="text-gold-500/50" />
                 hello@mehans.space
               </a>
-              <a href="tel:+212710891662" className="flex items-center gap-2.5 text-stone-600 hover:text-gold-500 text-[12px] transition-colors duration-300">
+              <a href="tel:+212710891662" className="flex items-center gap-2.5 text-stone-600 hover:text-gold-500 text-[12px] transition-colors duration-300 no-flip">
                 <Phone size={12} className="text-gold-500/50" />
                 +212 710 891 662
               </a>
               <div className="flex items-center gap-2.5 text-stone-700 text-[12px]">
                 <MapPin size={12} className="text-gold-500/50" />
-                Mahaj Riad, Rabat
+                {t.contact.location}
               </div>
             </div>
           </AnimatedSection>
@@ -67,11 +70,11 @@ export function Footer() {
         {/* Bottom bar */}
         <AnimatedSection delay={0.21}>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-stone-800 text-[10px]">© 2025 MEHANS. All rights reserved.</p>
+            <p className="text-stone-800 text-[10px]">{t.footer.copyright}</p>
             <div className="flex gap-6">
-              {['Privacy', 'Terms'].map((t) => (
-                <a key={t} href="#" className="text-stone-800 hover:text-stone-600 text-[10px] transition-colors duration-300">
-                  {t}
+              {[t.footer.privacy, t.footer.terms].map((text) => (
+                <a key={text} href="#" className="text-stone-800 hover:text-stone-600 text-[10px] transition-colors duration-300">
+                  {text}
                 </a>
               ))}
             </div>

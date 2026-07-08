@@ -1,11 +1,47 @@
 import { motion } from 'framer-motion';
 import { Zap, Settings, Layers, LineChart, Shield, Clock } from 'lucide-react';
-import { aiAdvantages } from '../../data';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 const ICONS = [Zap, Settings, Layers, LineChart];
 
 export function AIAdvantages() {
+  const { t } = useLanguage();
+
+  const advantages = [
+    {
+      title: t.aiAdvantages.adv1Title,
+      description: t.aiAdvantages.adv1Desc,
+      metric: t.aiAdvantages.adv1Metric,
+      metricLabel: t.aiAdvantages.adv1MetricLabel,
+    },
+    {
+      title: t.aiAdvantages.adv2Title,
+      description: t.aiAdvantages.adv2Desc,
+      metric: t.aiAdvantages.adv2Metric,
+      metricLabel: t.aiAdvantages.adv2MetricLabel,
+    },
+    {
+      title: t.aiAdvantages.adv3Title,
+      description: t.aiAdvantages.adv3Desc,
+      metric: t.aiAdvantages.adv3Metric,
+      metricLabel: t.aiAdvantages.adv3MetricLabel,
+    },
+    {
+      title: t.aiAdvantages.adv4Title,
+      description: t.aiAdvantages.adv4Desc,
+      metric: t.aiAdvantages.adv4Metric,
+      metricLabel: t.aiAdvantages.adv4MetricLabel,
+    },
+  ];
+
+  const calloutStats = [
+    { n: t.aiAdvantages.calloutStat1Value, l: t.aiAdvantages.calloutStat1Label },
+    { n: t.aiAdvantages.calloutStat2Value, l: t.aiAdvantages.calloutStat2Label },
+    { n: t.aiAdvantages.calloutStat3Value, l: t.aiAdvantages.calloutStat3Label },
+    { n: t.aiAdvantages.calloutStat4Value, l: t.aiAdvantages.calloutStat4Label },
+  ];
+
   return (
     <section id="ai-advantages" className="py-32 lg:py-40 bg-charcoal relative overflow-hidden">
       {/* Fine grid */}
@@ -22,26 +58,26 @@ export function AIAdvantages() {
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-8 h-px bg-gold-500" />
-                <span className="section-label">The MEHANS Difference</span>
+                <span className="section-label">{t.labels.theMehansDifference}</span>
               </div>
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                Built to Close Deals,{' '}
-                <span className="italic font-light text-stone-500">Not Just Automate Tasks.</span>
+                {t.aiAdvantages.headline1}{' '}
+                <span className="italic font-light text-stone-500">{t.aiAdvantages.headline2}</span>
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.14}>
             <p className="section-subtitle leading-[1.85]">
-              Four principles that make MEHANS systems deliver measurable results — not just activity — for elite real estate operations.
+              {t.aiAdvantages.description}
             </p>
           </AnimatedSection>
         </div>
 
         {/* 2x2 feature cards */}
         <div className="grid md:grid-cols-2 gap-px bg-stone-800/15 mb-px">
-          {aiAdvantages.map((adv, i) => {
+          {advantages.map((adv, i) => {
             const Icon = ICONS[i];
             return (
               <AnimatedSection key={adv.title} delay={i * 0.1}>
@@ -96,24 +132,19 @@ export function AIAdvantages() {
               <div className="max-w-lg">
                 <div className="flex items-center gap-2.5 mb-5">
                   <div className="w-1.5 h-1.5 rounded-full bg-gold-500 animate-pulse" />
-                  <span className="text-[9px] font-bold tracking-[0.38em] uppercase text-gold-500/70">Enterprise-Grade Infrastructure</span>
+                  <span className="text-[9px] font-bold tracking-[0.38em] uppercase text-gold-500/70">{t.aiAdvantages.calloutLabel}</span>
                 </div>
                 <h3 className="font-display text-[1.85rem] lg:text-[2.25rem] font-medium text-stone-100 leading-tight mb-4">
-                  Custom implementation.{' '}
-                  <span className="italic font-light text-stone-500">ROI you can measure.</span>
+                  {t.aiAdvantages.calloutHeadline1}{' '}
+                  <span className="italic font-light text-stone-500">{t.aiAdvantages.calloutHeadline2}</span>
                 </h3>
                 <p className="text-stone-500 text-[13px] leading-[1.8]">
-                  Every MEHANS deployment is a bespoke engineering project. We design, build, test, and maintain AI systems wired precisely into how your business operates — with dedicated support and full transparency from day one.
+                  {t.aiAdvantages.calloutDesc}
                 </p>
               </div>
 
               <div className="grid grid-cols-2 gap-10 flex-shrink-0">
-                {[
-                  { n: '≤ 2 Wks', l: 'Avg. Deployment' },
-                  { n: '99.9%',   l: 'System Uptime'    },
-                  { n: 'Zero',    l: 'Template Code'    },
-                  { n: 'Full',    l: 'CRM Sync'         },
-                ].map((m) => (
+                {calloutStats.map((m) => (
                   <div key={m.l} className="text-center group">
                     <div className="font-display text-[1.75rem] font-medium text-gold-500 leading-none mb-2 group-hover:text-gold-400 transition-colors duration-300">
                       {m.n}

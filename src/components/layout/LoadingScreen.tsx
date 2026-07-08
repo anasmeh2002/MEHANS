@@ -1,7 +1,9 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useLanguage } from '../../i18n';
 
 export function LoadingScreen() {
+  const { t } = useLanguage();
   const [phase, setPhase] = useState<'in' | 'hold' | 'out'>('in');
 
   useEffect(() => {
@@ -89,10 +91,10 @@ export function LoadingScreen() {
               className="text-center"
             >
               <p className="font-display text-[32px] font-medium tracking-[0.35em] text-stone-100 mb-3">
-                MEHANS
+                {t.loading.text}
               </p>
               <p className="text-[10px] font-semibold tracking-[0.5em] uppercase text-gold-500/60">
-                AI Automation for Real Estate Leaders
+                {t.loading.tagline}
               </p>
             </motion.div>
 
@@ -111,14 +113,6 @@ export function LoadingScreen() {
                   className="h-full bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400"
                 />
               </div>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.8, duration: 0.6 }}
-                className="text-[9px] tracking-[0.28em] uppercase text-stone-700"
-              >
-                Initializing AI Systems
-              </motion.p>
             </motion.div>
           </div>
 

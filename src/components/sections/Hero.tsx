@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { useLanguage } from '../../i18n';
 
 const PARTICLES = Array.from({ length: 22 }, (_, i) => ({
   id: i,
@@ -12,6 +13,7 @@ const PARTICLES = Array.from({ length: 22 }, (_, i) => ({
 }));
 
 export function Hero() {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [headlineIn, setHeadlineIn] = useState(false);
@@ -98,7 +100,7 @@ export function Hero() {
           >
             <div className="w-10 h-px bg-gold-500/70" />
             <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-gold-500">
-              Enterprise AI for Real Estate
+              {t.hero.eyebrow}
             </span>
           </motion.div>
 
@@ -110,8 +112,8 @@ export function Hero() {
             className="font-display font-semibold text-stone-100 leading-[1.05] mb-14 max-w-[600px]"
             style={{ fontSize: 'clamp(2.8rem, 6.5vw, 6rem)', letterSpacing: '-0.02em' }}
           >
-            Every Property Lead Matters.<br />
-            <span className="italic font-light text-gradient-gold">We Make Sure None Are Lost.</span>
+            {t.hero.headline1}<br />
+            <span className="italic font-light text-gradient-gold">{t.hero.headline2}</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -122,7 +124,7 @@ export function Hero() {
             className="text-stone-400 font-light leading-[1.7] mb-8 max-w-[600px]"
             style={{ fontSize: 'clamp(1rem, 1.4vw, 1.125rem)' }}
           >
-            MEHANS engineers bespoke AI automation for real estate businesses that want to respond faster, close more deals, and scale without hiring. Every lead answered in seconds. Every follow-up automated. Every opportunity captured.
+            {t.hero.subheadline}
           </motion.p>
 
           {/* Premium badges */}
@@ -133,9 +135,9 @@ export function Hero() {
             className="flex flex-wrap gap-3 mb-14"
           >
             {[
-              { icon: '⚡', label: 'Never Lose Another Lead' },
-              { icon: '🕒', label: 'Respond in Under 90 Seconds' },
-              { icon: '🛡', label: 'Enterprise-Grade Security' },
+              { icon: '⚡', label: t.hero.badge1 },
+              { icon: '🕒', label: t.hero.badge2 },
+              { icon: '🛡', label: t.hero.badge3 },
             ].map((badge) => (
               <div
                 key={badge.label}
@@ -157,8 +159,8 @@ export function Hero() {
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary group"
             >
-              Book Your Free AI Strategy Session
-              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+              {t.hero.cta}
+              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-300 flip-rtl" />
             </button>
           </motion.div>
         </div>
@@ -171,9 +173,9 @@ export function Hero() {
           className="mt-32 pt-10 border-t border-stone-700/40 flex flex-wrap gap-12 lg:gap-20"
         >
           {[
-            { v: '< 90s', l: 'Avg. Lead Response' },
-            { v: '80%', l: 'Less Manual Work' },
-            { v: '24/7', l: 'Always On' },
+            { v: t.hero.stat1Value, l: t.hero.stat1Label },
+            { v: t.hero.stat2Value, l: t.hero.stat2Label },
+            { v: t.hero.stat3Value, l: t.hero.stat3Label },
           ].map((s) => (
             <div key={s.l} className="flex flex-col gap-2">
               <span className="font-display text-2xl md:text-[1.75rem] font-medium text-gold-500 leading-none">{s.v}</span>
@@ -191,7 +193,7 @@ export function Hero() {
         onClick={() => document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' })}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2.5 group"
       >
-        <span className="text-stone-800 text-[9px] tracking-[0.38em] uppercase group-hover:text-stone-600 transition-colors">Scroll</span>
+        <span className="text-stone-800 text-[9px] tracking-[0.38em] uppercase group-hover:text-stone-600 transition-colors">{t.hero.scroll}</span>
         <motion.div animate={{ y: [0, 6, 0] }} transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}>
           <ChevronDown size={18} className="text-stone-700 group-hover:text-gold-500/70 transition-colors duration-300" strokeWidth={1.5} />
         </motion.div>

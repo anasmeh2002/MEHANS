@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
@@ -11,14 +12,16 @@ const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
   driftX: (Math.random() - 0.5) * 60,
 }));
 
-const proof = [
-  'No commitment required',
-  'Dedicated senior engineer',
-  'Custom AI roadmap in 7 days',
-  'Live in ≤ 2 weeks',
-];
-
 export function CTA() {
+  const { t } = useLanguage();
+
+  const proofItems = [
+    t.cta.proof1,
+    t.cta.proof2,
+    t.cta.proof3,
+    t.cta.proof4,
+  ];
+
   return (
     <section className="py-20 md:py-32 lg:py-40 bg-void relative overflow-hidden">
       {/* Premium grid */}
@@ -64,7 +67,7 @@ export function CTA() {
         <AnimatedSection delay={0}>
           <div className="flex items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
             <div className="w-10 md:w-12 h-px bg-gradient-to-r from-transparent to-stone-800" />
-            <span className="section-label">Take the First Step</span>
+            <span className="section-label">{t.labels.takeFirstStep}</span>
             <div className="w-10 md:w-12 h-px bg-gradient-to-l from-transparent to-stone-800" />
           </div>
         </AnimatedSection>
@@ -73,10 +76,16 @@ export function CTA() {
           <h2 className="font-display font-medium text-stone-100 leading-[1.02] mb-6 md:mb-8"
             style={{ fontSize: 'clamp(2.75rem, 7vw, 6rem)' }}
           >
-            Stop Losing Deals{' '}
+            {t.cta.headline1}{' '}
             <span className="block mt-2">
-              to{' '}
-              <span className="animate-gold-shimmer italic font-light">Slow Response.</span>
+              {t.cta.headline2.includes('to') ? (
+                <>
+                  {t.cta.headline2.split('to')[0]}{' '}
+                  <span className="animate-gold-shimmer italic font-light">{t.cta.headline2.split('to')[1]?.trim()}</span>
+                </>
+              ) : (
+                <span className="animate-gold-shimmer italic font-light">{t.cta.headline2}</span>
+              )}
             </span>
           </h2>
         </AnimatedSection>
@@ -85,7 +94,7 @@ export function CTA() {
           <p className="text-stone-500 leading-[1.85] mb-10 md:mb-12 max-w-lg mx-auto px-2"
             style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.125rem)' }}
           >
-            Book a free AI Strategy Session with a MEHANS senior engineer. We'll audit your lead pipeline, identify where revenue is being lost, and deliver a custom automation roadmap — at no cost and no obligation.
+            {t.cta.description}
           </p>
         </AnimatedSection>
 
@@ -94,10 +103,10 @@ export function CTA() {
             <button
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary group w-full xs:w-auto"
-              aria-label="Schedule a consultation"
+              aria-label={t.cta.cta}
             >
-              Book Your Free AI Strategy Session
-              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-300" />
+              {t.cta.cta}
+              <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-300 flip-rtl" />
             </button>
             <a href="mailto:hello@mehans.space" className="btn-ghost w-full xs:w-auto justify-center min-h-[52px]">
               hello@mehans.space
@@ -107,7 +116,7 @@ export function CTA() {
 
         <AnimatedSection delay={0.35}>
           <div className="pt-8 md:pt-10 border-t border-stone-800/35 flex flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-10">
-            {proof.map((item, i) => (
+            {proofItems.map((item, i) => (
               <motion.div
                 key={item}
                 initial={{ opacity: 0, y: 10 }}

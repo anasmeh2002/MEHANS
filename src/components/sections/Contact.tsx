@@ -1,21 +1,30 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, User, AtSign, MessageSquare } from 'lucide-react';
+import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
-const TRUST_BADGES = [
-  { label: 'Free Strategy Session' },
-  { label: 'Response Within 24 Hours' },
-  { label: 'Custom AI Roadmap Included' },
-  { label: 'No Commitment Required' },
-];
-
-const INTERESTS = ['Lead Gen AI', 'WhatsApp AI', 'CRM Automation', 'Voice AI', 'Full-Stack AI', 'Custom System'];
-
 export function Contact() {
+  const { t } = useLanguage();
   const [form, setForm] = useState({ name: '', email: '', phone: '', interest: '', message: '' });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const TRUST_BADGES = [
+    t.contact.badge1,
+    t.contact.badge2,
+    t.contact.badge3,
+    t.contact.badge4,
+  ];
+
+  const INTERESTS = [
+    t.contact.interest1,
+    t.contact.interest2,
+    t.contact.interest3,
+    t.contact.interest4,
+    t.contact.interest5,
+    t.contact.interest6,
+  ];
 
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm({ ...form, [field]: e.target.value });
@@ -50,19 +59,19 @@ export function Contact() {
           <AnimatedSection delay={0}>
             <div className="flex items-center justify-center gap-4 md:gap-5 mb-5 md:mb-7">
               <div className="w-10 md:w-14 h-px bg-gradient-to-r from-transparent to-gold-500/70" />
-              <span className="section-label">Get Started</span>
+              <span className="section-label">{t.labels.getStarted}</span>
               <div className="w-10 md:w-14 h-px bg-gradient-to-l from-transparent to-gold-500/70" />
             </div>
           </AnimatedSection>
           <AnimatedSection delay={0.08}>
             <h2 className="section-title mb-5 md:mb-7" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
-              Book Your Free<br />
-              <span className="italic font-light text-gradient-gold">AI Strategy Session.</span>
+              {t.contact.headline1}<br />
+              <span className="italic font-light text-gradient-gold">{t.contact.headline2}</span>
             </h2>
           </AnimatedSection>
           <AnimatedSection delay={0.12}>
             <p className="text-stone-400 text-[14px] md:text-[15px] max-w-lg mx-auto leading-[1.85] px-2">
-              Speak with a MEHANS senior engineer. We'll audit your lead pipeline, identify where deals are being lost, and deliver a custom automation roadmap — free, with no obligation.
+              {t.contact.description}
             </p>
           </AnimatedSection>
         </div>
@@ -71,10 +80,10 @@ export function Contact() {
         <AnimatedSection delay={0.16}>
           <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 mb-12 md:mb-16">
             {TRUST_BADGES.map((badge) => (
-              <div key={badge.label} className="flex items-center gap-2.5 px-4 py-3 md:px-5 md:py-2.5 border border-gold-500/30 bg-gold-500/[0.07] rounded-sm min-h-[44px] md:min-h-0">
+              <div key={badge} className="flex items-center gap-2.5 px-4 py-3 md:px-5 md:py-2.5 border border-gold-500/30 bg-gold-500/[0.07] rounded-sm min-h-[44px] md:min-h-0">
                 <CheckCircle2 size={14} className="md:hidden text-gold-500" />
                 <CheckCircle2 size={12} className="hidden md:block text-gold-500" />
-                <span className="text-stone-300 text-[12px] font-medium">{badge.label}</span>
+                <span className="text-stone-300 text-[12px] font-medium">{badge}</span>
               </div>
             ))}
           </div>
@@ -107,16 +116,16 @@ export function Contact() {
                       <div className="absolute -inset-4 md:-inset-5 border border-gold-500/15 rounded-full" />
                     </div>
                     <div>
-                      <h3 className="font-display text-[26px] md:text-[32px] text-stone-100 mb-3 md:mb-4">Request Received</h3>
+                      <h3 className="font-display text-[26px] md:text-[32px] text-stone-100 mb-3 md:mb-4">{t.contact.successTitle}</h3>
                       <p className="text-stone-400 text-[14px] md:text-[15px] leading-[1.85]">
-                        We'll reach out within 24 hours to schedule your strategy session.
+                        {t.contact.successDesc}
                       </p>
                     </div>
                     <button
                       onClick={() => setSent(false)}
                       className="text-gold-500/80 hover:text-gold-500 text-[13px] border-b border-gold-500/30 hover:border-gold-500 transition-all duration-200 min-h-[44px] px-4"
                     >
-                      Submit another request
+                      {t.contact.successCta}
                     </button>
                   </motion.div>
                 ) : (
@@ -132,10 +141,10 @@ export function Contact() {
                         <input
                           type="text"
                           required
-                          placeholder="Full Name"
+                          placeholder={t.contact.formNamePlaceholder}
                           value={form.name}
                           onChange={update('name')}
-                          aria-label="Full Name"
+                          aria-label={t.contact.formNamePlaceholder}
                           className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                         />
                       </div>
@@ -147,10 +156,10 @@ export function Contact() {
                         <input
                           type="email"
                           required
-                          placeholder="Email Address"
+                          placeholder={t.contact.formEmailPlaceholder}
                           value={form.email}
                           onChange={update('email')}
-                          aria-label="Email Address"
+                          aria-label={t.contact.formEmailPlaceholder}
                           className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                         />
                       </div>
@@ -164,10 +173,10 @@ export function Contact() {
                       </div>
                       <input
                         type="tel"
-                        placeholder="Phone Number (optional)"
+                        placeholder={t.contact.formPhonePlaceholder}
                         value={form.phone}
                         onChange={update('phone')}
-                        aria-label="Phone Number (optional)"
+                        aria-label={t.contact.formPhonePlaceholder}
                         className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                       />
                     </div>
@@ -175,7 +184,7 @@ export function Contact() {
                     {/* AI systems chips */}
                     <div>
                       <label className="text-[11px] font-bold tracking-[0.25em] uppercase text-stone-500 mb-3 md:mb-4 block">
-                        AI System Needed
+                        {t.contact.formLabel}
                       </label>
                       <div className="flex flex-wrap gap-2.5 md:gap-3">
                         {INTERESTS.map((int) => (
@@ -203,10 +212,10 @@ export function Contact() {
                       </div>
                       <textarea
                         rows={5}
-                        placeholder="Tell us about your workflow and what you'd like automated..."
+                        placeholder={t.contact.formMessagePlaceholder}
                         value={form.message}
                         onChange={update('message')}
-                        aria-label="Message about your workflow"
+                        aria-label={t.contact.formMessagePlaceholder}
                         className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 resize-none placeholder:text-stone-600"
                       />
                     </div>
@@ -215,7 +224,7 @@ export function Contact() {
                       type="submit"
                       disabled={loading}
                       className="w-full btn-primary justify-center py-5 md:py-5 text-[13px] tracking-[0.25em] disabled:opacity-50 disabled:cursor-not-allowed mt-2 md:mt-4 rounded-sm min-h-[52px]"
-                      aria-label="Submit consultation request"
+                      aria-label={t.contact.formSubmit}
                     >
                       {loading ? (
                         <motion.div
@@ -225,7 +234,7 @@ export function Contact() {
                         />
                       ) : (
                         <>
-                          Book Your Free AI Strategy Session
+                          {t.contact.formSubmit}
                           <ArrowRight size={15} />
                         </>
                       )}
@@ -245,12 +254,12 @@ export function Contact() {
               <a href="tel:+212710891662" className="group flex flex-col items-center gap-3 p-5 md:p-6 border border-stone-700/50 hover:border-gold-500/40 bg-stone-900/40 hover:bg-gold-500/[0.05] rounded-sm transition-all duration-300 min-h-[80px] md:min-h-0" aria-label="Call us at +212 710 891 662">
                 <Phone size={22} className="md:hidden text-gold-500/60 group-hover:text-gold-500 transition-colors duration-300" />
                 <Phone size={20} className="hidden md:block text-gold-500/60 group-hover:text-gold-500 transition-colors duration-300" />
-                <span className="text-stone-400 group-hover:text-gold-500 text-[13px] font-medium transition-colors duration-300">+212 710 891 662</span>
+                <span className="text-stone-400 group-hover:text-gold-500 text-[13px] font-medium transition-colors duration-300 no-flip">+212 710 891 662</span>
               </a>
               <div className="flex flex-col items-center gap-3 p-5 md:p-6 border border-stone-700/50 bg-stone-900/40 rounded-sm">
                 <MapPin size={22} className="md:hidden text-gold-500/60" />
                 <MapPin size={20} className="hidden md:block text-gold-500/60" />
-                <span className="text-stone-500 text-[13px]">Mahaj Riad, Rabat</span>
+                <span className="text-stone-500 text-[13px]">{t.contact.location}</span>
               </div>
             </div>
           </div>
