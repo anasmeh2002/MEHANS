@@ -31,13 +31,13 @@ export function Services() {
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
                 Twelve AI Systems.<br />
-                <span className="italic font-light text-stone-500">One Unified Platform.</span>
+                <span className="italic font-light text-stone-500">Every Revenue Gap Closed.</span>
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.12}>
             <p className="text-stone-500 text-sm leading-[1.8] max-w-sm lg:text-right">
-              Purpose-built automation for every layer of the real estate pipeline — from first lead to closed deal.
+              Purpose-built automation for every stage of the real estate pipeline — so no lead is lost, no follow-up is missed, and no deal is left on the table.
             </p>
           </AnimatedSection>
         </div>
@@ -111,14 +111,14 @@ export function Services() {
             <div className="flex items-center gap-3">
               <div className="w-1.5 h-1.5 rounded-full bg-gold-500" />
               <p className="text-stone-500 text-[13px]">
-                All systems are custom-built — no templates, no off-the-shelf packages.
+                All systems are custom-engineered for your agency — dedicated support, zero templates.
               </p>
             </div>
             <button
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-gold-500/80 hover:text-gold-500 text-[13px] font-medium tracking-wide flex items-center gap-2 group transition-colors duration-300 flex-shrink-0"
             >
-              Need a custom system?
+              Discuss your automation needs →
               <span className="group-hover:translate-x-1 transition-transform duration-300 inline-block">→</span>
             </button>
           </div>

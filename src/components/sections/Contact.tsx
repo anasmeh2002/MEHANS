@@ -4,10 +4,10 @@ import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, User, AtSign, MessageSqu
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 const TRUST_BADGES = [
-  { label: 'Free Consultation' },
+  { label: 'Free Strategy Session' },
   { label: 'Response Within 24 Hours' },
-  { label: 'Custom AI Roadmap' },
-  { label: 'No Obligation' },
+  { label: 'Custom AI Roadmap Included' },
+  { label: 'No Commitment Required' },
 ];
 
 const INTERESTS = ['Lead Gen AI', 'WhatsApp AI', 'CRM Automation', 'Voice AI', 'Full-Stack AI', 'Custom System'];
@@ -62,7 +62,7 @@ export function Contact() {
           </AnimatedSection>
           <AnimatedSection delay={0.12}>
             <p className="text-stone-400 text-[14px] md:text-[15px] max-w-lg mx-auto leading-[1.85] px-2">
-              Speak with a senior AI engineer. We'll analyze your workflow and show you exactly where automation delivers the highest return.
+              Speak with a MEHANS senior engineer. We'll audit your lead pipeline, identify where deals are being lost, and deliver a custom automation roadmap — free, with no obligation.
             </p>
           </AnimatedSection>
         </div>
@@ -225,7 +225,7 @@ export function Contact() {
                         />
                       ) : (
                         <>
-                          Schedule Strategy Session
+                          Book Your Free AI Strategy Session
                           <ArrowRight size={15} />
                         </>
                       )}

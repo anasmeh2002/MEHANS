@@ -13,9 +13,9 @@ const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
 
 const proof = [
   'No commitment required',
-  'Senior engineer assigned',
-  'AI strategy in 7 days',
-  'Systems live in ≤ 2 weeks',
+  'Dedicated senior engineer',
+  'Custom AI roadmap in 7 days',
+  'Live in ≤ 2 weeks',
 ];
 
 export function CTA() {
@@ -73,10 +73,10 @@ export function CTA() {
           <h2 className="font-display font-medium text-stone-100 leading-[1.02] mb-6 md:mb-8"
             style={{ fontSize: 'clamp(2.75rem, 7vw, 6rem)' }}
           >
-            Your Business Runs Better{' '}
+            Stop Losing Deals{' '}
             <span className="block mt-2">
-              With{' '}
-              <span className="animate-gold-shimmer italic font-light">Intelligence.</span>
+              to{' '}
+              <span className="animate-gold-shimmer italic font-light">Slow Response.</span>
             </span>
           </h2>
         </AnimatedSection>
@@ -85,7 +85,7 @@ export function CTA() {
           <p className="text-stone-500 leading-[1.85] mb-10 md:mb-12 max-w-lg mx-auto px-2"
             style={{ fontSize: 'clamp(0.95rem, 1.4vw, 1.125rem)' }}
           >
-            Book a free consultation with a MEHANS AI engineer. We'll analyse your workflow, identify the highest-impact automation opportunities, and show you exactly what your business looks like when AI is running it.
+            Book a free AI Strategy Session with a MEHANS senior engineer. We'll audit your lead pipeline, identify where revenue is being lost, and deliver a custom automation roadmap — at no cost and no obligation.
           </p>
         </AnimatedSection>
 
@@ -96,7 +96,7 @@ export function CTA() {
               className="btn-primary group w-full xs:w-auto"
               aria-label="Schedule a consultation"
             >
-              Schedule Consultation
+              Book Your Free AI Strategy Session
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-300" />
             </button>
             <a href="mailto:hello@mehans.space" className="btn-ghost w-full xs:w-auto justify-center min-h-[52px]">

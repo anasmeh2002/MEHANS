@@ -31,7 +31,7 @@ export function FAQ() {
             </AnimatedSection>
             <AnimatedSection delay={0.14}>
               <p className="text-stone-500 text-[13px] leading-[1.85] mb-12">
-                Everything you need to know about implementing AI automation in your real estate business — answered without jargon.
+                Everything real estate leaders ask before deploying AI automation — answered clearly, without technical jargon.
               </p>
             </AnimatedSection>
 
@@ -46,7 +46,7 @@ export function FAQ() {
                   Have a specific question?
                 </div>
                 <p className="text-stone-500 text-[13px] mb-6 leading-[1.75]">
-                  Speak directly with a MEHANS AI engineer. Free, no pitch.
+                  Speak directly with a MEHANS senior engineer. Free Automation Audit, no pitch, no obligation.
                 </p>
                 <div className="flex flex-col gap-3">
                   <a

@@ -28,14 +28,14 @@ export function Process() {
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                From Discovery to Live<br />
+                From First Call to Revenue<br />
                 <span className="italic font-light text-stone-500">in Six Steps.</span>
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.14}>
             <p className="text-stone-500 text-[14px] leading-[1.85]">
-              Structured process. Zero risk. Measurable results from day one.
+              A structured, low-risk deployment that delivers measurable results from the moment your system goes live.
             </p>
           </AnimatedSection>
         </div>
@@ -116,7 +116,7 @@ export function Process() {
                   className="btn-primary group w-full md:w-auto"
                   aria-label="Start your AI consultation journey"
                 >
-                  Start With Step One
+                  Start Your Free Discovery Call
                   <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>
                 </button>
               </div>

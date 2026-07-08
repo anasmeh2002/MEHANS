@@ -98,7 +98,7 @@ export function Hero() {
           >
             <div className="w-10 h-px bg-gold-500/70" />
             <span className="text-[10px] font-bold tracking-[0.35em] uppercase text-gold-500">
-              AI Automation for Real Estate
+              Enterprise AI for Real Estate
             </span>
           </motion.div>
 
@@ -110,8 +110,8 @@ export function Hero() {
             className="font-display font-semibold text-stone-100 leading-[1.05] mb-14 max-w-[600px]"
             style={{ fontSize: 'clamp(2.8rem, 6.5vw, 6rem)', letterSpacing: '-0.02em' }}
           >
-            AI That Runs<br />
-            <span className="italic font-light text-gradient-gold">Your Real Estate Business.</span>
+            Every Property Lead Matters.<br />
+            <span className="italic font-light text-gradient-gold">We Make Sure None Are Lost.</span>
           </motion.h1>
 
           {/* Subheadline */}
@@ -122,7 +122,7 @@ export function Hero() {
             className="text-stone-400 font-light leading-[1.7] mb-8 max-w-[600px]"
             style={{ fontSize: 'clamp(1rem, 1.4vw, 1.125rem)' }}
           >
-            MEHANS builds enterprise AI automation systems that capture leads, qualify prospects, automate follow-ups, schedule meetings, synchronize CRMs, and help real estate businesses scale with less manual work.
+            MEHANS engineers bespoke AI automation for real estate businesses that want to respond faster, close more deals, and scale without hiring. Every lead answered in seconds. Every follow-up automated. Every opportunity captured.
           </motion.p>
 
           {/* Premium badges */}
@@ -133,9 +133,9 @@ export function Hero() {
             className="flex flex-wrap gap-3 mb-14"
           >
             {[
-              { icon: '⚡', label: 'Instant Lead Response' },
-              { icon: '🕒', label: '24/7 AI Operation' },
-              { icon: '🛡', label: 'Enterprise Security' },
+              { icon: '⚡', label: 'Never Lose Another Lead' },
+              { icon: '🕒', label: 'Respond in Under 90 Seconds' },
+              { icon: '🛡', label: 'Enterprise-Grade Security' },
             ].map((badge) => (
               <div
                 key={badge.label}
@@ -157,7 +157,7 @@ export function Hero() {
               onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary group"
             >
-              Book AI Consultation
+              Book Your Free AI Strategy Session
               <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform duration-300" />
             </button>
           </motion.div>
@@ -171,9 +171,9 @@ export function Hero() {
           className="mt-32 pt-10 border-t border-stone-700/40 flex flex-wrap gap-12 lg:gap-20"
         >
           {[
-            { v: '< 90s', l: 'Lead Response' },
+            { v: '< 90s', l: 'Avg. Lead Response' },
             { v: '80%', l: 'Less Manual Work' },
-            { v: '24/7', l: 'AI Availability' },
+            { v: '24/7', l: 'Always On' },
           ].map((s) => (
             <div key={s.l} className="flex flex-col gap-2">
               <span className="font-display text-2xl md:text-[1.75rem] font-medium text-gold-500 leading-none">{s.v}</span>

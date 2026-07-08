@@ -34,24 +34,28 @@ export const stats = [
 
 export const faqs = [
   {
-    question: 'How long does implementation take?',
-    answer: "Most systems go live within two weeks. Complex enterprise deployments may take up to four weeks depending on integration scope.",
+    question: 'How quickly can we go live?',
+    answer: "Most agencies are fully operational within two weeks. We handle every aspect of implementation — from CRM integration to team training — so your team experiences zero disruption.",
   },
   {
-    question: 'Can your AI integrate with our CRM?',
-    answer: "Yes. We integrate with Salesforce, HubSpot, Zoho, and most regional CRMs. Custom integrations available.",
+    question: 'Which CRMs do you integrate with?',
+    answer: "We integrate with Salesforce, HubSpot, Zoho, and most regional CRMs used across the Middle East and North Africa. Custom integrations are available for proprietary systems.",
   },
   {
-    question: 'Do you build custom automations or use templates?',
-    answer: "Everything is custom-engineered for your workflow. No templates. No off-the-shelf packages.",
+    question: 'Is everything built custom for our agency?',
+    answer: "Yes — without exception. Every workflow, qualification script, and automation is engineered specifically for how your business operates. We do not use templates or off-the-shelf packages.",
   },
   {
-    question: 'Can AI handle WhatsApp messages from leads?',
-    answer: "Yes. Our WhatsApp AI engages leads within seconds, qualifies intent, and routes hot prospects to your agents.",
+    question: 'Can AI respond to WhatsApp inquiries automatically?',
+    answer: "Yes. Our WhatsApp AI engages every inbound lead within seconds, qualifies intent using your criteria, and routes high-value prospects directly to the right agent — day or night.",
   },
   {
-    question: 'Can the AI schedule appointments automatically?',
-    answer: "Yes. Connects to your calendar and books confirmed appointments without any human involvement.",
+    question: 'Can the AI book property viewings automatically?',
+    answer: "Yes. The AI connects to your team's calendar, proposes available slots, confirms appointments, and sends reminders — all without any human involvement.",
+  },
+  {
+    question: 'What does enterprise-grade security mean in practice?',
+    answer: "All systems are built with 256-bit encryption, role-based access controls, and GDPR-compliant data handling. Your client data never leaves a secure, auditable environment.",
   },
 ];
 
@@ -59,37 +63,37 @@ export const processSteps = [
   {
     number: '01',
     title: 'Discovery Call',
-    description: "Map your pipeline and identify highest-impact automation opportunities.",
+    description: "We map your entire lead pipeline and pinpoint exactly where revenue is being lost to slow response times and manual tasks.",
     duration: '1 Hour',
   },
   {
     number: '02',
     title: 'Business Analysis',
-    description: "Deep audit of workflows, CRM, and team structure.",
+    description: "Deep audit of your workflows, CRM, team structure, and conversion gaps — so every automation solves a real business problem.",
     duration: '3–5 Days',
   },
   {
     number: '03',
     title: 'AI Strategy',
-    description: "Technical blueprint with systems, integrations, and expected outcomes.",
+    description: "A complete technical blueprint with recommended systems, integrations, projected time savings, and measurable ROI targets.",
     duration: '1 Week',
   },
   {
     number: '04',
     title: 'Development',
-    description: "Build and test in staging environment before production.",
+    description: "Custom-built and tested in a staging environment. Nothing goes live until it performs exactly as designed.",
     duration: '1 Week',
   },
   {
     number: '05',
     title: 'Deployment',
-    description: "Zero-downtime launch with team training.",
+    description: "Zero-downtime launch with full team onboarding. Your agents start closing more deals from day one.",
     duration: '2 Days',
   },
   {
     number: '06',
     title: 'Optimization',
-    description: "Monthly monitoring and system evolution as you scale.",
+    description: "Continuous monitoring, performance reporting, and system evolution as your agency scales.",
     duration: 'Ongoing',
   },
 ];
@@ -98,73 +102,73 @@ export const services = [
   {
     icon: 'Magnet',
     title: 'AI Lead Generation',
-    description: 'Capture high-intent prospects across digital channels automatically.',
+    description: 'Never miss a high-intent buyer. AI captures and qualifies prospects across every digital channel around the clock.',
     tag: 'Acquisition',
   },
   {
     icon: 'Filter',
     title: 'AI Lead Qualification',
-    description: 'Engage, score intent, and route qualified prospects to your agents.',
+    description: 'Your agents only speak with serious buyers. AI scores intent, filters tire-kickers, and routes warm prospects instantly.',
     tag: 'Intelligence',
   },
   {
     icon: 'Database',
     title: 'CRM Automation',
-    description: 'End-to-end pipeline automation without manual input.',
+    description: 'Eliminate manual data entry. Every lead, follow-up, and status update is handled automatically across your pipeline.',
     tag: 'Operations',
   },
   {
     icon: 'MessageSquare',
     title: 'WhatsApp AI',
-    description: '24/7 AI agents for first contact and nurturing on WhatsApp.',
+    description: 'Respond to every WhatsApp inquiry in seconds — even at midnight. AI qualifies and nurtures leads before your team logs in.',
     tag: 'Communication',
   },
   {
     icon: 'Phone',
     title: 'Voice AI Receptionists',
-    description: 'AI voice systems that qualify callers and book appointments.',
+    description: 'Every inbound call is answered, qualified, and booked. No lead goes to voicemail. No opportunity is lost.',
     tag: 'Voice AI',
   },
   {
     icon: 'Mail',
     title: 'Email Automation',
-    description: 'Intelligent sequences that nurture leads with personalized timing.',
+    description: 'Intelligent follow-up sequences that keep your agency top of mind — sent at the right moment without manual effort.',
     tag: 'Nurturing',
   },
   {
     icon: 'TrendingUp',
     title: 'Sales Automation',
-    description: 'Automated workflows ensuring no prospect falls through.',
+    description: 'Close more deals with automated workflows that ensure every prospect receives timely, personalized engagement.',
     tag: 'Revenue',
   },
   {
     icon: 'Calendar',
     title: 'Appointment Scheduling',
-    description: 'AI that books, confirms, and reminds — synced in real time.',
+    description: 'AI books, confirms, and reminds. Your calendar fills itself while your agents focus on what closes deals.',
     tag: 'Scheduling',
   },
   {
     icon: 'GitBranch',
     title: 'Workflow Automation',
-    description: 'Eliminate repetitive manual tasks across operations.',
+    description: 'Eliminate the repetitive manual work consuming your team. Scale your output without scaling your headcount.',
     tag: 'Efficiency',
   },
   {
     icon: 'FileText',
     title: 'Document Automation',
-    description: 'Automated generation and processing of contracts.',
+    description: 'Contracts, listings, and client documents generated and processed automatically — reducing errors and admin time.',
     tag: 'Documents',
   },
   {
     icon: 'BarChart3',
     title: 'AI Analytics',
-    description: 'Real-time visibility into pipeline and performance.',
+    description: 'Real-time visibility into every lead, conversion, and revenue opportunity. Make decisions based on data, not instinct.',
     tag: 'Reporting',
   },
   {
     icon: 'Bot',
     title: 'Custom AI Agents',
-    description: 'Bespoke intelligent agents for your specific needs.',
+    description: 'Bespoke intelligent agents built precisely for your agency — handling tasks your competitors still do manually.',
     tag: 'Custom',
   },
 ];
@@ -172,58 +176,58 @@ export const services = [
 export const whoWeHelp = [
   {
     title: 'Real Estate Agencies',
-    description: 'Automate lead intake and qualification so agents focus on closing.',
+    description: 'Stop losing leads to slow response. AI qualifies every inquiry instantly so your agents focus exclusively on closing.',
     stat: '3x Conversion',
   },
   {
     title: 'Property Developers',
-    description: 'Manage buyer inquiries at scale across multiple developments.',
+    description: 'Manage hundreds of buyer inquiries across multiple developments without adding headcount.',
     stat: '80% Admin Cut',
   },
   {
     title: 'Real Estate Brokers',
-    description: 'Enterprise automation that makes one operate like ten.',
+    description: 'Operate with the capacity of a full team. AI handles lead intake, follow-up, and scheduling so you focus on deals.',
     stat: '10x Capacity',
   },
   {
     title: 'Investment Firms',
-    description: 'Automate deal flow and due diligence coordination.',
+    description: 'Automate deal flow management and due diligence coordination. Move faster than competitors on every opportunity.',
     stat: '60% Faster',
   },
   {
     title: 'Luxury Consultants',
-    description: 'White-glove service with automated infrastructure.',
+    description: 'Deliver white-glove client experiences at scale. AI handles the process — your team delivers the expertise.',
     stat: 'Premium Scale',
   },
   {
     title: 'Construction Firms',
-    description: 'AI manages client journey from pre-launch to handover.',
+    description: 'AI manages the entire client journey from pre-launch registration to handover — with zero manual follow-up.',
     stat: 'End-to-End',
   },
 ];
 
 export const aiAdvantages = [
   {
-    title: 'Responds in Seconds',
-    description: 'AI engages leads instantly — at 2am, weekends, holidays. First response wins.',
+    title: 'Every Lead Answered in Seconds',
+    description: 'No lead waits. AI responds to every WhatsApp, email, or web inquiry within 90 seconds — at 2am, weekends, and public holidays. First response wins the deal.',
     metric: '<90s',
     metricLabel: 'Response',
   },
   {
-    title: 'Built for Your Business',
-    description: 'Not templates. Trained on your workflow and qualification criteria.',
+    title: 'Built for Your Business, Not the Market',
+    description: 'Every system is trained on your qualification criteria, your tone, and your workflow. No generic templates. No off-the-shelf logic. An exact fit from day one.',
     metric: '100%',
     metricLabel: 'Custom',
   },
   {
-    title: 'Unified Channels',
-    description: 'WhatsApp, email, voice, CRM — all synchronized. No manual handoffs.',
+    title: 'All Channels. One Intelligent System.',
+    description: 'WhatsApp, email, voice, and CRM — fully synchronized and automated. Your team sees one unified pipeline with no manual handoffs and no leads falling through the cracks.',
     metric: '4+',
     metricLabel: 'Channels',
   },
   {
-    title: 'Visible Results',
-    description: 'Every automation instrumented with performance metrics from day one.',
+    title: 'ROI You Can Measure From Week One',
+    description: 'Every automation is instrumented with performance metrics. Track leads saved, time reclaimed, and deals accelerated — with full visibility from the moment you go live.',
     metric: 'Week 1',
     metricLabel: 'Insights',
   },

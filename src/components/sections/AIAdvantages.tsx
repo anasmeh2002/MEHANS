@@ -27,14 +27,14 @@ export function AIAdvantages() {
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                AI Infrastructure That{' '}
-                <span className="italic font-light text-stone-500">Performs at Scale.</span>
+                Built to Close Deals,{' '}
+                <span className="italic font-light text-stone-500">Not Just Automate Tasks.</span>
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.14}>
             <p className="section-subtitle leading-[1.85]">
-              Four engineering principles that separate MEHANS systems from generic automation tools and SaaS platforms.
+              Four principles that make MEHANS systems deliver measurable results — not just activity — for elite real estate operations.
             </p>
           </AnimatedSection>
         </div>
@@ -99,11 +99,11 @@ export function AIAdvantages() {
                   <span className="text-[9px] font-bold tracking-[0.38em] uppercase text-gold-500/70">Enterprise-Grade Infrastructure</span>
                 </div>
                 <h3 className="font-display text-[1.85rem] lg:text-[2.25rem] font-medium text-stone-100 leading-tight mb-4">
-                  Not software you configure.{' '}
-                  <span className="italic font-light text-stone-500">Systems we engineer.</span>
+                  Custom implementation.{' '}
+                  <span className="italic font-light text-stone-500">ROI you can measure.</span>
                 </h3>
                 <p className="text-stone-500 text-[13px] leading-[1.8]">
-                  Every MEHANS deployment is a bespoke engineering project. We design, build, test, and maintain AI systems that are wired precisely into how your business operates.
+                  Every MEHANS deployment is a bespoke engineering project. We design, build, test, and maintain AI systems wired precisely into how your business operates — with dedicated support and full transparency from day one.
                 </p>
               </div>
 

@@ -28,14 +28,14 @@ export function WhoWeHelp() {
             <AnimatedSection delay={0.08}>
               <h2 className="section-title" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
                 Built for Real Estate's{' '}
-                <span className="italic font-light text-stone-500">Most Demanding</span>{' '}
+                <span className="italic font-light text-stone-500">Highest-Stakes</span>{' '}
                 Operations.
               </h2>
             </AnimatedSection>
           </div>
           <AnimatedSection delay={0.14}>
             <p className="section-subtitle leading-[1.85]">
-              Whether you run a ten-person agency or a continental investment firm, MEHANS engineers AI infrastructure that scales to your operation.
+              Whether you run a boutique agency or a continental investment firm, MEHANS engineers AI systems that eliminate manual work, accelerate deal flow, and grow your revenue without growing your headcount.
             </p>
           </AnimatedSection>
         </div>
@@ -108,7 +108,7 @@ export function WhoWeHelp() {
                 Not sure where to start?
               </p>
               <p className="text-stone-500 text-[13px] leading-[1.75]">
-                Book a free 30-minute discovery call. We'll map your workflow and show you exactly where AI delivers the highest return.
+                Book a free 30-minute Automation Audit. We'll map your lead pipeline and show you exactly where revenue is being lost — and how to recover it.
               </p>
             </div>
             <div className="px-6 py-8 md:px-11 md:py-10 flex items-center relative z-10">
@@ -117,7 +117,7 @@ export function WhoWeHelp() {
                 className="btn-primary group w-full md:w-auto"
                 aria-label="Book a discovery call"
               >
-                Book Discovery Call
+                Schedule Your Automation Audit
                 <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>
               </button>
             </div>

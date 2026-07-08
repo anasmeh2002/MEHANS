@@ -5,32 +5,32 @@ import { AnimatedSection } from '../ui/AnimatedSection';
 const pillars = [
   {
     stat: '24/7',
-    label: 'AI Availability',
-    bullets: ['Never misses a lead', 'Instant engagement', 'Weekend coverage'],
+    label: 'Always Available',
+    bullets: ['Zero missed leads', 'Responds in under 90 seconds', 'Nights, weekends, holidays'],
     icon: Clock,
   },
   {
     stat: '80%',
     label: 'Less Manual Work',
-    bullets: ['Team focuses on closing', 'Automated follow-ups', 'No more chasing'],
+    bullets: ['Team focuses exclusively on closing', 'Follow-ups run automatically', 'Scale without extra headcount'],
     icon: TrendingDown,
   },
   {
     stat: '3×',
-    label: 'Faster Response',
-    bullets: ['Under 90 seconds', 'Beat competitors', 'Higher conversions'],
+    label: 'More Deals Closed',
+    bullets: ['First response wins the deal', 'No lead left uncontacted', 'Higher pipeline conversion'],
     icon: Zap,
   },
   {
     stat: '100%',
-    label: 'Custom Systems',
-    bullets: ['Built for your workflow', 'No templates', 'Exact fit'],
+    label: 'Custom Built',
+    bullets: ['Engineered for your workflow', 'Zero off-the-shelf templates', 'Dedicated implementation team'],
     icon: Settings,
   },
   {
     stat: '256-bit',
     label: 'Enterprise Security',
-    bullets: ['Bank-grade encryption', 'GDPR compliant', 'Secure by design'],
+    bullets: ['Bank-grade encryption', 'GDPR-compliant by design', 'Role-based access controls'],
     icon: Shield,
   },
 ];
@@ -55,13 +55,13 @@ export function WhyMehans() {
             </AnimatedSection>
             <AnimatedSection delay={0.08}>
               <h2 className="section-title mb-8" style={{ fontSize: 'clamp(2.25rem, 4.2vw, 3.75rem)' }}>
-                The Infrastructure<br />
-                <span className="italic font-light text-stone-500">Real Estate Relies On.</span>
+                The Results<br />
+                <span className="italic font-light text-stone-500">Real Estate Demands.</span>
               </h2>
             </AnimatedSection>
             <AnimatedSection delay={0.14}>
               <p className="text-stone-500 leading-[1.85] mb-12 text-[14px]">
-                Engineering partner, not software vendor. We build the AI backbone that powers elite real estate operations.
+                Strategic partner, not a SaaS subscription. We build and own the AI backbone that powers elite real estate operations — with dedicated support and custom implementation every step of the way.
               </p>
             </AnimatedSection>
 
@@ -136,7 +136,7 @@ export function WhyMehans() {
                   className="btn-primary group w-full md:w-auto"
                   aria-label="Schedule a consultation"
                 >
-                  Schedule Consultation
+                  Book Your Free AI Strategy Session
                   <span className="group-hover:translate-x-0.5 transition-transform duration-200 inline-block">→</span>
                 </button>
               </div>
