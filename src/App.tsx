@@ -10,6 +10,7 @@ import { AIAdvantages } from './components/sections/AIAdvantages';
 import { Testimonials } from './components/sections/Testimonials';
 import { Process } from './components/sections/Process';
 import { Pricing } from './components/sections/Pricing';
+import { Founder } from './components/sections/Founder';
 import { FAQ } from './components/sections/FAQ';
 import { CTA } from './components/sections/CTA';
 import { Contact } from './components/sections/Contact';
@@ -30,6 +31,7 @@ export default function App() {
         <Testimonials />
         <Process />
         <Pricing />
+        <Founder />
         <FAQ />
         <CTA />
         <Contact />

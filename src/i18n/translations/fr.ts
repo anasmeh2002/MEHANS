@@ -369,6 +369,17 @@ export const fr = {
     customCta: 'Parlez-nous',
   },
 
+  // Founder Section
+  founder: {
+    eyebrow: 'LA PERSONNE DERRIÈRE MEHANS',
+    name: 'Anas Mehdaoui',
+    role: 'Fondateur & PDG',
+    description: "Chez MEHANS, je conçois des expériences client intelligentes qui aident les entreprises immobilières à répondre plus vite, à suivre avec clarté et à gérer chaque opportunité plus professionnellement. L'objectif est simple : une meilleure expérience pour chaque client potentiel et plus de temps pour votre équipe afin de se concentrer sur les conversations et les transactions importantes.",
+    signature: 'Croissance plus claire. Meilleures expériences. Moins d\'opportunités manquées.',
+    cta: 'Parler avec Anas',
+    imageAlt: 'Anas Mehdaoui, Fondateur et PDG de MEHANS',
+  },
+
   // Loading screen
   loading: {
     text: 'MEHANS',

@@ -369,6 +369,17 @@ export const en = {
     customCta: 'Talk to Us',
   },
 
+  // Founder Section
+  founder: {
+    eyebrow: 'THE PERSON BEHIND MEHANS',
+    name: 'Anas Mehdaoui',
+    role: 'Founder & CEO',
+    description: 'At MEHANS, I build intelligent client experiences that help real estate businesses respond faster, follow up with clarity, and handle every opportunity more professionally. The goal is simple: a better experience for every prospective client and more time for your team to focus on meaningful conversations and deals.',
+    signature: 'Clearer growth. Better experiences. Fewer missed opportunities.',
+    cta: 'Speak with Anas',
+    imageAlt: 'Anas Mehdaoui, Founder and CEO of MEHANS',
+  },
+
   // Loading screen
   loading: {
     text: 'MEHANS',
