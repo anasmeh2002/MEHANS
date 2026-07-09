@@ -9,6 +9,7 @@ import { WhyMehans } from './components/sections/WhyMehans';
 import { AIAdvantages } from './components/sections/AIAdvantages';
 import { Testimonials } from './components/sections/Testimonials';
 import { Process } from './components/sections/Process';
+import { Pricing } from './components/sections/Pricing';
 import { FAQ } from './components/sections/FAQ';
 import { CTA } from './components/sections/CTA';
 import { Contact } from './components/sections/Contact';
@@ -28,6 +29,7 @@ export default function App() {
         <AIAdvantages />
         <Testimonials />
         <Process />
+        <Pricing />
         <FAQ />
         <CTA />
         <Contact />

@@ -335,6 +335,40 @@ export const fr = {
     button: 'Réserver Consultation Gratuite',
   },
 
+  // Pricing Section
+  pricing: {
+    eyebrow: 'Investissement Clair. Croissance Mesurée.',
+    headline: 'Choisissez le Point de Départ Adapté à Votre Équipe',
+    description: 'Nous commençons par une étape qui correspond à vos besoins actuels, puis développons l\'expérience au fur et à mesure de votre croissance.',
+    note: 'Chaque projet commence par une brève session stratégique pour comprendre les besoins de votre équipe et déterminer le meilleur point de départ.',
+    // Plans
+    starterName: 'Starter',
+    starterLabel: 'Départ Intelligent',
+    starterPrice: 'À partir de 2 500 MAD / mois',
+    starterDesc: 'Pour les entreprises qui veulent répondre rapidement aux nouvelles demandes et organiser les opportunités dès le début.',
+    starterFeature1: 'Réponse rapide aux demandes',
+    starterFeature2: 'Informations prospects organisées',
+    starterFeature3: 'Expérience professionnelle dès le premier contact',
+    starterCta: 'Commencer',
+    growthName: 'Growth',
+    growthLabel: 'Le Plus Choisi',
+    growthPrice: 'À partir de 5 000 MAD / mois',
+    growthDesc: 'Pour les entreprises qui veulent un meilleur suivi, plus d\'opportunités qualifiées et plus de rendez-vous pour l\'équipe commerciale.',
+    growthFeature1: 'Suivi continu des opportunités',
+    growthFeature2: 'Meilleure qualification des prospects',
+    growthFeature3: 'Rendez-vous organisés',
+    growthFeature4: 'Vision plus claire des opportunités',
+    growthCta: 'Demander un Plan Personnalisé',
+    customName: 'Custom',
+    customLabel: 'Expérience Sur Mesure',
+    customPrice: 'Selon les besoins de votre entreprise',
+    customDesc: 'Pour les entreprises qui ont besoin d\'une expérience conçue autour de leur équipe et de leurs objectifs.',
+    customFeature1: 'Expérience personnalisée pour votre marque',
+    customFeature2: 'Support pour opérations avancées',
+    customFeature3: 'Développement adapté à votre croissance',
+    customCta: 'Parlez-nous',
+  },
+
   // Loading screen
   loading: {
     text: 'MEHANS',

@@ -335,6 +335,40 @@ export const ar = {
     button: 'احجز جلستك',
   },
 
+  // Pricing Section
+  pricing: {
+    eyebrow: 'استثمار واضح. نمو مدروس.',
+    headline: 'اختر البداية المناسبة لفريقك',
+    description: 'نبدأ بخطوة تناسب احتياجاتك الحالية، ثم نطوّر التجربة مع نمو أعمالك.',
+    note: 'كل مشروع يبدأ بجلسة استراتيجية قصيرة لفهم احتياجات فريقك وتحديد أفضل نقطة بداية.',
+    // Plans
+    starterName: 'Starter',
+    starterLabel: 'بداية ذكية',
+    starterPrice: 'ابتداءً من 2,500 MAD / شهريًا',
+    starterDesc: 'للشركات التي تريد الرد بسرعة على الاستفسارات الجديدة وتنظيم الفرص من البداية.',
+    starterFeature1: 'رد سريع على الاستفسارات',
+    starterFeature2: 'تنظيم معلومات العملاء المحتملين',
+    starterFeature3: 'تجربة احترافية من أول تواصل',
+    starterCta: 'ابدأ الآن',
+    growthName: 'Growth',
+    growthLabel: 'الأكثر اختيارًا',
+    growthPrice: 'ابتداءً من 5,000 MAD / شهريًا',
+    growthDesc: 'للشركات التي تريد متابعة أقوى، فرصاً أكثر جاهزية، ومواعيد أكثر لفريق المبيعات.',
+    growthFeature1: 'متابعة مستمرة للفرص',
+    growthFeature2: 'تأهيل أفضل للعملاء المحتملين',
+    growthFeature3: 'تنظيم المواعيد',
+    growthFeature4: 'رؤية أوضح للفرص',
+    growthCta: 'اطلب خطة مناسبة',
+    customName: 'Custom',
+    customLabel: 'تجربة مخصصة',
+    customPrice: 'حسب احتياجات شركتك',
+    customDesc: 'للشركات التي تحتاج تجربة مصممة حول فريقها وأهدافها.',
+    customFeature1: 'تجربة مخصصة لعلامتك التجارية',
+    customFeature2: 'دعم للعمليات المتقدمة',
+    customFeature3: 'تطوير حسب نمو أعمالك',
+    customCta: 'تحدث معنا',
+  },
+
   // Loading screen
   loading: {
     text: 'MEHANS',

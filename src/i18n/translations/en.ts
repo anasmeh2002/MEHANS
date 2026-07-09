@@ -335,6 +335,40 @@ export const en = {
     button: 'Book Free Consultation',
   },
 
+  // Pricing Section
+  pricing: {
+    eyebrow: 'Clear Investment. Measured Growth.',
+    headline: 'Choose the Right Starting Point for Your Team',
+    description: 'We start with a step that fits your current needs, then develop the experience as your business grows.',
+    note: 'Every project begins with a brief strategy session to understand your team\'s needs and determine the best starting point.',
+    // Plans
+    starterName: 'Starter',
+    starterLabel: 'Smart Start',
+    starterPrice: 'Starting from 2,500 MAD / month',
+    starterDesc: 'For companies that want to respond quickly to new inquiries and organize opportunities from the start.',
+    starterFeature1: 'Fast response to inquiries',
+    starterFeature2: 'Organized lead information',
+    starterFeature3: 'Professional experience from first contact',
+    starterCta: 'Get Started',
+    growthName: 'Growth',
+    growthLabel: 'Most Popular',
+    growthPrice: 'Starting from 5,000 MAD / month',
+    growthDesc: 'For companies that want stronger follow-up, more qualified opportunities, and more appointments for the sales team.',
+    growthFeature1: 'Continuous opportunity follow-up',
+    growthFeature2: 'Better lead qualification',
+    growthFeature3: 'Organized appointments',
+    growthFeature4: 'Clearer view of opportunities',
+    growthCta: 'Request a Custom Plan',
+    customName: 'Custom',
+    customLabel: 'Tailored Experience',
+    customPrice: 'Based on your company\'s needs',
+    customDesc: 'For companies that need an experience designed around their team and goals.',
+    customFeature1: 'Experience customized to your brand',
+    customFeature2: 'Support for advanced operations',
+    customFeature3: 'Development tailored to your growth',
+    customCta: 'Talk to Us',
+  },
+
   // Loading screen
   loading: {
     text: 'MEHANS',
