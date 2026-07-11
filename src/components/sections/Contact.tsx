@@ -1,12 +1,12 @@
 import { useState, FormEvent } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, User, AtSign, MessageSquare } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, CheckCircle2, User, AtSign, Building2, MessageSquare } from 'lucide-react';
 import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
 export function Contact() {
   const { t } = useLanguage();
-  const [form, setForm] = useState({ name: '', email: '', phone: '', interest: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', company: '', phone: '', message: '' });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -15,15 +15,6 @@ export function Contact() {
     t.contact.badge2,
     t.contact.badge3,
     t.contact.badge4,
-  ];
-
-  const INTERESTS = [
-    t.contact.interest1,
-    t.contact.interest2,
-    t.contact.interest3,
-    t.contact.interest4,
-    t.contact.interest5,
-    t.contact.interest6,
   ];
 
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
@@ -39,7 +30,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="py-24 md:py-44 lg:py-52 relative overflow-hidden">
-      {/* Premium gradient background - brighter */}
+      {/* Premium gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-stone-950 via-stone-900/95 to-stone-950" />
 
       {/* Main spotlight effect behind form */}
@@ -54,7 +45,7 @@ export function Contact() {
 
       <div className="max-w-5xl mx-auto px-6 lg:px-10 relative z-10">
 
-        {/* Header - centered */}
+        {/* Header */}
         <div className="text-center mb-12 md:mb-16">
           <AnimatedSection delay={0}>
             <div className="flex items-center justify-center gap-4 md:gap-5 mb-5 md:mb-7">
@@ -92,12 +83,11 @@ export function Contact() {
         {/* Premium form card */}
         <AnimatedSection delay={0.2}>
           <div className="relative">
-            {/* Glassmorphism card with premium styling */}
             <div className="glass-premium rounded-lg overflow-hidden relative">
               {/* Top gold gradient line */}
               <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold-500 to-transparent" />
 
-              {/* Corner accents - more prominent */}
+              {/* Corner accents */}
               <div className="absolute top-4 md:top-6 left-4 md:left-6 w-8 md:w-10 h-8 md:h-10 border-l-2 border-t-2 border-gold-500/40" />
               <div className="absolute top-4 md:top-6 right-4 md:right-6 w-8 md:w-10 h-8 md:h-10 border-r-2 border-t-2 border-gold-500/40" />
               <div className="absolute bottom-4 md:bottom-6 left-4 md:left-6 w-8 md:w-10 h-8 md:h-10 border-l-2 border-b-2 border-gold-500/40" />
@@ -131,7 +121,7 @@ export function Contact() {
                 ) : (
                   <form onSubmit={handleSubmit} className="flex flex-col gap-5 md:gap-7">
 
-                    {/* Name + email row */}
+                    {/* Name + Email */}
                     <div className="grid sm:grid-cols-2 gap-4 md:gap-7">
                       <div className="relative">
                         <div className="absolute left-5 top-1/2 -translate-y-1/2 z-10">
@@ -141,10 +131,10 @@ export function Contact() {
                         <input
                           type="text"
                           required
-                          placeholder={t.contact.formNamePlaceholder}
+                          placeholder="Full Name"
                           value={form.name}
                           onChange={update('name')}
-                          aria-label={t.contact.formNamePlaceholder}
+                          aria-label="Full Name"
                           className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                         />
                       </div>
@@ -156,51 +146,45 @@ export function Contact() {
                         <input
                           type="email"
                           required
-                          placeholder={t.contact.formEmailPlaceholder}
+                          placeholder="Business Email"
                           value={form.email}
                           onChange={update('email')}
-                          aria-label={t.contact.formEmailPlaceholder}
+                          aria-label="Business Email"
                           className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                         />
                       </div>
                     </div>
 
-                    {/* Phone */}
-                    <div className="relative">
-                      <div className="absolute left-5 top-1/2 -translate-y-1/2 z-10">
-                        <Phone size={18} className="md:hidden text-stone-500" />
-                        <Phone size={16} className="hidden md:block text-stone-500" />
+                    {/* Company + Phone */}
+                    <div className="grid sm:grid-cols-2 gap-4 md:gap-7">
+                      <div className="relative">
+                        <div className="absolute left-5 top-1/2 -translate-y-1/2 z-10">
+                          <Building2 size={18} className="md:hidden text-stone-500" />
+                          <Building2 size={16} className="hidden md:block text-stone-500" />
+                        </div>
+                        <input
+                          type="text"
+                          required
+                          placeholder="Company Name"
+                          value={form.company}
+                          onChange={update('company')}
+                          aria-label="Company Name"
+                          className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
+                        />
                       </div>
-                      <input
-                        type="tel"
-                        placeholder={t.contact.formPhonePlaceholder}
-                        value={form.phone}
-                        onChange={update('phone')}
-                        aria-label={t.contact.formPhonePlaceholder}
-                        className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
-                      />
-                    </div>
-
-                    {/* AI systems chips */}
-                    <div>
-                      <label className="text-[11px] font-bold tracking-[0.25em] uppercase text-stone-500 mb-3 md:mb-4 block">
-                        {t.contact.formLabel}
-                      </label>
-                      <div className="flex flex-wrap gap-2.5 md:gap-3">
-                        {INTERESTS.map((int) => (
-                          <button
-                            key={int}
-                            type="button"
-                            onClick={() => setForm({ ...form, interest: int })}
-                            className={`px-4 py-3 md:px-5 md:py-3 text-[12px] font-medium border-2 rounded-sm transition-all duration-300 min-h-[44px] ${
-                              form.interest === int
-                                ? 'border-gold-500/55 text-gold-400 bg-gold-500/[0.12]'
-                                : 'border-stone-700/60 text-stone-500 hover:border-stone-600/70 hover:text-stone-400'
-                            }`}
-                          >
-                            {int}
-                          </button>
-                        ))}
+                      <div className="relative">
+                        <div className="absolute left-5 top-1/2 -translate-y-1/2 z-10">
+                          <Phone size={18} className="md:hidden text-stone-500" />
+                          <Phone size={16} className="hidden md:block text-stone-500" />
+                        </div>
+                        <input
+                          type="tel"
+                          placeholder="Phone Number (optional)"
+                          value={form.phone}
+                          onChange={update('phone')}
+                          aria-label="Phone Number (optional)"
+                          className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
+                        />
                       </div>
                     </div>
 
@@ -212,19 +196,25 @@ export function Contact() {
                       </div>
                       <textarea
                         rows={5}
-                        placeholder={t.contact.formMessagePlaceholder}
+                        required
+                        placeholder="Briefly describe your business and the biggest challenge you'd like to solve."
                         value={form.message}
                         onChange={update('message')}
-                        aria-label={t.contact.formMessagePlaceholder}
+                        aria-label="Message"
                         className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 resize-none placeholder:text-stone-600"
                       />
                     </div>
+
+                    {/* Helper note */}
+                    <p className="text-stone-600 text-[12px] leading-[1.7] -mt-2">
+                      Our team will analyze your needs and recommend the best AI automation strategy during your free consultation.
+                    </p>
 
                     <button
                       type="submit"
                       disabled={loading}
                       className="w-full btn-primary justify-center py-5 md:py-5 text-[13px] tracking-[0.25em] disabled:opacity-50 disabled:cursor-not-allowed mt-2 md:mt-4 rounded-sm min-h-[52px]"
-                      aria-label={t.contact.formSubmit}
+                      aria-label="Book My Free AI Strategy Session"
                     >
                       {loading ? (
                         <motion.div
@@ -234,7 +224,7 @@ export function Contact() {
                         />
                       ) : (
                         <>
-                          {t.contact.formSubmit}
+                          Book My Free AI Strategy Session
                           <ArrowRight size={15} />
                         </>
                       )}
@@ -244,7 +234,7 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Contact info below - improved styling */}
+            {/* Contact info below */}
             <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6">
               <a href="mailto:hello@mehans.space" className="group flex flex-col items-center gap-3 p-5 md:p-6 border border-stone-700/50 hover:border-gold-500/40 bg-stone-900/40 hover:bg-gold-500/[0.05] rounded-sm transition-all duration-300 min-h-[80px] md:min-h-0" aria-label="Email us at hello@mehans.space">
                 <Mail size={22} className="md:hidden text-gold-500/60 group-hover:text-gold-500 transition-colors duration-300" />
