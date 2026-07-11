@@ -10,7 +10,6 @@ import { AIAdvantages } from './components/sections/AIAdvantages';
 import { AIWorkflow } from './components/sections/AIWorkflow';
 import { DashboardPreview } from './components/sections/DashboardPreview';
 import { ClientJourney } from './components/sections/ClientJourney';
-import { Testimonials } from './components/sections/Testimonials';
 import { Process } from './components/sections/Process';
 import { Pricing } from './components/sections/Pricing';
 import { Founder } from './components/sections/Founder';
@@ -36,7 +35,6 @@ export default function App() {
         <WhoWeHelp />
         <WhyMehans />
         <AIAdvantages />
-        <Testimonials />
         <Process />
         <Pricing />
         <Founder />
