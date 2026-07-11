@@ -1,43 +1,38 @@
-import { LoadingScreen } from './components/layout/LoadingScreen';
-import { Navbar } from './components/layout/Navbar';
-import { Footer } from './components/layout/Footer';
-import { Hero } from './components/sections/Hero';
-import { Statistics } from './components/sections/Statistics';
-import { Services } from './components/sections/Services';
-import { WhoWeHelp } from './components/sections/WhoWeHelp';
-import { WhyMehans } from './components/sections/WhyMehans';
-import { AIAdvantages } from './components/sections/AIAdvantages';
-import { Testimonials } from './components/sections/Testimonials';
-import { Process } from './components/sections/Process';
-import { Pricing } from './components/sections/Pricing';
-import { Founder } from './components/sections/Founder';
-import { FAQ } from './components/sections/FAQ';
-import { CTA } from './components/sections/CTA';
-import { Contact } from './components/sections/Contact';
-import { MobileStickyCTA } from './components/ui/MobileStickyCTA';
+import { Nav } from './components/Nav';
+import { Hero } from './components/Hero';
+import { CursorGlow } from './components/CursorGlow';
+import { AIWorkflow } from './components/AIWorkflow';
+import { Dashboard } from './components/Dashboard';
+import { ClientExperience } from './components/ClientExperience';
+import { Results } from './components/Results';
+import { Founder } from './components/Founder';
+import { CTA } from './components/CTA';
+import { Footer } from './components/Footer';
 
 export default function App() {
   return (
-    <>
-      <LoadingScreen />
-      <Navbar />
-      <main>
+    <div className="min-h-screen bg-[#050505] text-white">
+      <CursorGlow />
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#d4af37] focus:text-black focus:rounded-md focus:text-sm focus:font-medium"
+      >
+        Skip to main content
+      </a>
+
+      <Nav />
+
+      <main id="main-content">
         <Hero />
-        <Statistics />
-        <Services />
-        <WhoWeHelp />
-        <WhyMehans />
-        <AIAdvantages />
-        <Testimonials />
-        <Process />
-        <Pricing />
+        <AIWorkflow />
+        <Dashboard />
+        <ClientExperience />
+        <Results />
         <Founder />
-        <FAQ />
         <CTA />
-        <Contact />
       </main>
+
       <Footer />
-      <MobileStickyCTA />
-    </>
+    </div>
   );
 }
