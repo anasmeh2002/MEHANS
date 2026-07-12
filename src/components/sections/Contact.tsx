@@ -131,10 +131,10 @@ export function Contact() {
                         <input
                           type="text"
                           required
-                          placeholder="Full Name"
+                          placeholder={t.contact.formNamePlaceholder}
                           value={form.name}
                           onChange={update('name')}
-                          aria-label="Full Name"
+                          aria-label={t.contact.formNamePlaceholder}
                           className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                         />
                       </div>
@@ -146,10 +146,10 @@ export function Contact() {
                         <input
                           type="email"
                           required
-                          placeholder="Business Email"
+                          placeholder={t.contact.formEmailPlaceholder}
                           value={form.email}
                           onChange={update('email')}
-                          aria-label="Business Email"
+                          aria-label={t.contact.formEmailPlaceholder}
                           className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                         />
                       </div>
@@ -165,10 +165,10 @@ export function Contact() {
                         <input
                           type="text"
                           required
-                          placeholder="Company Name"
+                          placeholder={t.contact.formCompanyPlaceholder}
                           value={form.company}
                           onChange={update('company')}
-                          aria-label="Company Name"
+                          aria-label={t.contact.formCompanyPlaceholder}
                           className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                         />
                       </div>
@@ -179,10 +179,10 @@ export function Contact() {
                         </div>
                         <input
                           type="tel"
-                          placeholder="Phone Number (optional)"
+                          placeholder={t.contact.formPhonePlaceholder}
                           value={form.phone}
                           onChange={update('phone')}
-                          aria-label="Phone Number (optional)"
+                          aria-label={t.contact.formPhonePlaceholder}
                           className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-[18px] md:py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 placeholder:text-stone-600"
                         />
                       </div>
@@ -197,24 +197,24 @@ export function Contact() {
                       <textarea
                         rows={5}
                         required
-                        placeholder="Briefly describe your business and the biggest challenge you'd like to solve."
+                        placeholder={t.contact.formMessagePlaceholder}
                         value={form.message}
                         onChange={update('message')}
-                        aria-label="Message"
+                        aria-label={t.contact.formMessagePlaceholder}
                         className="w-full bg-stone-900/90 border-2 border-stone-700/70 px-14 py-5 text-[16px] md:text-[15px] text-stone-200 rounded-sm outline-none transition-all duration-300 focus:border-gold-500/55 focus:bg-stone-900 resize-none placeholder:text-stone-600"
                       />
                     </div>
 
                     {/* Helper note */}
                     <p className="text-stone-600 text-[12px] leading-[1.7] -mt-2">
-                      Our team will analyze your needs and recommend the best AI automation strategy during your free consultation.
+                      {t.contact.formNote}
                     </p>
 
                     <button
                       type="submit"
                       disabled={loading}
                       className="w-full btn-primary justify-center py-5 md:py-5 text-[13px] tracking-[0.25em] disabled:opacity-50 disabled:cursor-not-allowed mt-2 md:mt-4 rounded-sm min-h-[52px]"
-                      aria-label="Book My Free AI Strategy Session"
+                      aria-label={t.contact.formSubmit}
                     >
                       {loading ? (
                         <motion.div
@@ -224,7 +224,7 @@ export function Contact() {
                         />
                       ) : (
                         <>
-                          Book My Free AI Strategy Session
+                          {t.contact.formSubmit}
                           <ArrowRight size={15} />
                         </>
                       )}

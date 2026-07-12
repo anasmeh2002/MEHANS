@@ -9,22 +9,8 @@ interface Message {
   isConfirmation?: boolean;
 }
 
-const MESSAGES: Message[] = [
-  { from: 'lead', text: "Hi, I need help automating my sales process. What can you do?",                                                            delay: 0.6 },
-  { from: 'ai',   text: "I can qualify your leads, book meetings, and fill your pipeline automatically. What's your current monthly revenue?",       delay: 1.6 },
-  { from: 'lead', text: "Around €50k. We have 3 sales reps.",                                                                                      delay: 2.9 },
-  { from: 'ai',   text: "Perfect fit. Companies your size typically see 3× pipeline growth in 60 days. Let me book a 20-minute call with you.",     delay: 4.1 },
-  { from: 'lead', text: "That sounds great — when are you available?",                                                                              delay: 5.4 },
-  { from: 'ai',   text: "✓ Meeting confirmed — tomorrow at 10:00 AM. Calendar invite sent.",                                                        delay: 6.6, isConfirmation: true },
-];
-
-const TIMELINE = [
-  { label: 'Message received', time: '0:00' },
-  { label: 'Intent detected',  time: '0:02' },
-  { label: 'Lead qualified',   time: '0:05' },
-  { label: 'Meeting booked',   time: '0:58' },
-  { label: 'Confirmation sent',time: '1:01' },
-];
+const TIMELINE_KEYS = ['timeline1', 'timeline2', 'timeline3', 'timeline4', 'timeline5'] as const;
+const TIMELINE_TIMES = ['0:00', '0:02', '0:05', '0:58', '1:01'];
 
 function Bubble({ msg, visible }: { msg: Message; visible: boolean }) {
   const isAI = msg.from === 'ai';
@@ -64,6 +50,20 @@ export function ClientJourney() {
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: '-80px 0px' });
 
+  const messages: Message[] = [
+    { from: 'lead', text: t.journey.msg1Lead, delay: 0.6 },
+    { from: 'ai',   text: t.journey.msg2AI,   delay: 1.6 },
+    { from: 'lead', text: t.journey.msg3Lead, delay: 2.9 },
+    { from: 'ai',   text: t.journey.msg4AI,   delay: 4.1 },
+    { from: 'lead', text: t.journey.msg5Lead, delay: 5.4 },
+    { from: 'ai',   text: t.journey.msg6AI,   delay: 6.6, isConfirmation: true },
+  ];
+
+  const timeline = TIMELINE_KEYS.map((key, i) => ({
+    label: t.journey[key],
+    time: TIMELINE_TIMES[i],
+  }));
+
   const [visible, setVisible] = useState(0);
   const [activeStep, setActiveStep] = useState(-1);
   const started = useRef(false);
@@ -71,9 +71,9 @@ export function ClientJourney() {
   useEffect(() => {
     if (!inView || started.current) return;
     started.current = true;
-    MESSAGES.forEach((m, i) => setTimeout(() => setVisible(i + 1), m.delay * 1000));
-    TIMELINE.forEach((_, i) => setTimeout(() => setActiveStep(i), (i * 1.3 + 0.5) * 1000));
-  }, [inView]);
+    messages.forEach((m, i) => setTimeout(() => setVisible(i + 1), m.delay * 1000));
+    timeline.forEach((_, i) => setTimeout(() => setActiveStep(i), (i * 1.3 + 0.5) * 1000));
+  }, [inView]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section
@@ -95,7 +95,7 @@ export function ClientJourney() {
             viewport={{ once: true }}
             className="section-label mb-5"
           >
-            Your Client's Experience
+            {t.journey.label}
           </motion.p>
           <motion.h2
             id="journey-heading"
@@ -106,9 +106,9 @@ export function ClientJourney() {
             className="section-title leading-[1.05] mb-4"
             style={{ fontSize: 'clamp(2.2rem, 4vw, 3.25rem)', letterSpacing: '-0.02em' }}
           >
-            First contact to booked meeting.
+            {t.journey.headline1}
             <br />
-            <span className="italic font-light text-stone-500">Under 60 seconds.</span>
+            <span className="italic font-light text-stone-500">{t.journey.headline2}</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -117,7 +117,7 @@ export function ClientJourney() {
             transition={{ delay: 0.16 }}
             className="text-stone-500 text-[14px] leading-[1.75]"
           >
-            This is what your future client experiences — from first message to confirmed appointment.
+            {t.journey.description}
           </motion.p>
         </div>
 
@@ -137,22 +137,22 @@ export function ClientJourney() {
                   <div className="w-2.5 h-2.5 rounded-full bg-gold-500" />
                 </div>
                 <div>
-                  <div className="text-[12px] font-semibold text-stone-200 tracking-wide">MEHANS AI</div>
+                  <div className="text-[12px] font-semibold text-stone-200 tracking-wide">{t.journey.chatHeader}</div>
                   <div className="flex items-center gap-1.5 mt-0.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[9px] text-stone-600">Online — responds in seconds</span>
+                    <span className="text-[9px] text-stone-600">{t.journey.chatStatus}</span>
                   </div>
                 </div>
               </div>
 
               {/* Messages */}
               <div className="p-5 min-h-[340px] flex flex-col justify-end">
-                {MESSAGES.map((msg, i) => (
+                {messages.map((msg, i) => (
                   <Bubble key={i} msg={msg} visible={i < visible} />
                 ))}
 
                 {/* Typing indicator */}
-                {visible > 0 && visible < MESSAGES.length && (
+                {visible > 0 && visible < messages.length && (
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -186,11 +186,11 @@ export function ClientJourney() {
             className="space-y-3 pt-2"
           >
             <div className="mb-8">
-              <h3 className="text-stone-200 font-semibold text-[15px] mb-1.5">What happens behind the scenes</h3>
-              <p className="text-[13px] text-stone-600">Every action is logged, scored, and escalated instantly.</p>
+              <h3 className="text-stone-200 font-semibold text-[15px] mb-1.5">{t.journey.behindScenesTitle}</h3>
+              <p className="text-[13px] text-stone-600">{t.journey.behindScenesDesc}</p>
             </div>
 
-            {TIMELINE.map((step, i) => (
+            {timeline.map((step, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: 10 }}
@@ -231,7 +231,7 @@ export function ClientJourney() {
             ))}
 
             <AnimatePresence>
-              {activeStep >= TIMELINE.length - 1 && (
+              {activeStep >= timeline.length - 1 && (
                 <motion.div
                   initial={{ opacity: 0, y: 10, scale: 0.97 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -240,10 +240,10 @@ export function ClientJourney() {
                 >
                   <div className="flex items-center gap-2 mb-2.5">
                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                    <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-[0.2em]">Meeting Confirmed</span>
+                    <span className="text-[9px] font-bold text-emerald-400 uppercase tracking-[0.2em]">{t.journey.confirmedLabel}</span>
                   </div>
-                  <div className="text-[14px] font-medium text-gold-400">Tomorrow · 10:00 AM</div>
-                  <div className="text-[11px] text-stone-600 mt-1">Calendar invite sent · Team briefing ready</div>
+                  <div className="text-[14px] font-medium text-gold-400">{t.journey.confirmedTime}</div>
+                  <div className="text-[11px] text-stone-600 mt-1">{t.journey.confirmedNote}</div>
                 </motion.div>
               )}
             </AnimatePresence>

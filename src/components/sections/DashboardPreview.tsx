@@ -2,14 +2,6 @@ import { useRef, useState, useEffect, memo } from 'react';
 import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import { useLanguage } from '../../i18n';
 
-const LEADS = [
-  { name: 'Sophie Laurent', company: 'Nexus Capital',  status: 'Qualified',          score: 94, time: '2m',  avatar: 'SL', color: 'text-gold-500 bg-gold-500/10 border-gold-500/20' },
-  { name: 'Marc Dubois',    company: 'Vertex SaaS',    status: 'Meeting Scheduled',  score: 88, time: '8m',  avatar: 'MD', color: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' },
-  { name: 'Laila Hassan',   company: 'AlphaScale',     status: 'New Lead',           score: 71, time: '15m', avatar: 'LH', color: 'text-blue-400 bg-blue-400/10 border-blue-400/20' },
-  { name: 'James Okafor',   company: 'Forte Digital',  status: 'Completed',          score: 96, time: '1h',  avatar: 'JO', color: 'text-gold-500 bg-gold-500/10 border-gold-500/20' },
-  { name: 'Nina Petrov',    company: 'Luminary Tech',  status: 'Waiting',            score: 63, time: '3h',  avatar: 'NP', color: 'text-orange-400 bg-orange-400/10 border-orange-400/20' },
-];
-
 const BARS = [38, 62, 51, 77, 69, 91, 84, 72, 88, 81, 96, 88];
 
 const SparkChart = memo(() => (
@@ -59,6 +51,33 @@ export function DashboardPreview() {
   const rawY = useTransform(scrollYProgress, [0, 1], [24, -24]);
   const y = useSpring(rawY, { stiffness: 90, damping: 28 });
 
+  const stats = [
+    { label: t.dashboard.stat1Label, value: 47, suffix: t.dashboard.stat1Suffix },
+    { label: t.dashboard.stat2Label, value: 12, suffix: t.dashboard.stat2Suffix },
+    { label: t.dashboard.stat3Label, value: 84, suffix: t.dashboard.stat3Suffix },
+  ];
+
+  const kpis = [
+    { label: t.dashboard.kpi1Label, value: t.dashboard.kpi1Value },
+    { label: t.dashboard.kpi2Label, value: t.dashboard.kpi2Value },
+    { label: t.dashboard.kpi3Label, value: t.dashboard.kpi3Value },
+  ];
+
+  const leads = [
+    { name: t.dashboard.lead1Name, company: t.dashboard.lead1Company, status: t.dashboard.lead1Status, score: 94, time: '2m',  avatar: 'SL', color: 'text-gold-500 bg-gold-500/10 border-gold-500/20' },
+    { name: t.dashboard.lead2Name, company: t.dashboard.lead2Company, status: t.dashboard.lead2Status, score: 88, time: '8m',  avatar: 'MD', color: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' },
+    { name: t.dashboard.lead3Name, company: t.dashboard.lead3Company, status: t.dashboard.lead3Status, score: 71, time: '15m', avatar: 'LH', color: 'text-blue-400 bg-blue-400/10 border-blue-400/20' },
+    { name: t.dashboard.lead4Name, company: t.dashboard.lead4Company, status: t.dashboard.lead4Status, score: 96, time: '1h',  avatar: 'JO', color: 'text-gold-500 bg-gold-500/10 border-gold-500/20' },
+    { name: t.dashboard.lead5Name, company: t.dashboard.lead5Company, status: t.dashboard.lead5Status, score: 63, time: '3h',  avatar: 'NP', color: 'text-orange-400 bg-orange-400/10 border-orange-400/20' },
+  ];
+
+  const activities = [
+    { text: t.dashboard.activity1Text, name: t.dashboard.lead1Name, time: '2m' },
+    { text: t.dashboard.activity2Text, name: t.dashboard.lead2Name, time: '8m' },
+    { text: t.dashboard.activity3Text, name: t.dashboard.lead5Name, time: '42m' },
+    { text: t.dashboard.activity4Text, name: t.dashboard.lead4Name, time: '1h' },
+  ];
+
   return (
     <section
       id="dashboard"
@@ -82,7 +101,7 @@ export function DashboardPreview() {
               transition={{ duration: 0.6 }}
               className="section-label mb-6"
             >
-              Live Dashboard
+              {t.dashboard.label}
             </motion.p>
             <motion.h2
               id="dashboard-heading"
@@ -93,9 +112,9 @@ export function DashboardPreview() {
               className="section-title leading-[1.05] mb-6"
               style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', letterSpacing: '-0.02em' }}
             >
-              Total visibility.
+              {t.dashboard.headline1}
               <br />
-              <span className="italic font-light text-stone-500">Zero guesswork.</span>
+              <span className="italic font-light text-stone-500">{t.dashboard.headline2}</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -104,8 +123,7 @@ export function DashboardPreview() {
               transition={{ duration: 0.7, delay: 0.16 }}
               className="text-stone-500 text-[14px] leading-[1.85] max-w-sm mb-12"
             >
-              Every lead, score, and conversation in one command centre.
-              Know who's ready to buy before your team picks up the phone.
+              {t.dashboard.description}
             </motion.p>
 
             <motion.div
@@ -115,11 +133,7 @@ export function DashboardPreview() {
               transition={{ duration: 0.7, delay: 0.22 }}
               className="space-y-4"
             >
-              {[
-                { label: 'Leads processed today',     value: 47, suffix: '+' },
-                { label: 'Meetings booked this week', value: 12, suffix: '' },
-                { label: 'Pipeline value',            value: 84, suffix: 'k€' },
-              ].map((s) => (
+              {stats.map((s) => (
                 <div key={s.label} className="flex items-center justify-between py-3.5 border-b border-stone-800/50">
                   <span className="text-[13px] text-stone-500">{s.label}</span>
                   <span className="font-display text-xl font-medium text-gold-500">
@@ -163,11 +177,7 @@ export function DashboardPreview() {
 
               {/* KPI row */}
               <div className="grid grid-cols-3 divide-x divide-stone-800/40 border-b border-stone-800/40">
-                {[
-                  { label: 'Pipeline', value: '€210k' },
-                  { label: 'Qualified', value: '38%' },
-                  { label: 'Avg Close', value: '4.2d' },
-                ].map((kpi) => (
+                {kpis.map((kpi) => (
                   <div key={kpi.label} className="py-4 px-4 text-center">
                     <div className="font-display text-lg font-medium text-gold-500 leading-none mb-1">{kpi.value}</div>
                     <div className="text-[9px] text-stone-600 uppercase tracking-wider">{kpi.label}</div>
@@ -178,17 +188,17 @@ export function DashboardPreview() {
               {/* Sparkline */}
               <div className="px-5 py-4 border-b border-stone-800/40">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[9px] text-stone-600 uppercase tracking-widest">Leads / month</span>
-                  <span className="text-[11px] text-gold-500 font-semibold">+23%</span>
+                  <span className="text-[9px] text-stone-600 uppercase tracking-widest">{t.dashboard.chartLabel}</span>
+                  <span className="text-[11px] text-gold-500 font-semibold">{t.dashboard.chartGrowth}</span>
                 </div>
                 {inView && <SparkChart />}
               </div>
 
               {/* Leads list */}
               <div className="px-5 py-3 border-b border-stone-800/40">
-                <div className="text-[9px] text-stone-700 uppercase tracking-widest mb-3">Recent Leads</div>
+                <div className="text-[9px] text-stone-700 uppercase tracking-widest mb-3">{t.dashboard.leadsLabel}</div>
                 <div className="space-y-2.5">
-                  {inView && LEADS.map((lead, i) => (
+                  {inView && leads.map((lead, i) => (
                     <motion.div
                       key={lead.name}
                       initial={{ opacity: 0, y: 6 }}
@@ -214,14 +224,9 @@ export function DashboardPreview() {
 
               {/* Activity */}
               <div className="px-5 py-4">
-                <div className="text-[9px] text-stone-700 uppercase tracking-widest mb-3">Activity</div>
+                <div className="text-[9px] text-stone-700 uppercase tracking-widest mb-3">{t.dashboard.activityLabel}</div>
                 <div className="space-y-2.5">
-                  {inView && [
-                    { text: 'Lead qualified', name: 'Sophie Laurent', time: '2m' },
-                    { text: 'Meeting booked', name: 'Marc Dubois',    time: '8m' },
-                    { text: 'Follow-up sent', name: 'Nina Petrov',    time: '42m' },
-                    { text: 'Deal closed',    name: 'James Okafor',   time: '1h' },
-                  ].map((item, i) => (
+                  {inView && activities.map((item, i) => (
                     <motion.div
                       key={i}
                       initial={{ opacity: 0, x: 8 }}

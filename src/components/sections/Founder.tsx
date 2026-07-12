@@ -52,7 +52,7 @@ export function Founder() {
                   {/* Portrait image */}
                   <div className="relative overflow-hidden rounded-2xl w-[320px] h-[420px] lg:w-[360px] lg:h-[470px]">
                     <img
-                      src="/images/founder/WhatsApp_Image_2026-07-11_at_15.25.04.jpeg"
+                      src="/images/founder/WhatsApp_Image_2026-07-12_at_12.32.55.jpeg"
                       alt={t.founder.imageAlt}
                       className="w-full h-full object-cover object-top"
                       loading="lazy"

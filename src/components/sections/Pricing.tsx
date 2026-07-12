@@ -10,12 +10,14 @@ export function Pricing() {
     {
       name: t.pricing.starterName,
       label: t.pricing.starterLabel,
-      price: t.pricing.starterPrice,
-      description: t.pricing.starterDesc,
+      setupFee: t.pricing.starterSetup,
+      monthly: t.pricing.starterMonthly,
       features: [
         t.pricing.starterFeature1,
         t.pricing.starterFeature2,
         t.pricing.starterFeature3,
+        t.pricing.starterFeature4,
+        t.pricing.starterFeature5,
       ],
       cta: t.pricing.starterCta,
       highlighted: false,
@@ -23,13 +25,16 @@ export function Pricing() {
     {
       name: t.pricing.growthName,
       label: t.pricing.growthLabel,
-      price: t.pricing.growthPrice,
-      description: t.pricing.growthDesc,
+      setupFee: t.pricing.growthSetup,
+      monthly: t.pricing.growthMonthly,
       features: [
         t.pricing.growthFeature1,
         t.pricing.growthFeature2,
         t.pricing.growthFeature3,
         t.pricing.growthFeature4,
+        t.pricing.growthFeature5,
+        t.pricing.growthFeature6,
+        t.pricing.growthFeature7,
       ],
       cta: t.pricing.growthCta,
       highlighted: true,
@@ -37,12 +42,15 @@ export function Pricing() {
     {
       name: t.pricing.customName,
       label: t.pricing.customLabel,
-      price: t.pricing.customPrice,
-      description: t.pricing.customDesc,
+      setupFee: t.pricing.customSetup,
+      monthly: t.pricing.customMonthly,
       features: [
         t.pricing.customFeature1,
         t.pricing.customFeature2,
         t.pricing.customFeature3,
+        t.pricing.customFeature4,
+        t.pricing.customFeature5,
+        t.pricing.customFeature6,
       ],
       cta: t.pricing.customCta,
       highlighted: false,
@@ -88,22 +96,22 @@ export function Pricing() {
                 transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                 className={`relative h-full flex flex-col bg-stone-900/40 border rounded-sm overflow-hidden transition-all duration-500 ${
                   plan.highlighted
-                    ? 'border-gold-500/40'
+                    ? 'border-gold-500/50 shadow-[0_0_40px_rgba(201,168,76,0.08)]'
                     : 'border-stone-800/50 hover:border-stone-700/60'
                 }`}
               >
                 {/* Most Popular Badge */}
                 {plan.highlighted && (
-                  <div className="absolute top-0 left-0 right-0 flex justify-center pt-4">
-                    <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-gold-500 bg-gold-500/10 px-4 py-1.5 rounded-sm">
+                  <div className="absolute top-0 left-0 right-0 flex justify-center pt-4 z-10">
+                    <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-gold-500 bg-gold-500/10 border border-gold-500/20 px-4 py-1.5 rounded-sm">
                       {plan.label}
                     </span>
                   </div>
                 )}
 
-                <div className={`flex-1 flex flex-col p-8 ${plan.highlighted ? 'pt-12' : ''}`}>
+                <div className={`flex-1 flex flex-col p-8 ${plan.highlighted ? 'pt-14' : ''}`}>
                   {/* Plan Name */}
-                  <div className="mb-4">
+                  <div className="mb-5">
                     {!plan.highlighted && (
                       <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-stone-600 mb-2 block">
                         {plan.label}
@@ -114,20 +122,28 @@ export function Pricing() {
                     </h3>
                   </div>
 
-                  {/* Price */}
-                  <div className="mb-6">
-                    <span className="font-display text-[26px] font-medium text-gold-500 leading-none">
-                      {plan.price}
+                  {/* Setup Fee */}
+                  <div className="mb-2">
+                    <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-stone-600 block mb-1">
+                      {t.pricing.setupFeeLabel}
+                    </span>
+                    <span className="font-display text-[22px] font-medium text-stone-200 leading-none">
+                      {plan.setupFee}
                     </span>
                   </div>
 
-                  {/* Description */}
-                  <p className="text-stone-500 text-[13px] leading-[1.8] mb-8 flex-1">
-                    {plan.description}
-                  </p>
+                  {/* Monthly */}
+                  <div className="mb-6 pb-6 border-b border-stone-800/40">
+                    <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-stone-600 block mb-1">
+                      {t.pricing.monthlyLabel}
+                    </span>
+                    <span className="font-display text-[26px] font-medium text-gold-500 leading-none">
+                      {plan.monthly}
+                    </span>
+                  </div>
 
                   {/* Features */}
-                  <ul className="flex flex-col gap-3 mb-8">
+                  <ul className="flex flex-col gap-3 mb-8 flex-1">
                     {plan.features.map((feature, fi) => (
                       <li key={fi} className="flex items-start gap-3">
                         <Check size={14} className="text-gold-500/60 flex-shrink-0 mt-0.5" strokeWidth={2} />
