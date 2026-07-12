@@ -20,13 +20,51 @@ export function Contact() {
   const update = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm({ ...form, [field]: e.target.value });
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    await new Promise((r) => setTimeout(r, 1000));
+ const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
+  setLoading(true);
+
+  try {
+    const response = await fetch(
+      "https://n8n.mehans.space/webhook/mehans-lead",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          company: form.company,
+          phone: form.phone,
+          message: form.message,
+          source: "MEHANS Website",
+          submittedAt: new Date().toISOString(),
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Webhook failed");
+    }
+
     setSent(true);
+
+    setForm({
+      name: "",
+      email: "",
+      company: "",
+      phone: "",
+      message: "",
+    });
+
+  } catch (error) {
+    console.error(error);
+    alert("Something went wrong. Please try again.");
+  } finally {
     setLoading(false);
-  };
+  }
+};
 
   return (
     <section id="contact" className="py-24 md:py-44 lg:py-52 relative overflow-hidden">
