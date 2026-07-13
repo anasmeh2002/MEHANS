@@ -4,6 +4,8 @@ interface LogoDef {
   name: string;
   viewBox: string;
   paths: string[];
+  /* Optional per-logo scale tweak so every mark reads at the same optical weight */
+  scale?: number;
 }
 
 const logos: LogoDef[] = [
@@ -71,34 +73,19 @@ const logos: LogoDef[] = [
     name: 'IBM',
     viewBox: '0 0 32 32',
     paths: [
-      'M0 9.5v2h6v-2z',
-      'M0 12.5v2h6v-2z',
-      'M.667 15.5v2h4.666v-2z',
-      'M.667 18.5v2h4.666v-2z',
-      'M0 21.5v2h6v-2z',
-      'M0 24.5v2h6v-2z',
-      'M8.333 9.5v2h1.334v-2z',
-      'M8.333 12.5v2h1.334v-2z',
-      'M8.333 15.5v2h1.334v-2z',
-      'M8.333 18.5v2h1.334v-2z',
-      'M8.333 21.5v2h1.334v-2z',
-      'M8.333 24.5v2h1.334v-2z',
+      'M0 9.5v2h6v-2z','M0 12.5v2h6v-2z','M.667 15.5v2h4.666v-2z','M.667 18.5v2h4.666v-2z',
+      'M0 21.5v2h6v-2z','M0 24.5v2h6v-2z','M8.333 9.5v2h1.334v-2z','M8.333 12.5v2h1.334v-2z',
+      'M8.333 15.5v2h1.334v-2z','M8.333 18.5v2h1.334v-2z','M8.333 21.5v2h1.334v-2z','M8.333 24.5v2h1.334v-2z',
       'M12 9.5v2h5.5c.34 0 .5-.45.5-1s-.16-1-.5-1H12z',
       'M12.833 12.5v2h3.834a1.5 1.5 0 0 0 .5-1c0-.4-.1-.7-.5-1h-3.834z',
-      'M12.833 15.5v2h3v-2z',
-      'M12.833 18.5v2h3v-2z',
+      'M12.833 15.5v2h3v-2z','M12.833 18.5v2h3v-2z',
       'M12 21.5v2h4.667a1.5 1.5 0 0 0 .5-1c0-.4-.1-.7-.5-1H12z',
       'M12 24.5v2h5.5c.34 0 .5-.45.5-1s-.16-1-.5-1H12z',
-      'M20.667 9.5v2H22v-2z',
-      'M20.667 12.5v2H22v-2z',
-      'M20.667 15.5v2H22v-2z',
-      'M20.667 18.5v2H22v-2z',
-      'M20.667 21.5v2H22v-2z',
-      'M20.667 24.5v2H22v-2z',
+      'M20.667 9.5v2H22v-2z','M20.667 12.5v2H22v-2z','M20.667 15.5v2H22v-2z',
+      'M20.667 18.5v2H22v-2z','M20.667 21.5v2H22v-2z','M20.667 24.5v2H22v-2z',
       'M24 9.5v2h5.5c.34 0 .5-.45.5-1s-.16-1-.5-1H24z',
       'M24.833 12.5v2h3.834a1.5 1.5 0 0 0 .5-1c0-.4-.1-.7-.5-1h-3.834z',
-      'M24.833 15.5v2h3v-2z',
-      'M24.833 18.5v2h3v-2z',
+      'M24.833 15.5v2h3v-2z','M24.833 18.5v2h3v-2z',
       'M24 21.5v2h4.667a1.5 1.5 0 0 0 .5-1c0-.4-.1-.7-.5-1H24z',
       'M24 24.5v2h5.5c.34 0 .5-.45.5-1s-.16-1-.5-1H24z',
     ],
@@ -120,17 +107,16 @@ const logos: LogoDef[] = [
   },
 ];
 
-function LogoItem({ logo, index }: { logo: LogoDef; index: number }) {
+function LogoItem({ logo }: { logo: LogoDef }) {
   return (
     <div
-      key={index}
-      className="trusted-logo mx-10 md:mx-14 flex-shrink-0 flex items-center justify-center"
+      className="trusted-logo flex-shrink-0 flex items-center justify-center mx-9 md:mx-12"
       title={logo.name}
     >
       <svg
         viewBox={logo.viewBox}
         fill="currentColor"
-        className="h-7 w-auto"
+        style={{ height: 36, width: 'auto', display: 'block' }}
         aria-label={logo.name}
         role="img"
       >
@@ -146,52 +132,54 @@ export function TrustedBy() {
   const doubled = [...logos, ...logos];
 
   return (
-    <section className="relative bg-[#080808] border-y border-stone-800/40 overflow-hidden">
-      {/* Gold accent lines */}
-      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
+    <section className="relative bg-[#080808] overflow-hidden" style={{ marginTop: '-50px' }}>
+      {/* Top separator */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-stone-700/50 to-transparent" />
+      {/* Bottom gold accent */}
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold-500/18 to-transparent" />
 
-      {/* Ambient radial glow */}
+      {/* Ambient glow */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            'radial-gradient(ellipse 65% 80% at 50% 50%, rgba(201,168,76,0.024) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 70% 90% at 50% 50%, rgba(201,168,76,0.022) 0%, transparent 68%)',
         }}
       />
 
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-12 pb-9 text-center">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-10 text-center">
         <AnimatedSection delay={0}>
-          <p className="text-[9px] font-bold tracking-[0.35em] uppercase text-gold-500 mb-3">
+          <p className="text-[8.5px] font-bold tracking-[0.38em] uppercase text-gold-500 mb-3">
             Trusted by Industry Leaders
           </p>
         </AnimatedSection>
         <AnimatedSection delay={0.08}>
-          <p className="text-stone-500 text-[13px] max-w-lg mx-auto leading-relaxed">
+          <p className="text-stone-600 text-[13px] max-w-md mx-auto leading-relaxed">
             Technologies and platforms trusted across modern real estate and enterprise businesses.
           </p>
         </AnimatedSection>
       </div>
 
-      {/* Marquee */}
-      <div className="relative pb-12">
-        {/* Left fade */}
+      {/* Marquee strip */}
+      <div className="relative pb-14">
+        {/* Left edge fade */}
         <div
-          className="absolute left-0 top-0 bottom-0 w-24 md:w-40 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(to right, #080808 0%, transparent 100%)' }}
+          aria-hidden="true"
+          className="absolute left-0 top-0 bottom-0 w-28 md:w-48 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to right, #080808 0%, rgba(8,8,8,0) 100%)' }}
         />
-        {/* Right fade */}
+        {/* Right edge fade */}
         <div
-          className="absolute right-0 top-0 bottom-0 w-24 md:w-40 z-10 pointer-events-none"
-          style={{ background: 'linear-gradient(to left, #080808 0%, transparent 100%)' }}
+          aria-hidden="true"
+          className="absolute right-0 top-0 bottom-0 w-28 md:w-48 z-10 pointer-events-none"
+          style={{ background: 'linear-gradient(to left, #080808 0%, rgba(8,8,8,0) 100%)' }}
         />
 
-        {/* Scrolling track — hover on wrapper pauses animation via CSS group */}
+        {/* Scrolling row — CSS group pauses all logos on hover */}
         <div className="overflow-hidden group" aria-hidden="true">
           <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
             {doubled.map((logo, i) => (
-              <LogoItem key={`${logo.name}-${i}`} logo={logo} index={i} />
+              <LogoItem key={`${logo.name}-${i}`} logo={logo} />
             ))}
           </div>
         </div>

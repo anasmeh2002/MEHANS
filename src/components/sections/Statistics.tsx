@@ -1,79 +1,204 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ThumbsUp, TrendingDown, Clock, Rocket } from 'lucide-react';
-import { useLanguage } from '../../i18n';
+import { Clock, Zap, Infinity, HeadphonesIcon } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
-const icons = [ThumbsUp, TrendingDown, Clock, Rocket];
+interface Metric {
+  value: string;
+  valueSmall?: string;
+  label: string;
+  sublabel: string;
+  icon: React.ElementType;
+}
 
-function CountUp({ to, suffix, prefix }: { to: number; suffix: string; prefix: string }) {
-  const [n, setN] = useState(0);
-  const ref = useRef<HTMLSpanElement>(null);
+const metrics: Metric[] = [
+  {
+    value: '24/7',
+    label: 'AI Availability',
+    sublabel: 'Your business never stops responding.',
+    icon: Clock,
+  },
+  {
+    value: 'Days',
+    valueSmall: 'Deployment',
+    label: 'Deployment',
+    sublabel: 'Fast implementation with minimal disruption.',
+    icon: Zap,
+  },
+  {
+    value: '∞',
+    label: 'Workflow Automations',
+    sublabel: 'Custom automations built for your business.',
+    icon: Infinity,
+  },
+  {
+    value: 'Enterprise',
+    label: 'Dedicated Support',
+    sublabel: 'Reliable long-term optimization and assistance.',
+    icon: HeadphonesIcon,
+  },
+];
+
+function StatCard({ metric, index }: { metric: Metric; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref as React.RefObject<Element>, { once: true });
+  const Icon = metric.icon;
 
-  useEffect(() => {
-    if (!inView) return;
-    const duration = 1600;
-    const start = performance.now();
-    const tick = (now: number) => {
-      const p = Math.min((now - start) / duration, 1);
-      const eased = 1 - Math.pow(1 - p, 4);
-      setN(parseFloat((eased * to).toFixed(to % 1 !== 0 ? 1 : 0)));
-      if (p < 1) requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
-  }, [inView, to]);
+  const isDeployment = metric.valueSmall !== undefined;
 
-  return <span ref={ref}>{prefix}{n}{suffix}</span>;
+  return (
+    <AnimatedSection delay={index * 0.1}>
+      <motion.div
+        ref={ref}
+        whileHover={{ y: -6 }}
+        transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+        className="stats-card group relative flex flex-col items-center text-center px-6 py-10 md:py-12 cursor-default"
+      >
+        {/* Glass background */}
+        <div className="absolute inset-0 bg-gradient-to-b from-stone-800/10 to-stone-900/20 backdrop-blur-sm" />
+        {/* Gold border — softens on default, glows on hover */}
+        <div className="absolute inset-0 border border-stone-700/35 group-hover:border-gold-500/35 transition-colors duration-400 rounded-sm" />
+        {/* Top gold line accent */}
+        <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent group-hover:via-gold-500/50 transition-all duration-500" />
+        {/* Hover inner glow */}
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-sm"
+          style={{ boxShadow: 'inset 0 0 40px rgba(201,168,76,0.04), 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(201,168,76,0.15)' }}
+        />
+
+        <div className="relative z-10 flex flex-col items-center">
+          {/* Icon */}
+          <div className="w-10 h-10 flex items-center justify-center border border-stone-700/50 group-hover:border-gold-500/30 mb-5 transition-colors duration-400 rounded-sm flex-shrink-0">
+            <Icon
+              size={17}
+              strokeWidth={1.4}
+              className="text-stone-500 group-hover:text-gold-500 transition-colors duration-400"
+            />
+          </div>
+
+          {/* Primary value */}
+          <motion.div
+            initial={{ opacity: 0, y: 8 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: index * 0.1 + 0.2, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-1"
+          >
+            {isDeployment ? (
+              <div className="flex flex-col items-center gap-0.5">
+                <span className="font-display text-[11px] font-normal tracking-[0.22em] uppercase text-stone-500 leading-none">
+                  {metric.valueSmall}
+                </span>
+                <span className="font-display text-4xl md:text-5xl font-medium text-gold-500 leading-none tracking-tight">
+                  {metric.value}
+                </span>
+              </div>
+            ) : (
+              <span className="font-display text-4xl md:text-5xl font-medium text-gold-500 leading-none tracking-tight">
+                {metric.value}
+              </span>
+            )}
+          </motion.div>
+
+          {/* Label */}
+          <p className="text-stone-200 text-[13px] font-semibold tracking-wide mb-2 mt-2">
+            {metric.label}
+          </p>
+
+          {/* Sublabel */}
+          <p className="text-stone-500 text-[12px] leading-relaxed max-w-[160px]">
+            {metric.sublabel}
+          </p>
+        </div>
+      </motion.div>
+    </AnimatedSection>
+  );
 }
 
 export function Statistics() {
-  const { t } = useLanguage();
-
-  const items = [
-    { value: 98, suffix: '%', prefix: '', label: t.stats.satisfaction, icon: icons[0] },
-    { value: 80, suffix: '%', prefix: '', label: t.stats.reduction, icon: icons[1] },
-    { value: 24, suffix: '/7', prefix: '', label: t.stats.availability, icon: icons[2] },
-    { value: 2, suffix: '', prefix: '≤ ', label: t.stats.deployment, icon: icons[3] },
-  ];
-
   return (
-    <section className="relative bg-stone-900/50 border-y border-stone-700/30 overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/25 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/25 to-transparent" />
-      <div className="absolute inset-0 circuit-bg opacity-35 pointer-events-none" />
+    <section className="relative bg-[#080808] overflow-hidden">
+      {/* Top separator */}
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-gold-500/20 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-y lg:divide-y-0 divide-x-0 lg:divide-x divide-stone-700/30">
-          {items.map((item, i) => {
-            const Icon = item.icon;
-            return (
-              <AnimatedSection key={item.label} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{ y: -3 }}
-                  transition={{ duration: 0.25 }}
-                  className="py-10 md:py-14 lg:py-16 px-4 md:px-6 lg:px-10 text-center group cursor-default relative overflow-hidden"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-b from-gold-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Circuit texture */}
+      <div className="absolute inset-0 circuit-bg opacity-20 pointer-events-none" />
 
-                  <div className="relative z-10">
-                    <div className="w-11 h-11 border border-stone-700/60 group-hover:border-gold-500/35 mx-auto flex items-center justify-center mb-4 md:mb-5 transition-colors duration-400 rounded-sm">
-                      <Icon size={20} strokeWidth={1.5} className="md:hidden text-stone-500 group-hover:text-gold-500 transition-colors duration-400" />
-                      <Icon size={18} strokeWidth={1.5} className="hidden md:block text-stone-500 group-hover:text-gold-500 transition-colors duration-400" />
-                    </div>
+      {/* Soft ambient glow */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse 80% 60% at 50% 0%, rgba(201,168,76,0.03) 0%, transparent 65%)',
+        }}
+      />
 
-                    <div className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-gold-500 mb-2 leading-none group-hover:scale-[1.02] transition-transform duration-400 origin-bottom inline-block">
-                      <CountUp to={item.value} suffix={item.suffix} prefix={item.prefix} />
-                    </div>
-
-                    <div className="text-stone-300 text-[12px] md:text-[13px] font-medium">{item.label}</div>
-                  </div>
-                </motion.div>
-              </AnimatedSection>
-            );
-          })}
+      {/* Cards grid */}
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-16 md:pt-20 pb-16 md:pb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          {metrics.map((metric, i) => (
+            <StatCard key={metric.label} metric={metric} index={i} />
+          ))}
         </div>
       </div>
+
+      {/* Bottom separator */}
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-stone-700/40 to-transparent" />
+    </section>
+  );
+}
+
+/* ─── Inline CTA below statistics ─────────────────────────────── */
+export function StatsCTA() {
+  const scrollToContact = () => {
+    const el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  return (
+    <section className="relative bg-[#080808] overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 55% 70% at 50% 60%, rgba(201,168,76,0.035) 0%, transparent 70%)' }}
+      />
+
+      <div className="relative max-w-3xl mx-auto px-6 lg:px-10 py-20 md:py-24 text-center">
+        <AnimatedSection delay={0}>
+          <p className="text-[8.5px] font-bold tracking-[0.38em] uppercase text-gold-500 mb-5">
+            Get Started
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.08}>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-stone-50 leading-tight mb-4">
+            Ready to automate<br className="hidden sm:block" /> your business?
+          </h2>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.15}>
+          <p className="text-stone-400 text-[15px] md:text-base leading-relaxed max-w-xl mx-auto mb-10">
+            Let's build intelligent systems that save time, improve client experience,
+            and help your business scale.
+          </p>
+        </AnimatedSection>
+
+        <AnimatedSection delay={0.22}>
+          <motion.button
+            onClick={scrollToContact}
+            whileHover={{ scale: 1.03, boxShadow: '0 8px 40px rgba(201,168,76,0.35)' }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-gold-500 text-[#080808] text-[13px] font-semibold tracking-[0.08em] uppercase border border-gold-500 transition-colors duration-300 relative overflow-hidden group"
+          >
+            {/* Shimmer on hover */}
+            <motion.span
+              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -translate-x-full"
+              whileHover={{ translateX: '200%' }}
+              transition={{ duration: 0.65, ease: 'easeInOut' }}
+              aria-hidden="true"
+            />
+            <span className="relative">Book a Free Strategy Call</span>
+          </motion.button>
+        </AnimatedSection>
+      </div>
+
+      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-stone-700/40 to-transparent" />
     </section>
   );
 }

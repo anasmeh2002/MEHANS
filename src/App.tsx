@@ -3,7 +3,7 @@ import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
 import { TrustedBy } from './components/sections/TrustedBy';
-import { Statistics } from './components/sections/Statistics';
+import { Statistics, StatsCTA } from './components/sections/Statistics';
 import { Services } from './components/sections/Services';
 import { WhoWeHelp } from './components/sections/WhoWeHelp';
 import { WhyMehans } from './components/sections/WhyMehans';
@@ -30,6 +30,7 @@ export default function App() {
         <Hero />
         <TrustedBy />
         <Statistics />
+        <StatsCTA />
         <AIWorkflow />
         <DashboardPreview />
         <ClientJourney />
