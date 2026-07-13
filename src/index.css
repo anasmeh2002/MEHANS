@@ -526,6 +526,22 @@ textarea:focus-visible {
 }
 
 /* ─────────────────────────────────────────────
+   TRUSTED-BY MARQUEE LOGOS
+───────────────────────────────────────────── */
+.trusted-logo {
+  color: #e7e5e4;
+  opacity: 0.55;
+  transition: opacity 0.35s ease, transform 0.35s ease, filter 0.35s ease;
+  will-change: transform, opacity, filter;
+}
+.trusted-logo:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 7px rgba(201, 168, 76, 0.5)) brightness(1.15);
+  color: #f5f5f4;
+}
+
+/* ─────────────────────────────────────────────
    SMALL MOBILE ADJUSTMENTS (< 480px)
 ───────────────────────────────────────────── */
 @media (max-width: 479px) {

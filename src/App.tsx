@@ -2,6 +2,7 @@ import { LoadingScreen } from './components/layout/LoadingScreen';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
+import { TrustedBy } from './components/sections/TrustedBy';
 import { Statistics } from './components/sections/Statistics';
 import { Services } from './components/sections/Services';
 import { WhoWeHelp } from './components/sections/WhoWeHelp';
@@ -27,6 +28,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <TrustedBy />
         <Statistics />
         <AIWorkflow />
         <DashboardPreview />

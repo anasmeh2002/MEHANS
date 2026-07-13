@@ -111,6 +111,7 @@ export default {
         'float-slow': 'float 11s ease-in-out infinite 2s',
         'spin-slow':  'spin 10s linear infinite',
         'pulse-soft': 'pulseSoft 3s ease-in-out infinite',
+        'marquee':    'marquee 28s linear infinite',
       },
       keyframes: {
         float: {
@@ -120,6 +121,10 @@ export default {
         pulseSoft: {
           '0%, 100%': { opacity: '0.4' },
           '50%':       { opacity: '0.9' },
+        },
+        marquee: {
+          '0%':   { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-50%)' },
         },
       },
       backgroundImage: {
