@@ -26,7 +26,7 @@ export function Contact() {
 
   try {
     const response = await fetch(
-      "https://n8n.mehans.space/webhook/mehans-lead",
+      "https://n8n.mehans.space/webhook-test/mehans-lead",
       {
         method: "POST",
         headers: {
