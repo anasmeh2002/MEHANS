@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Clock, Zap, Infinity, HeadphonesIcon } from 'lucide-react';
 import { AnimatedSection } from '../ui/AnimatedSection';
+import { useLanguage } from '../../i18n';
 
 interface Metric {
   value: string;
@@ -147,6 +148,7 @@ export function Statistics() {
 
 /* ─── Inline CTA below statistics ─────────────────────────────── */
 export function StatsCTA() {
+  const { t } = useLanguage();
   const scrollToContact = () => {
     const el = document.getElementById('contact');
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -161,20 +163,20 @@ export function StatsCTA() {
       <div className="relative max-w-3xl mx-auto px-6 lg:px-10 py-20 md:py-24 text-center">
         <AnimatedSection delay={0}>
           <p className="text-[8.5px] font-bold tracking-[0.38em] uppercase text-gold-500 mb-5">
-            Get Started
+            {t.labels.getStarted}
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay={0.08}>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-medium text-stone-50 leading-tight mb-4">
-            Ready to automate<br className="hidden sm:block" /> your business?
+            {t.cta.headline1}{' '}
+            <span className="italic font-light text-stone-500">{t.cta.headline2}</span>
           </h2>
         </AnimatedSection>
 
         <AnimatedSection delay={0.15}>
           <p className="text-stone-400 text-[15px] md:text-base leading-relaxed max-w-xl mx-auto mb-10">
-            Let's build intelligent systems that save time, improve client experience,
-            and help your business scale.
+            {t.cta.description}
           </p>
         </AnimatedSection>
 
@@ -184,7 +186,7 @@ export function StatsCTA() {
             whileHover={{ scale: 1.03, boxShadow: '0 8px 40px rgba(201,168,76,0.35)' }}
             whileTap={{ scale: 0.97 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-gold-500 text-[#080808] text-[13px] font-semibold tracking-[0.08em] uppercase border border-gold-500 transition-colors duration-300 relative overflow-hidden group"
+            className="inline-flex items-center gap-2.5 px-8 py-3.5 bg-gold-500 text-[#080808] text-[13px] font-semibold tracking-[0.08em] uppercase border border-gold-500 transition-colors duration-300 relative overflow-hidden group min-h-[48px]"
           >
             {/* Shimmer on hover */}
             <motion.span
@@ -193,8 +195,31 @@ export function StatsCTA() {
               transition={{ duration: 0.65, ease: 'easeInOut' }}
               aria-hidden="true"
             />
-            <span className="relative">Book a Free Strategy Call</span>
+            <span className="relative">{t.cta.cta}</span>
           </motion.button>
+        </AnimatedSection>
+
+        {/* Trust badges */}
+        <AnimatedSection delay={0.3}>
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mt-12">
+            {[
+              { key: 'security', label: t.trust.security },
+              { key: 'gdpr', label: t.trust.gdpr },
+              { key: 'encryption', label: t.trust.encryption },
+              { key: 'monitoring', label: t.trust.monitoring },
+              { key: 'cloud', label: t.trust.cloud },
+            ].map((badge) => (
+              <div
+                key={badge.key}
+                className="flex items-center gap-2 text-stone-600 text-[11px] tracking-wide"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="text-gold-500/70 flex-shrink-0">
+                  <path d="M20 6L9 17l-5-5" />
+                </svg>
+                {badge.label}
+              </div>
+            ))}
+          </div>
         </AnimatedSection>
       </div>
 

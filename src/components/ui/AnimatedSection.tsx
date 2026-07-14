@@ -19,14 +19,12 @@ export function AnimatedSection({ children, className = '', delay = 0, direction
       y: direction === 'up' ? 32 : direction === 'down' ? -32 : 0,
       x: direction === 'left' ? 32 : direction === 'right' ? -32 : 0,
       scale: direction === 'none' ? 0.97 : 1,
-      filter: blur ? 'blur(8px)' : 'blur(0px)',
     },
     visible: {
       opacity: 1,
       y: 0,
       x: 0,
       scale: 1,
-      filter: 'blur(0px)',
     },
   };
 
