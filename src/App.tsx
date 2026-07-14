@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/react';
 import { LoadingScreen } from './components/layout/LoadingScreen';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -23,6 +24,7 @@ import { CursorGlow } from './components/ui/CursorGlow';
 export default function App() {
   return (
     <>
+      <SpeedInsights />
       <CursorGlow />
       <LoadingScreen />
       <Navbar />
