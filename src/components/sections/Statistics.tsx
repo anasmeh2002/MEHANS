@@ -12,35 +12,8 @@ interface Metric {
   icon: React.ElementType;
 }
 
-const metrics: Metric[] = [
-  {
-    value: '24/7',
-    label: 'AI Availability',
-    sublabel: 'Your business never stops responding.',
-    icon: Clock,
-  },
-  {
-    value: 'Days',
-    valueSmall: 'Deployment',
-    label: 'Deployment',
-    sublabel: 'Fast implementation with minimal disruption.',
-    icon: Zap,
-  },
-  {
-    value: '∞',
-    label: 'Workflow Automations',
-    sublabel: 'Custom automations built for your business.',
-    icon: Infinity,
-  },
-  {
-    value: 'Enterprise',
-    label: 'Dedicated Support',
-    sublabel: 'Reliable long-term optimization and assistance.',
-    icon: HeadphonesIcon,
-  },
-];
-
 function StatCard({ metric, index }: { metric: Metric; index: number }) {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref as React.RefObject<Element>, { once: true });
   const Icon = metric.icon;
@@ -115,6 +88,36 @@ function StatCard({ metric, index }: { metric: Metric; index: number }) {
 }
 
 export function Statistics() {
+  const { t } = useLanguage();
+
+  const metrics: Metric[] = [
+    {
+      value: '24/7',
+      label: t.stats.availability,
+      sublabel: t.stats.availabilityDesc,
+      icon: Clock,
+    },
+    {
+      value: t.stats.deploymentValue,
+      valueSmall: t.stats.deploymentLabel,
+      label: t.stats.deployment,
+      sublabel: t.stats.deploymentDesc,
+      icon: Zap,
+    },
+    {
+      value: '∞',
+      label: t.stats.workflow,
+      sublabel: t.stats.workflowDesc,
+      icon: Infinity,
+    },
+    {
+      value: t.stats.enterpriseValue,
+      label: t.stats.enterprise,
+      sublabel: t.stats.enterpriseDesc,
+      icon: HeadphonesIcon,
+    },
+  ];
+
   return (
     <section className="relative bg-[#080808] overflow-hidden">
       {/* Top separator */}

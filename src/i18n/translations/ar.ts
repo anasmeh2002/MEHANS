@@ -36,14 +36,17 @@ export const ar = {
 
   // Statistics Section
   stats: {
-    satisfaction: 'رضا العملاء',
-    satisfactionDesc: 'جودة مؤسسية',
-    reduction: 'عمل يدوي أقل',
-    reductionDesc: 'خلال 90 يوماً',
-    availability: 'توفر الخدمة',
-    availabilityDesc: 'لا تفوتك فرصة',
-    deployment: 'متوسط التشغيل',
-    deploymentDesc: 'من الاتفاق إلى الإطلاق',
+    availability: 'متاح على مدار الساعة',
+    availabilityDesc: 'استجابة فورية لعملائك في أي وقت.',
+    deployment: 'إطلاق سريع',
+    deploymentLabel: 'خلال أيام',
+    deploymentValue: 'أيام',
+    deploymentDesc: 'تشغيل النظام خلال أيام قليلة دون تعقيد.',
+    workflow: 'سير العمل الذكي',
+    workflowDesc: 'تنفيذ المتابعات والمهام بكفاءة ودقة.',
+    enterprise: 'دعم مخصص للشركات',
+    enterpriseValue: 'مؤسسات',
+    enterpriseDesc: 'فريق متخصص يرافقك لضمان أفضل النتائج.',
   },
 
   // Section Labels

@@ -32,14 +32,17 @@ export const en = {
   },
 
   stats: {
-    satisfaction: 'Client Satisfaction',
-    satisfactionDesc: 'Enterprise-grade delivery',
-    reduction: 'Less Manual Work',
-    reductionDesc: 'Within 90 days',
     availability: 'AI Availability',
-    availabilityDesc: 'Never miss a lead',
-    deployment: 'Avg. Deployment',
-    deploymentDesc: 'From signed to live',
+    availabilityDesc: 'Your business never stops responding.',
+    deployment: 'Deployment',
+    deploymentLabel: 'Within Days',
+    deploymentValue: 'Days',
+    deploymentDesc: 'Fast implementation with minimal disruption.',
+    workflow: 'Workflow Automations',
+    workflowDesc: 'Custom automations built for your business.',
+    enterprise: 'Dedicated Support',
+    enterpriseValue: 'Enterprise',
+    enterpriseDesc: 'Reliable long-term optimization and assistance.',
   },
 
   labels: {

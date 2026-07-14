@@ -36,14 +36,17 @@ export const fr = {
 
   // Statistics Section
   stats: {
-    satisfaction: 'Satisfaction Client',
-    satisfactionDesc: 'Excellence enterprise',
-    reduction: 'Réduction des Tâches Manuelles',
-    reductionDesc: 'Moyenne en 90 jours',
     availability: 'Disponibilité IA',
-    availabilityDesc: 'Aucun prospect manqué',
-    deployment: 'Déploiement Moyen',
-    deploymentDesc: 'Du contrat au déploiement',
+    availabilityDesc: 'Réponse instantanée à vos clients à tout moment.',
+    deployment: 'Déploiement',
+    deploymentLabel: 'En quelques jours',
+    deploymentValue: 'Jours',
+    deploymentDesc: 'Mise en service rapide sans complexité.',
+    workflow: 'Automatisations de flux',
+    workflowDesc: 'Exécution des suivis et tâches avec efficacité et précision.',
+    enterprise: 'Support dédié',
+    enterpriseValue: 'Enterprise',
+    enterpriseDesc: 'Une équipe spécialisée pour garantir les meilleurs résultats.',
   },
 
   // Section Labels

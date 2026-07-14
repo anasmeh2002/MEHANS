@@ -531,7 +531,7 @@ textarea:focus-visible {
 .trusted-logo {
   color: #ffffff;
   opacity: 0.70;
-  transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease, color 0.3s ease;
   animation: trusted-float 6s ease-in-out infinite;
   will-change: transform, opacity, filter;
 }
@@ -541,6 +541,14 @@ textarea:focus-visible {
   filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.55)) brightness(1.1);
   color: #C9A84C;
   animation-play-state: paused;
+}
+.trusted-logo-name {
+  transition: color 0.3s ease, opacity 0.3s ease;
+  opacity: 0.5;
+}
+.trusted-logo:hover .trusted-logo-name {
+  color: #C9A84C;
+  opacity: 1;
 }
 @keyframes trusted-float {
   0%, 100% { transform: translateY(0); }
