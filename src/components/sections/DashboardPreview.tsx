@@ -54,7 +54,7 @@ export function DashboardPreview() {
   const stats = [
     { label: t.dashboard.stat1Label, value: 47, suffix: t.dashboard.stat1Suffix },
     { label: t.dashboard.stat2Label, value: 12, suffix: t.dashboard.stat2Suffix },
-    { label: t.dashboard.stat3Label, value: 84, suffix: t.dashboard.stat3Suffix },
+    { label: t.dashboard.stat3Label, value: 210, suffix: t.dashboard.stat3Suffix },
   ];
 
   const kpis = [
