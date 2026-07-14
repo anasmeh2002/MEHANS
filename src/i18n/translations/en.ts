@@ -45,6 +45,11 @@ export const en = {
     enterpriseDesc: 'Reliable long-term optimization and assistance.',
   },
 
+  trustedBy: {
+    title: 'Trusted by Industry Leaders',
+    subtitle: 'Technologies and platforms trusted across modern real estate and enterprise businesses.',
+  },
+
   labels: {
     whatWeBuild: 'What We Build',
     whoWeServe: 'Who We Serve',

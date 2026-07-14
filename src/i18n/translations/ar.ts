@@ -49,6 +49,11 @@ export const ar = {
     enterpriseDesc: 'فريق متخصص يرافقك لضمان أفضل النتائج.',
   },
 
+  trustedBy: {
+    title: 'موثوق به من قبل رواد القطاع',
+    subtitle: 'نعتمد على أحدث التقنيات والمنصات المستخدمة في قطاع العقارات والأعمال الحديثة.',
+  },
+
   // Section Labels
   labels: {
     whatWeBuild: 'ما نبنيه',

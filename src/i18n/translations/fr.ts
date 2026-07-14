@@ -49,6 +49,11 @@ export const fr = {
     enterpriseDesc: 'Une équipe spécialisée pour garantir les meilleurs résultats.',
   },
 
+  trustedBy: {
+    title: 'Trust by Industry Leaders',
+    subtitle: "Technologies et plateformes de confiance pour l'immobilier moderne et les entreprises.",
+  },
+
   // Section Labels
   labels: {
     whatWeBuild: 'Ce Que Nous Créons',
