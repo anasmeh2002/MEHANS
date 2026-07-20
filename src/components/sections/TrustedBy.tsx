@@ -116,7 +116,6 @@ export function TrustedBy() {
     <section
       ref={sectionRef}
       className="relative bg-[#080808] overflow-hidden"
-      style={{ marginTop: '-50px' }}
     >
       {/* Top separator */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-stone-700/50 to-transparent" />

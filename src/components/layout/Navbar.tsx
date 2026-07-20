@@ -6,9 +6,9 @@ import { useLanguage } from '../../i18n';
 const links = [
   { labelKey: 'services', href: '#services' },
   { labelKey: 'solutions', href: '#solutions' },
-  { labelKey: 'platform', href: '#ai-advantages' },
+  { labelKey: 'platform', href: '#dashboard' },
   { labelKey: 'process', href: '#process' },
-  { labelKey: 'about', href: '#why-mehans' },
+  { labelKey: 'about', href: '#founder' },
 ];
 
 const languages = [

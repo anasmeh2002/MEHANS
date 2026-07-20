@@ -379,6 +379,27 @@
 }
 
 /* ─────────────────────────────────────────────
+   HERO ENTER — fade + slight upward motion
+───────────────────────────────────────────── */
+@keyframes heroEnter {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-enter {
+  opacity: 0;
+  animation: heroEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Scroll cue bounce */
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(4px); }
+}
+.scroll-bounce {
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────
    SCALE IN ANIMATION
 ───────────────────────────────────────────── */
 @keyframes scaleIn {
@@ -523,6 +544,27 @@ textarea:focus-visible {
       transition-duration: 0.01ms !important;
     }
   }
+}
+
+/* Process timeline line */
+@keyframes processLine {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+.process-line {
+  transform-origin: top;
+  animation: processLine 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+/* ─────────────────────────────────────────────
+   SPARK CHART BAR ANIMATION
+───────────────────────────────────────────── */
+@keyframes sparkBar {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+.spark-bar {
+  animation: sparkBar 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 /* ─────────────────────────────────────────────
