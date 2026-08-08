@@ -53,34 +53,31 @@ export function LoadingScreen() {
           />
 
           {/* Center content */}
-          <div className="relative flex flex-col items-center gap-12">
-            {/* Logo mark */}
+          <div className="relative flex flex-col items-center gap-10">
+            {/* Logo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.05, ease: [0.34, 1.56, 0.64, 1] }}
               className="relative"
             >
-              <div className="w-16 h-16 border-[1.5px] border-gold-500/90 flex items-center justify-center relative">
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.5, ease: [0.34, 1.56, 0.64, 1] }}
-                  className="w-5 h-5 bg-gold-500"
-                />
-                {/* Rotating outer ring */}
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
-                  className="absolute -inset-3 border border-gold-500/15 border-t-gold-500/50"
-                />
-                {/* Second rotating ring */}
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-                  className="absolute -inset-5 border border-gold-500/10 border-b-gold-500/30"
-                />
-              </div>
+              <img
+                src="/Image%20%5BVectorized%5D%20(1).png"
+                alt="MEHANS"
+                className="w-24 h-24 object-contain relative z-10"
+              />
+              {/* Rotating outer ring */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+                className="absolute -inset-3 border border-gold-500/15 border-t-gold-500/50 rounded-full"
+              />
+              {/* Second rotating ring */}
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
+                className="absolute -inset-5 border border-gold-500/10 border-b-gold-500/30 rounded-full"
+              />
             </motion.div>
 
             {/* Wordmark */}
