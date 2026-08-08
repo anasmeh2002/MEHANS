@@ -52,14 +52,22 @@ export function Navbar() {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="group flex items-center flex-shrink-0"
+            className="group flex items-center gap-3 flex-shrink-0"
             aria-label="MEHANS home"
           >
             <img
               src="/Image%20%5BVectorized%5D%20(1).png"
               alt="MEHANS"
-              className="h-12 w-12 object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
             />
+            <div className="flex flex-col leading-none">
+              <span className="font-display text-[17px] font-medium tracking-[0.2em] text-stone-100 uppercase">
+                MEHANS
+              </span>
+              <span className="text-[8px] font-semibold tracking-[0.3em] uppercase text-gold-500/60 mt-1 no-flip">
+                {t.loading.tagline}
+              </span>
+            </div>
           </button>
 
           {/* Desktop links */}
@@ -161,11 +169,21 @@ export function Navbar() {
             <div className="absolute inset-0 grid-bg-fine opacity-50 pointer-events-none" />
 
             <div className="pt-28 px-10 flex flex-col gap-0 relative z-10">
-              <img
-                src="/Image%20%5BVectorized%5D%20(1).png"
-                alt="MEHANS"
-                className="h-14 w-14 object-contain mb-8"
-              />
+              <div className="flex items-center gap-3 mb-8">
+                <img
+                  src="/Image%20%5BVectorized%5D%20(1).png"
+                  alt="MEHANS"
+                  className="h-12 w-12 object-contain"
+                />
+                <div className="flex flex-col leading-none">
+                  <span className="font-display text-[20px] font-medium tracking-[0.2em] text-stone-100 uppercase">
+                    MEHANS
+                  </span>
+                  <span className="text-[9px] font-semibold tracking-[0.3em] uppercase text-gold-500/60 mt-1 no-flip">
+                    {t.loading.tagline}
+                  </span>
+                </div>
+              </div>
               <div className="flex flex-col divide-y divide-stone-800/35">
                 {links.map((l, i) => (
                 <motion.button

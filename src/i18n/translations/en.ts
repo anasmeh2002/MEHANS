@@ -15,8 +15,8 @@ export const en = {
 
   hero: {
     eyebrow: 'ENTERPRISE AI FOR REAL ESTATE',
-    headline1: 'Every Lead.',
-    headline2: 'Captured.',
+    headline1: 'Every Lead',
+    headline2: 'Captured',
     subheadline: 'Capture, qualify, follow up, and book appointments automatically with AI — 24/7, without hiring additional staff.',
     badge1: 'Responds in Under 90 Seconds',
     badge2: 'Built for Real Estate Agencies',

@@ -18,8 +18,8 @@ export const fr = {
   // Hero Section
   hero: {
     eyebrow: 'IA ENTERPRISE POUR L\'IMMOBILIER',
-    headline1: 'Chaque Prospect.',
-    headline2: 'Capturé.',
+    headline1: 'Chaque Prospect',
+    headline2: 'Capturé',
     subheadline: 'Capturez, qualifiez, relancez et réservez des rendez-vous automatiquement avec l\'IA — 24h/24, sans recruter de personnel supplémentaire.',
     badge1: 'Réponse en Moins de 90 Secondes',
     badge2: 'Conçu pour les Agences Immobilières',
