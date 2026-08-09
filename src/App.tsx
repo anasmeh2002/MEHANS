@@ -11,6 +11,7 @@ import { Founder } from './components/sections/Founder';
 import { CTA } from './components/sections/CTA';
 import { Contact } from './components/sections/Contact';
 import { MobileStickyCTA } from './components/ui/MobileStickyCTA';
+import { DesktopStickyCTA } from './components/ui/DesktopStickyCTA';
 import { CursorGlow } from './components/ui/CursorGlow';
 import { LazySection } from './components/ui/LazySection';
 
@@ -33,6 +34,7 @@ export default function App() {
       </main>
       <Footer />
       <MobileStickyCTA />
+      <DesktopStickyCTA />
     </>
   );
 }
