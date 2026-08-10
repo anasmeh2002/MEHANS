@@ -6,9 +6,9 @@ import { useLanguage } from '../../i18n';
 const links = [
   { labelKey: 'services', href: '#services' },
   { labelKey: 'solutions', href: '#solutions' },
-  { labelKey: 'platform', href: '#dashboard' },
+  { labelKey: 'platform', href: '#ai-advantages' },
   { labelKey: 'process', href: '#process' },
-  { labelKey: 'about', href: '#founder' },
+  { labelKey: 'about', href: '#why-mehans' },
 ];
 
 const languages = [
@@ -52,21 +52,19 @@ export function Navbar() {
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="group flex items-center gap-3 flex-shrink-0"
-            aria-label="MEHANS home"
+            className="group flex items-center gap-3.5 flex-shrink-0"
           >
-            <img
-              src="/Image%20%5BVectorized%5D%20(1).png"
-              alt="MEHANS"
-              className="h-10 w-10 object-contain transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="flex flex-col leading-none">
-              <span className="font-display text-[17px] font-medium tracking-[0.2em] text-stone-100 uppercase">
+            <div className="w-8 h-8 border border-gold-500/90 flex items-center justify-center transition-all duration-400 group-hover:border-gold-400 relative">
+              <div className="w-2.5 h-2.5 bg-gold-500 group-hover:bg-gold-400 transition-colors duration-300" />
+              <div className="absolute -inset-1 border border-gold-500/10 group-hover:border-gold-500/20 transition-colors duration-400" />
+            </div>
+            <div>
+              <span className="font-display text-[18px] font-medium tracking-[0.2em] text-stone-100 leading-none">
                 MEHANS
               </span>
-              <span className="text-[8px] font-semibold tracking-[0.3em] uppercase text-gold-500/60 mt-1 no-flip">
+              <div className="text-[8px] font-semibold tracking-[0.3em] uppercase text-gold-500/50 leading-none mt-1 hidden sm:block">
                 {t.loading.tagline}
-              </span>
+              </div>
             </div>
           </button>
 
@@ -168,24 +166,8 @@ export function Navbar() {
             {/* Grid overlay */}
             <div className="absolute inset-0 grid-bg-fine opacity-50 pointer-events-none" />
 
-            <div className="pt-28 px-10 flex flex-col gap-0 relative z-10">
-              <div className="flex items-center gap-3 mb-8">
-                <img
-                  src="/Image%20%5BVectorized%5D%20(1).png"
-                  alt="MEHANS"
-                  className="h-12 w-12 object-contain"
-                />
-                <div className="flex flex-col leading-none">
-                  <span className="font-display text-[20px] font-medium tracking-[0.2em] text-stone-100 uppercase">
-                    MEHANS
-                  </span>
-                  <span className="text-[9px] font-semibold tracking-[0.3em] uppercase text-gold-500/60 mt-1 no-flip">
-                    {t.loading.tagline}
-                  </span>
-                </div>
-              </div>
-              <div className="flex flex-col divide-y divide-stone-800/35">
-                {links.map((l, i) => (
+            <div className="pt-32 px-10 flex flex-col gap-0 divide-y divide-stone-800/35 relative z-10">
+              {links.map((l, i) => (
                 <motion.button
                   key={l.href}
                   initial={{ opacity: 0, x: -18 }}
@@ -196,8 +178,7 @@ export function Navbar() {
                 >
                   {t.nav[l.labelKey as keyof typeof t.nav] || l.labelKey}
                 </motion.button>
-                ))}
-              </div>
+              ))}
             </div>
             <motion.div
               initial={{ opacity: 0 }}

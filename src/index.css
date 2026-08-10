@@ -379,27 +379,6 @@
 }
 
 /* ─────────────────────────────────────────────
-   HERO ENTER — fade + slight upward motion
-───────────────────────────────────────────── */
-@keyframes heroEnter {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.hero-enter {
-  opacity: 0;
-  animation: heroEnter 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-/* Scroll cue bounce */
-@keyframes scrollBounce {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(4px); }
-}
-.scroll-bounce {
-  animation: scrollBounce 2s ease-in-out infinite;
-}
-
-/* ─────────────────────────────────────────────
    SCALE IN ANIMATION
 ───────────────────────────────────────────── */
 @keyframes scaleIn {
@@ -546,39 +525,22 @@ textarea:focus-visible {
   }
 }
 
-/* Process timeline line */
-@keyframes processLine {
-  from { transform: scaleY(0); }
-  to   { transform: scaleY(1); }
-}
-.process-line {
-  transform-origin: top;
-  animation: processLine 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
-}
-
-/* ─────────────────────────────────────────────
-   SPARK CHART BAR ANIMATION
-───────────────────────────────────────────── */
-@keyframes sparkBar {
-  from { transform: scaleY(0); }
-  to   { transform: scaleY(1); }
-}
-.spark-bar {
-  animation: sparkBar 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
 /* ─────────────────────────────────────────────
    TRUSTED-BY MARQUEE LOGOS
 ───────────────────────────────────────────── */
 .trusted-logo {
   color: #ffffff;
   opacity: 0.70;
-  transition: opacity 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease, filter 0.3s ease, color 0.3s ease;
+  animation: trusted-float 6s ease-in-out infinite;
+  will-change: transform, opacity, filter;
 }
 .trusted-logo:hover {
   opacity: 1;
   transform: scale(1.05);
+  filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.55)) brightness(1.1);
   color: #C9A84C;
+  animation-play-state: paused;
 }
 .trusted-logo-name {
   transition: color 0.3s ease, opacity 0.3s ease;
@@ -588,32 +550,12 @@ textarea:focus-visible {
   color: #C9A84C;
   opacity: 1;
 }
-
-/* Marquee track — single GPU-composited animation for all logos.
-   Track contains 3 copies; translating -33.33% moves exactly one
-   copy width, creating a seamless infinite loop with no gaps. */
-.trusted-marquee-track {
-  animation: trusted-marquee 28s linear infinite;
-  will-change: transform;
+@keyframes trusted-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
 }
-@keyframes trusted-marquee {
-  0%   { transform: translate3d(0, 0, 0); }
-  100% { transform: translate3d(-33.333%, 0, 0); }
-}
-
-/* Header fade-up — pure CSS, no Framer Motion */
-.trusted-fade-up {
-  opacity: 0;
-  transform: translate3d(0, 16px, 0);
-  animation: trusted-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-@keyframes trusted-fade-up {
-  to { opacity: 1; transform: translate3d(0, 0, 0); }
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .trusted-marquee-track { animation: none; }
-  .trusted-fade-up { animation: none; opacity: 1; transform: none; }
+  .trusted-logo { animation: none; }
 }
 
 /* ─────────────────────────────────────────────

@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, memo } from 'react';
-import { useInView } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, useInView } from 'framer-motion';
 import { useLanguage } from '../../i18n';
 
 const BARS = [38, 62, 51, 77, 69, 91, 84, 72, 88, 81, 96, 88];
@@ -7,13 +7,15 @@ const BARS = [38, 62, 51, 77, 69, 91, 84, 72, 88, 81, 96, 88];
 const SparkChart = memo(() => (
   <div className="flex items-end gap-[2px] h-9 w-full" role="img" aria-label="Lead volume sparkline chart">
     {BARS.map((h, i) => (
-      <div
+      <motion.div
         key={i}
-        className="flex-1 rounded-[1px] origin-bottom spark-bar"
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 0.55, delay: i * 0.035, ease: [0.22, 1, 0.36, 1] }}
+        className="flex-1 rounded-[1px] origin-bottom"
         style={{
           height: `${h}%`,
           background: i === BARS.length - 1 ? 'rgba(201,168,76,0.9)' : 'rgba(201,168,76,0.2)',
-          animationDelay: `${i * 0.035}s`,
         }}
       />
     ))}
@@ -42,7 +44,12 @@ function CountUp({ to, duration = 1400 }: { to: number; duration?: number }) {
 export function DashboardPreview() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
+  const dashRef = useRef<HTMLDivElement>(null);
   const inView = useInView(sectionRef, { once: true, margin: '-80px 0px' });
+
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const rawY = useTransform(scrollYProgress, [0, 1], [24, -24]);
+  const y = useSpring(rawY, { stiffness: 90, damping: 28 });
 
   const stats = [
     { label: t.dashboard.stat1Label, value: 47, suffix: t.dashboard.stat1Suffix },
@@ -75,7 +82,7 @@ export function DashboardPreview() {
     <section
       id="dashboard"
       ref={sectionRef}
-      className="py-24 lg:py-32 bg-void relative overflow-hidden"
+      className="py-36 lg:py-44 bg-void relative overflow-hidden"
       aria-labelledby="dashboard-heading"
     >
       {/* Ambient glow */}
@@ -87,26 +94,45 @@ export function DashboardPreview() {
 
           {/* Text */}
           <div>
-            <p className="section-label mb-6 fade-in-up" style={{ animationDelay: '0s' }}>
+            <motion.p
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="section-label mb-6"
+            >
               {t.dashboard.label}
-            </p>
-            <h2
+            </motion.p>
+            <motion.h2
               id="dashboard-heading"
-              className="section-title leading-[1.05] mb-6 fade-in-up"
-              style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', letterSpacing: '-0.02em', animationDelay: '0.08s' }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.08 }}
+              className="section-title leading-[1.05] mb-6"
+              style={{ fontSize: 'clamp(2.2rem, 4vw, 3.5rem)', letterSpacing: '-0.02em' }}
             >
               {t.dashboard.headline1}
               <br />
               <span className="italic font-light text-stone-500">{t.dashboard.headline2}</span>
-            </h2>
-            <p
-              className="text-stone-500 text-[14px] leading-[1.85] max-w-sm mb-12 fade-in-up"
-              style={{ animationDelay: '0.16s' }}
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.16 }}
+              className="text-stone-500 text-[14px] leading-[1.85] max-w-sm mb-12"
             >
               {t.dashboard.description}
-            </p>
+            </motion.p>
 
-            <div className="space-y-4 fade-in-up" style={{ animationDelay: '0.22s' }}>
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, delay: 0.22 }}
+              className="space-y-4"
+            >
               {stats.map((s) => (
                 <div key={s.label} className="flex items-center justify-between py-3.5 border-b border-stone-800/50">
                   <span className="text-[13px] text-stone-500">{s.label}</span>
@@ -115,11 +141,19 @@ export function DashboardPreview() {
                   </span>
                 </div>
               ))}
-            </div>
+            </motion.div>
           </div>
 
           {/* Dashboard card */}
-          <div className="relative fade-in-up" style={{ animationDelay: '0.3s' }}>
+          <motion.div
+            ref={dashRef}
+            style={{ y }}
+            initial={{ opacity: 0, scale: 0.96, y: 40 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative"
+          >
             {/* Glow behind card */}
             <div
               className="absolute -inset-6 rounded-3xl opacity-20 blur-2xl pointer-events-none"
@@ -165,10 +199,12 @@ export function DashboardPreview() {
                 <div className="text-[9px] text-stone-700 uppercase tracking-widest mb-3">{t.dashboard.leadsLabel}</div>
                 <div className="space-y-2.5">
                   {inView && leads.map((lead, i) => (
-                    <div
+                    <motion.div
                       key={lead.name}
-                      className="flex items-center gap-3 fade-in-up"
-                      style={{ animationDelay: `${0.15 + i * 0.07}s` }}
+                      initial={{ opacity: 0, y: 6 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.15 + i * 0.07 }}
+                      className="flex items-center gap-3"
                     >
                       <div className="w-6 h-6 rounded-full bg-stone-800 border border-stone-700/50 flex items-center justify-center flex-shrink-0">
                         <span className="text-[8px] font-bold text-stone-400">{lead.avatar}</span>
@@ -181,7 +217,7 @@ export function DashboardPreview() {
                         <span>{lead.status}</span>
                       </div>
                       <div className="text-[11px] font-bold text-stone-400 flex-shrink-0 w-6 text-right">{lead.score}</div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -191,10 +227,12 @@ export function DashboardPreview() {
                 <div className="text-[9px] text-stone-700 uppercase tracking-widest mb-3">{t.dashboard.activityLabel}</div>
                 <div className="space-y-2.5">
                   {inView && activities.map((item, i) => (
-                    <div
+                    <motion.div
                       key={i}
-                      className="flex items-center justify-between fade-in-up"
-                      style={{ animationDelay: `${0.3 + i * 0.08}s` }}
+                      initial={{ opacity: 0, x: 8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.3 + i * 0.08 }}
+                      className="flex items-center justify-between"
                     >
                       <div className="flex items-center gap-2.5">
                         <div className="w-1.5 h-1.5 rounded-full bg-gold-500/70 flex-shrink-0" />
@@ -202,12 +240,12 @@ export function DashboardPreview() {
                         <span className="text-[11px] text-stone-300 font-medium">{item.name}</span>
                       </div>
                       <span className="text-[9px] text-stone-700 tabular-nums ml-3">{item.time}</span>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>
