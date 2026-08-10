@@ -67,7 +67,7 @@ export function Contact() {
 };
 
   return (
-    <section id="contact" className="py-24 md:py-44 lg:py-52 relative overflow-hidden">
+    <section id="contact" className="py-24 lg:py-32 relative overflow-hidden">
       {/* Premium gradient background */}
       <div className="absolute inset-0 bg-gradient-to-b from-stone-950 via-stone-900/95 to-stone-950" />
 
@@ -84,7 +84,7 @@ export function Contact() {
       <div className="max-w-5xl mx-auto px-6 lg:px-10 relative z-10">
 
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+        <div className="text-center mb-10 md:mb-12">
           <AnimatedSection delay={0}>
             <div className="flex items-center justify-center gap-4 md:gap-5 mb-5 md:mb-7">
               <div className="w-10 md:w-14 h-px bg-gradient-to-r from-transparent to-gold-500/70" />
@@ -107,7 +107,7 @@ export function Contact() {
 
         {/* Trust badges */}
         <AnimatedSection delay={0.16}>
-          <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 mb-12 md:mb-16">
+          <div className="flex flex-wrap justify-center gap-2.5 md:gap-3 mb-10 md:mb-12">
             {TRUST_BADGES.map((badge) => (
               <div key={badge} className="flex items-center gap-2.5 px-4 py-3 md:px-5 md:py-2.5 border border-gold-500/30 bg-gold-500/[0.07] rounded-sm min-h-[44px] md:min-h-0">
                 <CheckCircle2 size={14} className="md:hidden text-gold-500" />

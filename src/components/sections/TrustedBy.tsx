@@ -1,4 +1,5 @@
-import { AnimatedSection } from '../ui/AnimatedSection';
+import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../../i18n';
 
 /* Official monochrome SVG logos (Simple Icons / official sources).
    All use viewBox 0 0 24 24 for uniform scaling. */
@@ -65,19 +66,15 @@ const logos = [
   },
 ];
 
-function LogoItem({ logo, index }: { logo: typeof logos[number]; index: number }) {
+function LogoItem({ logo }: { logo: typeof logos[number] }) {
   return (
-    <div
-      className="trusted-logo flex-shrink-0 flex flex-col items-center justify-center mx-6 md:mx-10"
-      style={{ animationDelay: `${index * 0.05}s` }}
-    >
+    <div className="trusted-logo flex-shrink-0 flex flex-col items-center justify-center mx-6 md:mx-10">
       <svg
         viewBox={logo.viewBox}
         fill="currentColor"
         className="h-8 md:h-9 w-auto"
         aria-label={logo.name}
         role="img"
-        loading="lazy"
       >
         <path d={logo.path} />
       </svg>
@@ -89,10 +86,37 @@ function LogoItem({ logo, index }: { logo: typeof logos[number]; index: number }
 }
 
 export function TrustedBy() {
-  const doubled = [...logos, ...logos];
+  const { t } = useLanguage();
+  const sectionRef = useRef<HTMLElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  // Lazy render: only mount the marquee when the section approaches the viewport.
+  // Prevents CLS by reserving the section height via min-height on the container.
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Triple the logos so the track is always wider than any viewport.
+  // Animation translates -33.33% (one full set width) for a seamless loop.
+  const tripled = [...logos, ...logos, ...logos];
 
   return (
-    <section className="relative bg-[#080808] overflow-hidden" style={{ marginTop: '-50px' }}>
+    <section
+      ref={sectionRef}
+      className="relative bg-[#080808] overflow-hidden"
+    >
       {/* Top separator */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-stone-700/50 to-transparent" />
       {/* Bottom gold accent */}
@@ -104,22 +128,21 @@ export function TrustedBy() {
         style={{ background: 'radial-gradient(ellipse 70% 90% at 50% 50%, rgba(201,168,76,0.022) 0%, transparent 68%)' }}
       />
 
-      {/* Header */}
+      {/* Header — pure CSS fade-up, no Framer Motion */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-10 text-center">
-        <AnimatedSection delay={0}>
-          <p className="text-[8.5px] font-bold tracking-[0.38em] uppercase text-gold-500 mb-3">
-            Trusted by Industry Leaders
-          </p>
-        </AnimatedSection>
-        <AnimatedSection delay={0.08}>
-          <p className="text-stone-600 text-[13px] max-w-md mx-auto leading-relaxed">
-            Technologies and platforms trusted across modern real estate and enterprise businesses.
-          </p>
-        </AnimatedSection>
+        <p className="trusted-fade-up text-[8.5px] font-bold tracking-[0.38em] uppercase text-gold-500 mb-3">
+          {t.trustedBy.title}
+        </p>
+        <p
+          className="trusted-fade-up text-stone-600 text-[13px] max-w-md mx-auto leading-relaxed"
+          style={{ animationDelay: '0.1s' }}
+        >
+          {t.trustedBy.subtitle}
+        </p>
       </div>
 
-      {/* Marquee strip */}
-      <div className="relative pb-14">
+      {/* Marquee strip — min-height prevents CLS before lazy mount */}
+      <div className="relative pb-14" style={{ minHeight: '140px' }}>
         {/* Left edge fade */}
         <div
           aria-hidden="true"
@@ -133,14 +156,16 @@ export function TrustedBy() {
           style={{ background: 'linear-gradient(to left, #080808 0%, rgba(8,8,8,0) 100%)' }}
         />
 
-        {/* Scrolling row — CSS group pauses all logos on hover */}
-        <div className="overflow-hidden group" aria-hidden="true">
-          <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused]">
-            {doubled.map((logo, i) => (
-              <LogoItem key={`${logo.name}-${i}`} logo={logo} index={i % logos.length} />
-            ))}
+        {/* Scrolling row — only the track animates, not individual logos */}
+        {visible && (
+          <div className="overflow-hidden group" aria-hidden="true">
+            <div className="trusted-marquee-track flex w-max group-hover:[animation-play-state:paused]">
+              {tripled.map((logo, i) => (
+                <LogoItem key={`${logo.name}-${i}`} logo={logo} />
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

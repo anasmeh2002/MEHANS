@@ -1,15 +1,14 @@
-import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
 
-const PARTICLES = Array.from({ length: 24 }, (_, i) => ({
+const PARTICLES = Array.from({ length: 8 }, (_, i) => ({
   id: i,
-  left: Math.random() * 100,
-  size: Math.random() * 2 + 0.5,
-  duration: Math.random() * 16 + 12,
-  delay: Math.random() * 12,
-  driftX: (Math.random() - 0.5) * 60,
+  left: (i * 12.5 + 5),
+  size: 1.5 + (i % 3),
+  duration: 9 + (i % 4) * 2,
+  delay: (i % 5) * 0.8,
+  driftX: (i % 2 ? 1 : -1) * 30,
 }));
 
 export function CTA() {
@@ -23,7 +22,7 @@ export function CTA() {
   ];
 
   return (
-    <section className="py-20 md:py-32 lg:py-40 bg-void relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-void relative overflow-hidden">
       {/* Premium grid */}
       <div className="absolute inset-0 grid-bg opacity-35 pointer-events-none" />
 
@@ -31,11 +30,8 @@ export function CTA() {
       <div className="absolute inset-0 circuit-bg opacity-25 pointer-events-none" />
 
       {/* Central glow */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2 }}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-gold-500/[0.035] blur-[140px] pointer-events-none orb-animate"
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-gold-500/[0.035] blur-[140px] pointer-events-none orb-animate"
       />
 
       {/* Secondary glow */}
@@ -116,17 +112,11 @@ export function CTA() {
 
         <AnimatedSection delay={0.35}>
           <div className="pt-8 md:pt-10 border-t border-stone-800/35 flex flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-10">
-            {proofItems.map((item, i) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 + i * 0.08 }}
-                className="flex items-center gap-2.5"
-              >
+            {proofItems.map((item) => (
+              <div key={item} className="flex items-center gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-gold-500/70" />
                 <span className="text-stone-500 text-[11px] tracking-wide">{item}</span>
-              </motion.div>
+              </div>
             ))}
           </div>
         </AnimatedSection>

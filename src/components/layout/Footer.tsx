@@ -24,10 +24,19 @@ export function Footer() {
           {/* Brand */}
           <AnimatedSection delay={0}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 border border-gold-500 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 bg-gold-500" />
+              <img
+                src="/Image%20%5BVectorized%5D%20(1).png"
+                alt="MEHANS"
+                className="h-10 w-10 object-contain"
+              />
+              <div className="flex flex-col leading-none">
+                <span className="font-display text-[17px] font-medium tracking-[0.2em] text-stone-100 uppercase">
+                  MEHANS
+                </span>
+                <span className="text-[8px] font-semibold tracking-[0.3em] uppercase text-gold-500/60 mt-1 no-flip">
+                  {t.loading.tagline}
+                </span>
               </div>
-              <span className="font-display text-[17px] font-medium tracking-[0.2em] text-stone-100">MEHANS</span>
             </div>
             <p className="text-stone-700 text-[12px] leading-relaxed">
               {t.footer.tagline}

@@ -32,14 +32,14 @@ export function Services() {
   }));
 
   return (
-    <section id="services" className="py-36 lg:py-44 bg-stone-950 relative overflow-hidden">
+    <section id="services" className="py-24 lg:py-32 bg-stone-950 relative overflow-hidden">
       {/* Circuit pattern */}
       <div className="absolute inset-0 circuit-bg opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Header row */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-20 lg:mb-24">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14 lg:mb-16">
           <div>
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
