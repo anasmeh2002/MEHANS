@@ -10,7 +10,7 @@ interface Props {
 
 export function SectionHeader({ label, title, subtitle, align = 'center', titleClassName = '' }: Props) {
   return (
-    <div className={`mb-12 md:mb-14 ${align === 'center' ? 'text-center' : ''}`}>
+    <div className={`mb-16 md:mb-20 ${align === 'center' ? 'text-center' : ''}`}>
       <AnimatedSection delay={0}>
         <div className={`flex items-center gap-3 mb-6 ${align === 'center' ? 'justify-center' : ''}`}>
           <div className="w-6 h-px bg-gold-500" />

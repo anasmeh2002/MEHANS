@@ -17,15 +17,14 @@ export const fr = {
 
   // Hero Section
   hero: {
-    eyebrow: 'IA ENTERPRISE POUR L\'IMMOBILIER',
-    headline1: 'Chaque Prospect',
-    headline2: 'Capturé',
-    subheadline: 'Capturez, qualifiez, relancez et réservez des rendez-vous automatiquement avec l\'IA — 24h/24, sans recruter de personnel supplémentaire.',
-    badge1: 'Réponse en Moins de 90 Secondes',
-    badge2: 'Conçu pour les Agences Immobilières',
+    eyebrow: 'IA Enterprise pour l\'Immobilier',
+    headline1: 'Chaque Prospect Compte.',
+    headline2: 'Aucun N\'est Jamais Perdu.',
+    subheadline: 'MEHANS conçoit des solutions d\'automatisation IA sur mesure pour les entreprises immobilières qui souhaitent répondre plus vite, conclure davantage de transactions et se développer sans recruter. Chaque prospect répondu en quelques secondes. Chaque relance automatisée. Chaque opportunité captée.',
+    badge1: 'Ne Perdez Aucun Prospect',
+    badge2: 'Réponse en Moins de 90 Secondes',
     badge3: 'Sécurité Niveau Enterprise',
-    cta: 'Réservez une Consultation Gratuite',
-    secondaryCta: 'Voir Comment Ça Marche',
+    cta: 'Réservez Votre Session Stratégique IA Gratuite',
     stat1Value: '< 90s',
     stat1Label: 'Temps de Réponse Moyen',
     stat2Value: '80%',
@@ -48,11 +47,6 @@ export const fr = {
     enterprise: 'Support dédié',
     enterpriseValue: 'Enterprise',
     enterpriseDesc: 'Une équipe spécialisée pour garantir les meilleurs résultats.',
-  },
-
-  trustedBy: {
-    title: 'Trust by Industry Leaders',
-    subtitle: "Technologies et plateformes de confiance pour l'immobilier moderne et les entreprises.",
   },
 
   // Section Labels

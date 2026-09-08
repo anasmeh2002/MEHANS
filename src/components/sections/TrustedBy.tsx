@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { useLanguage } from '../../i18n';
 
 /* Official monochrome SVG logos (Simple Icons / official sources).
    All use viewBox 0 0 24 24 for uniform scaling. */
@@ -86,7 +85,6 @@ function LogoItem({ logo }: { logo: typeof logos[number] }) {
 }
 
 export function TrustedBy() {
-  const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -108,14 +106,13 @@ export function TrustedBy() {
     return () => observer.disconnect();
   }, []);
 
-  // Triple the logos so the track is always wider than any viewport.
-  // Animation translates -33.33% (one full set width) for a seamless loop.
-  const tripled = [...logos, ...logos, ...logos];
+  const doubled = [...logos, ...logos];
 
   return (
     <section
       ref={sectionRef}
       className="relative bg-[#080808] overflow-hidden"
+      style={{ marginTop: '-50px' }}
     >
       {/* Top separator */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-stone-700/50 to-transparent" />
@@ -131,13 +128,13 @@ export function TrustedBy() {
       {/* Header — pure CSS fade-up, no Framer Motion */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-10 text-center">
         <p className="trusted-fade-up text-[8.5px] font-bold tracking-[0.38em] uppercase text-gold-500 mb-3">
-          {t.trustedBy.title}
+          Trusted by Industry Leaders
         </p>
         <p
           className="trusted-fade-up text-stone-600 text-[13px] max-w-md mx-auto leading-relaxed"
           style={{ animationDelay: '0.1s' }}
         >
-          {t.trustedBy.subtitle}
+          Technologies and platforms trusted across modern real estate and enterprise businesses.
         </p>
       </div>
 
@@ -160,7 +157,7 @@ export function TrustedBy() {
         {visible && (
           <div className="overflow-hidden group" aria-hidden="true">
             <div className="trusted-marquee-track flex w-max group-hover:[animation-play-state:paused]">
-              {tripled.map((logo, i) => (
+              {doubled.map((logo, i) => (
                 <LogoItem key={`${logo.name}-${i}`} logo={logo} />
               ))}
             </div>

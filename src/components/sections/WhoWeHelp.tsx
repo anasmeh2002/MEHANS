@@ -18,7 +18,7 @@ export function WhoWeHelp() {
   ];
 
   return (
-    <section id="solutions" className="py-24 lg:py-32 bg-charcoal relative overflow-hidden">
+    <section id="solutions" className="py-32 lg:py-40 bg-charcoal relative overflow-hidden">
       {/* Vertical rule left */}
       <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold-500/15 to-transparent" />
 
@@ -28,7 +28,7 @@ export function WhoWeHelp() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Section header */}
-        <div className="grid lg:grid-cols-2 gap-10 mb-14 lg:mb-16 items-end">
+        <div className="grid lg:grid-cols-2 gap-10 mb-18 lg:mb-22 items-end">
           <div>
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">

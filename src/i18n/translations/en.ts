@@ -14,15 +14,14 @@ export const en = {
   },
 
   hero: {
-    eyebrow: 'ENTERPRISE AI FOR REAL ESTATE',
-    headline1: 'Every Lead',
-    headline2: 'Captured',
-    subheadline: 'Capture, qualify, follow up, and book appointments automatically with AI — 24/7, without hiring additional staff.',
-    badge1: 'Responds in Under 90 Seconds',
-    badge2: 'Built for Real Estate Agencies',
+    eyebrow: 'Enterprise AI for Real Estate',
+    headline1: 'Every Lead Matters.',
+    headline2: 'None Get Lost.',
+    subheadline: 'MEHANS qualifies leads, books meetings, and keeps your pipeline full — automatically, around the clock.',
+    badge1: 'Never Lose a Lead',
+    badge2: 'Respond in Under 90s',
     badge3: 'Enterprise-Grade Security',
-    cta: 'Book a Free Consultation',
-    secondaryCta: 'See How It Works',
+    cta: 'Book Your Free AI Strategy Session',
     stat1Value: '< 90s',
     stat1Label: 'Avg. Response',
     stat2Value: '80%',
@@ -44,11 +43,6 @@ export const en = {
     enterprise: 'Dedicated Support',
     enterpriseValue: 'Enterprise',
     enterpriseDesc: 'Reliable long-term optimization and assistance.',
-  },
-
-  trustedBy: {
-    title: 'Trusted by Industry Leaders',
-    subtitle: 'Technologies and platforms trusted across modern real estate and enterprise businesses.',
   },
 
   labels: {

@@ -1,3 +1,4 @@
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import { Clock, Phone, Search, Settings, Rocket, LineChart } from 'lucide-react';
 import { useLanguage } from '../../i18n';
@@ -8,6 +9,8 @@ const icons = [Phone, Search, Settings, Settings, Rocket, LineChart];
 export function Process() {
   const { t } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start end', 'end start'] });
+  const lineH = useTransform(scrollYProgress, [0.08, 0.88], ['0%', '100%']);
 
   const steps = [
     { number: '01', title: t.process.step1Title, description: t.process.step1Desc, duration: t.process.step1Duration },
@@ -19,13 +22,13 @@ export function Process() {
   ];
 
   return (
-    <section id="process" ref={sectionRef} className="py-24 lg:py-32 bg-stone-950 relative overflow-hidden">
+    <section id="process" ref={sectionRef} className="py-36 lg:py-44 bg-stone-950 relative overflow-hidden">
       <div className="absolute inset-0 circuit-bg opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
         {/* Header */}
-        <div className="grid lg:grid-cols-2 gap-10 mb-14 lg:mb-16 items-end">
+        <div className="grid lg:grid-cols-2 gap-10 mb-20 lg:mb-24 items-end">
           <div>
             <AnimatedSection delay={0}>
               <div className="flex items-center gap-3 mb-6">
@@ -58,9 +61,6 @@ export function Process() {
                   alt="MEHANS AI deployment process"
                   className="w-full h-full object-cover"
                   loading="lazy"
-                  decoding="async"
-                  width="800"
-                  height="600"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/35 to-transparent" />
               </div>
@@ -81,7 +81,7 @@ export function Process() {
           <div className="relative">
             {/* Animated connector line - hidden on mobile */}
             <div className="hidden md:block absolute left-[22px] top-6 bottom-12 w-px bg-stone-800/50">
-              <div className="w-full h-full bg-gradient-to-b from-gold-500 to-gold-500/20 origin-top process-line" />
+              <motion.div style={{ height: lineH }} className="w-full bg-gradient-to-b from-gold-500 to-gold-500/20 origin-top" />
             </div>
 
             <div className="flex flex-col">
@@ -89,8 +89,10 @@ export function Process() {
                 const Icon = icons[i];
                 return (
                   <AnimatedSection key={step.number} delay={i * 0.08}>
-                    <div
-                      className="group relative flex gap-4 md:gap-7 pb-8 md:pb-10 cursor-default last:pb-0 transition-transform duration-300 hover:translate-x-1.5"
+                    <motion.div
+                      whileHover={{ x: 6 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="group relative flex gap-4 md:gap-7 pb-8 md:pb-10 cursor-default last:pb-0"
                     >
                       {/* Circle node - larger on mobile */}
                       <div className="flex-shrink-0 w-12 h-12 md:w-12 md:h-12 border border-stone-700/60 group-hover:border-gold-500/45 bg-stone-950 flex items-center justify-center z-10 relative transition-all duration-400 rounded-sm">
@@ -111,7 +113,7 @@ export function Process() {
                         </div>
                         <p className="text-stone-500 text-[13px] md:text-[13px] leading-[1.75]">{step.description}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   </AnimatedSection>
                 );
               })}
