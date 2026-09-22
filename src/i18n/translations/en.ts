@@ -59,72 +59,76 @@ export const en = {
 
 services: {
   eyebrow: "AI SALES SYSTEMS",
+
   headline1: "One AI Sales System.",
   headline2: "Built for Real Estate.",
+
   description:
-    "MEHANS connects lead capture, qualification, WhatsApp follow-up, CRM management, and appointment booking into one sales workflow.",
+    "MEHANS connects lead capture, AI qualification, WhatsApp follow-up, CRM management, and appointment booking into one sales workflow.",
+
   note:
     "Built around your agency’s existing workflow — not a generic template.",
+
   cta: "Book a Free Automation Audit",
 
   leadGenTitle: "Lead Capture",
   leadGenDesc:
-    "Capture inquiries from your website and connected channels, then bring them into one organized workflow.",
+    "Capture inquiries from your website and connected channels and bring every new lead into one organized workflow.",
   leadGenTag: "CAPTURE",
 
   leadQualTitle: "AI Lead Qualification",
   leadQualDesc:
-    "Organize leads by intent, budget, timeline, and your own qualification criteria.",
+    "Automatically collect key details such as budget, location, property type, and buying timeline to organize leads by intent.",
   leadQualTag: "QUALIFICATION",
 
   crmTitle: "CRM Automation",
   crmDesc:
-    "Keep leads, statuses, tasks, and follow-ups organized automatically across your sales pipeline.",
+    "Keep leads, statuses, tasks, conversations, and follow-ups organized across your sales pipeline.",
   crmTag: "CRM",
 
-  whatsappTitle: "WhatsApp Follow-Up",
+  whatsappTitle: "WhatsApp Automation",
   whatsappDesc:
-    "Manage WhatsApp conversations and automate appropriate follow-up workflows without losing context.",
+    "Connect WhatsApp to your sales workflow and automate conversations, qualification, routing, and follow-up.",
   whatsappTag: "WHATSAPP",
 
   voiceTitle: "Voice AI",
   voiceDesc:
-    "Handle selected inbound call flows, collect key information, and route qualified opportunities.",
-  voiceTag: "VOICE",
+    "Automate selected inbound call flows, collect key information, and route qualified opportunities to your team.",
+  voiceTag: "VOICE AI",
 
   emailTitle: "Email Automation",
   emailDesc:
-    "Send structured follow-ups and updates based on lead activity and your agency's workflow.",
+    "Create structured email follow-ups and updates based on lead activity, pipeline stage, and your agency’s workflow.",
   emailTag: "EMAIL",
 
-  salesTitle: "Sales Workflow Automation",
+  salesTitle: "Sales Automation",
   salesDesc:
-    "Connect repetitive steps between lead arrival, qualification, follow-up, and sales action.",
+    "Automate repetitive sales actions from new lead arrival to qualification, follow-up, and agent handoff.",
   salesTag: "SALES",
 
   appointmentTitle: "Appointment Booking",
   appointmentDesc:
-    "Connect calendars and streamline consultation, viewing, and appointment scheduling.",
+    "Connect your calendar and streamline consultations, property viewings, and other sales appointments.",
   appointmentTag: "BOOKING",
 
   workflowTitle: "Workflow Integration",
   workflowDesc:
-    "Connect the tools your agency already uses into one coordinated sales workflow.",
+    "Connect the tools your agency already uses so information moves between systems without repetitive manual work.",
   workflowTag: "INTEGRATION",
 
   documentTitle: "Document Automation",
   documentDesc:
-    "Reduce repetitive document and information-handling tasks across your sales process.",
+    "Automate repetitive document and information-handling tasks across your agency’s sales workflow.",
   documentTag: "DOCUMENTS",
 
   analyticsTitle: "Sales Analytics",
   analyticsDesc:
-    "Track lead activity, pipeline movement, appointments, and follow-up across your sales process.",
+    "Track lead activity, pipeline movement, appointments, follow-ups, and key sales workflow data in one place.",
   analyticsTag: "ANALYTICS",
 
   agentsTitle: "Custom AI Systems",
   agentsDesc:
-    "Build additional AI workflows around your agency’s specific process, tools, and business needs.",
+    "Build custom AI workflows around your agency’s specific processes, tools, lead sources, and sales requirements.",
   agentsTag: "CUSTOM AI",
 },
 
