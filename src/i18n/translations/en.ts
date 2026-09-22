@@ -1,7 +1,7 @@
 export const en = {
   meta: {
-    title: 'MEHANS — AI Sales Automation for Real Estate',
-    description: 'AI that qualifies leads, books meetings, and fills your pipeline — in under 60 seconds.',
+    title: 'MEHANS — AI Sales Automation for Real Estate Agencies',
+    description: 'MEHANS helps real estate agencies capture, qualify, follow up with, and book appointments from their leads — automatically.',
   },
 
   nav: {
@@ -13,23 +13,23 @@ export const en = {
     scheduleConsultation: 'Book a Call',
   },
 
-  hero: {
-    eyebrow: 'Enterprise AI for Real Estate',
-    headline1: 'Every Lead Matters.',
-    headline2: 'None Get Lost.',
-    subheadline: 'MEHANS qualifies leads, books meetings, and keeps your pipeline full — automatically, around the clock.',
-    badge1: 'Never Lose a Lead',
-    badge2: 'Respond in Under 90s',
-    badge3: 'Enterprise-Grade Security',
-    cta: 'Book Your Free AI Strategy Session',
-    stat1Value: '< 90s',
-    stat1Label: 'Avg. Response',
-    stat2Value: '80%',
-    stat2Label: 'Less Manual Work',
-    stat3Value: '24/7',
-    stat3Label: 'Always On',
-    scroll: 'Scroll',
-  },
+ hero: {
+  eyebrow: 'AI Sales Automation for Real Estate Agencies',
+  headline1: 'Turn Every Lead',
+  headline2: 'Into an Opportunity.',
+  subheadline: 'MEHANS helps real estate agencies capture, qualify, follow up with, and book appointments from their leads — automatically.',
+  badge1: 'AI Lead Qualification',
+  badge2: 'WhatsApp Follow-Up',
+  badge3: 'Appointment Automation',
+  cta: 'Book a Free Automation Audit',
+  stat1Value: '24/7',
+  stat1Label: 'Lead Follow-Up',
+  stat2Value: '1',
+  stat2Label: 'Unified CRM',
+  stat3Value: '4',
+  stat3Label: 'Core Systems',
+  scroll: 'Scroll',
+},
 
   stats: {
     availability: 'AI Availability',
@@ -58,11 +58,11 @@ export const en = {
   },
 
   services: {
-    headline1: 'Twelve AI Systems.',
-    headline2: 'Every Gap Closed.',
-    description: 'Purpose-built automation for every stage of the pipeline — no lead lost, no follow-up missed.',
-    note: 'All systems are custom-engineered for your agency.',
-    cta: 'Discuss your automation needs',
+    headline1: 'One AI Sales System.',
+    headline2: 'Built for Real Estate.',
+    description: 'MEHANS connects lead qualification, WhatsApp follow-up, CRM management, and appointment booking into one sales workflow.',
+    note: 'Built around your agency’s existing workflow — not a generic template.',
+    cta: 'Book a Free Automation Audit',
     acquisition: 'Acquisition',
     intelligence: 'Intelligence',
     operations: 'Operations',
