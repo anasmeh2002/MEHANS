@@ -57,49 +57,76 @@ export const en = {
     getStarted: 'Get Started',
   },
 
-  services: {
-    headline1: 'One AI Sales System.',
-    headline2: 'Built for Real Estate.',
-    description: 'MEHANS connects lead qualification, WhatsApp follow-up, CRM management, and appointment booking into one sales workflow.',
-    note: 'Built around your agency’s existing workflow — not a generic template.',
-    cta: 'Book a Free Automation Audit',
-    acquisition: 'Acquisition',
-    intelligence: 'Intelligence',
-    operations: 'Operations',
-    communication: 'Communication',
-    voiceAI: 'Voice AI',
-    nurturing: 'Nurturing',
-    revenue: 'Revenue',
-    scheduling: 'Scheduling',
-    efficiency: 'Efficiency',
-    documents: 'Documents',
-    reporting: 'Reporting',
-    custom: 'Custom',
-    leadGenTitle: 'AI Lead Generation',
-    leadGenDesc: 'AI captures and qualifies prospects across every channel, around the clock.',
-    leadQualTitle: 'AI Lead Qualification',
-    leadQualDesc: 'Your agents only speak with serious buyers. AI filters and routes warm prospects instantly.',
-    crmTitle: 'CRM Automation',
-    crmDesc: 'Every lead, follow-up, and status update handled automatically across your pipeline.',
-    whatsappTitle: 'WhatsApp AI',
-    whatsappDesc: 'Reply to every WhatsApp inquiry in seconds — even at midnight.',
-    voiceTitle: 'Voice AI Receptionists',
-    voiceDesc: 'Every inbound call answered, qualified, and booked. No voicemail. No lost lead.',
-    emailTitle: 'Email Automation',
-    emailDesc: 'Intelligent follow-up sequences sent at the right moment without manual effort.',
-    salesTitle: 'Sales Automation',
-    salesDesc: 'Automated workflows ensure every prospect receives timely, personalised engagement.',
-    appointmentTitle: 'Appointment Scheduling',
-    appointmentDesc: 'AI books, confirms, and reminds. Your calendar fills itself.',
-    workflowTitle: 'Workflow Automation',
-    workflowDesc: 'Eliminate repetitive work. Scale output without scaling headcount.',
-    documentTitle: 'Document Automation',
-    documentDesc: 'Contracts and client documents generated automatically — fewer errors, less admin.',
-    analyticsTitle: 'AI Analytics',
-    analyticsDesc: 'Real-time visibility into every lead, conversion, and revenue opportunity.',
-    agentsTitle: 'Custom AI Agents',
-    agentsDesc: 'Bespoke intelligent agents built for tasks your competitors still do manually.',
-  },
+services: {
+  eyebrow: "AI SALES SYSTEMS",
+  headline1: "One AI Sales System.",
+  headline2: "Built for Real Estate.",
+  description:
+    "MEHANS connects lead capture, qualification, WhatsApp follow-up, CRM management, and appointment booking into one sales workflow.",
+  note:
+    "Built around your agency’s existing workflow — not a generic template.",
+  cta: "Book a Free Automation Audit",
+
+  leadGenTitle: "Lead Capture",
+  leadGenDesc:
+    "Capture inquiries from your website and connected channels, then bring them into one organized workflow.",
+  leadGenTag: "CAPTURE",
+
+  leadQualTitle: "AI Lead Qualification",
+  leadQualDesc:
+    "Organize leads by intent, budget, timeline, and your own qualification criteria.",
+  leadQualTag: "QUALIFICATION",
+
+  crmTitle: "CRM Automation",
+  crmDesc:
+    "Keep leads, statuses, tasks, and follow-ups organized automatically across your sales pipeline.",
+  crmTag: "CRM",
+
+  whatsappTitle: "WhatsApp Follow-Up",
+  whatsappDesc:
+    "Manage WhatsApp conversations and automate appropriate follow-up workflows without losing context.",
+  whatsappTag: "WHATSAPP",
+
+  voiceTitle: "Voice AI",
+  voiceDesc:
+    "Handle selected inbound call flows, collect key information, and route qualified opportunities.",
+  voiceTag: "VOICE",
+
+  emailTitle: "Email Automation",
+  emailDesc:
+    "Send structured follow-ups and updates based on lead activity and your agency's workflow.",
+  emailTag: "EMAIL",
+
+  salesTitle: "Sales Workflow Automation",
+  salesDesc:
+    "Connect repetitive steps between lead arrival, qualification, follow-up, and sales action.",
+  salesTag: "SALES",
+
+  appointmentTitle: "Appointment Booking",
+  appointmentDesc:
+    "Connect calendars and streamline consultation, viewing, and appointment scheduling.",
+  appointmentTag: "BOOKING",
+
+  workflowTitle: "Workflow Integration",
+  workflowDesc:
+    "Connect the tools your agency already uses into one coordinated sales workflow.",
+  workflowTag: "INTEGRATION",
+
+  documentTitle: "Document Automation",
+  documentDesc:
+    "Reduce repetitive document and information-handling tasks across your sales process.",
+  documentTag: "DOCUMENTS",
+
+  analyticsTitle: "Sales Analytics",
+  analyticsDesc:
+    "Track lead activity, pipeline movement, appointments, and follow-up across your sales process.",
+  analyticsTag: "ANALYTICS",
+
+  agentsTitle: "Custom AI Systems",
+  agentsDesc:
+    "Build additional AI workflows around your agency’s specific process, tools, and business needs.",
+  agentsTag: "CUSTOM AI",
+},
 
   whoWeHelp: {
     headline1: "Built for Real Estate's",
