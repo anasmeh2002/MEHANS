@@ -2,7 +2,7 @@ export const fr = {
   // Meta
   meta: {
     title: 'MEHANS — Automatisation par IA pour les acteurs de l’immobilier',
-    description: 'MEHANS conçoit des systèmes d\'automatisation IA enterprise pour agences immobilières, courtiers et promoteurs. Capturez des prospects, automatisez les relances, synchronisez vos CRM et développez votre activité avec l\'IA.',
+    description: 'MEHANS conçoit des systèmes d’automatisation IA de niveau entreprise pour agences immobilières, courtiers et promoteurs. Capturez des prospects, automatisez les relances, synchronisez vos CRM et développez votre activité avec l\'IA.',
   },
 
   // Navigation
@@ -18,9 +18,9 @@ export const fr = {
   // Hero Section
   hero: {
     eyebrow: 'IA de niveau entreprise pour l’immobilier',
-    headline1: 'Chaque prospect compte.',
-    headline2: 'Aucun prospect ne se perd.',
-    subheadline: 'MEHANS conçoit des systèmes d’automatisation IA sur mesure pour les entreprises immobilières qui souhaitent répondre plus vite, conclure davantage de transactions et se développer sans augmenter leurs effectifs. Chaque prospect reçoit une réponse en quelques secondes. Chaque relance est automatisée. Chaque opportunité est prise en charge.',
+    headline1: 'Chaque prospect compte',
+    headline2: 'Aucun prospect ne se perd',
+    subheadline: 'MEHANS conçoit des systèmes d’automatisation IA sur mesure pour les entreprises immobilières qui souhaitent répondre plus vite, conclure davantage de transactions et se développer sans augmenter leurs effectifs. Chaque prospect reçoit une réponse en quelques secondes. Chaque relance est automatisée. Chaque opportunité est prise en charge',
     badge1: 'Aucun prospect perdu',
     badge2: 'Réponse en moins de 90 secondes',
     badge3: 'Sécurité de niveau entreprise',
@@ -64,8 +64,8 @@ export const fr = {
 
   // Services Section
   services: {
-    headline1: 'Douze systèmes IA.',
-    headline2: 'Chaque fuite de revenus comblée.',
+    headline1: 'Douze systèmes IA',
+    headline2: 'Chaque fuite de revenus comblée',
     description: 'Automatisation conçue pour chaque étape du pipeline immobilier — ainsi aucun prospect n\'est perdu, aucune relance n\'est oubliée, et aucune transaction n\'est laissée de côté.',
     note: 'Tous les systèmes sont conçus sur mesure pour votre agence — avec un accompagnement dédié et sans modèles génériques.',
     cta: 'Discutez de vos besoins d\'automatisation',
@@ -117,7 +117,7 @@ export const fr = {
     description: 'Que vous dirigiez une agence boutique ou une firme d\'investissement continentale, MEHANS conçoit des systèmes IA qui éliminent le travail manuel, accélèrent le flux de transactions et augmentent vos revenus sans augmenter vos effectifs.',
     ctaBannerTitle: 'Par où commencer ?',
     ctaBannerDesc: 'Réservez un Audit d\'Automatisation gratuit de 30 minutes. Nous cartographierons votre pipeline de prospects et vous montrerons exactement où les revenus sont perdus — et comment les récupérer.',
-    ctaBannerButton: 'Planifiez Votre Audit d\'Automatisation',
+    ctaBannerButton: 'Réserver mon audit gratuit',
     // Client types
     agenciesTitle: 'Agences Immobilières',
     agenciesDesc: 'Arrêtez de perdre des prospects à cause de réponses lentes. L\'IA qualifie chaque demande instantanément pour que vos agents se concentrent uniquement sur la conclusion.',
@@ -142,7 +142,7 @@ export const fr = {
   // Why Mehans Section
   whyMehans: {
     headline1: 'Les résultats',
-    headline2: 'Que l\'Immobilier Exige.',
+    headline2: 'dont votre activité immobilière a besoin',
     description: 'Partenaire stratégique, pas un abonnement SaaS. Nous construisons et gérons l\'infrastructure IA qui propulse les opérations immobilières d\'élite — avec un support dédié et une implémentation personnalisée à chaque étape.',
     cta: 'Réservez votre session stratégique IA gratuite',
     deploymentLabel: 'déploiement moyen',
@@ -177,7 +177,7 @@ export const fr = {
   // AI Advantages Section
   aiAdvantages: {
     headline1: 'Conçu pour Conclure des Transactions,',
-    headline2: 'Pas Juste Automatiser des Tâches.',
+    headline2: 'Pas seulement automatiser des tâches',
     description: 'Quatre principes qui font que les systèmes MEHANS délivrent des résultats mesurables — pas juste de l\'activité — pour les opérations immobilières d\'élite.',
     calloutLabel: 'Infrastructure de niveau entreprise',
     calloutHeadline1: 'Implémentation personnalisée.',
@@ -200,7 +200,7 @@ export const fr = {
     adv2Desc: 'Chaque système est conçu selon vos critères de qualification, votre ton et vos workflows. Aucun modèle générique : chaque automatisation est adaptée à votre activité dès le premier jour.',
     adv2Metric: '100%',
     adv2MetricLabel: 'Personnalisé',
-    adv3Title: 'Tous les canaux. Un seul système.',
+    adv3Title: 'Tous les canaux. Un seul système',
     adv3Desc: 'WhatsApp, email, voix et CRM — entièrement synchronisés. Votre équipe dispose d’un pipeline unifié, sans transferts manuels ni prospects oubliés.',
     adv3Metric: '4+',
     adv3MetricLabel: 'Canaux',
@@ -230,7 +230,7 @@ export const fr = {
   // Process Section
   process: {
     headline1: 'Du premier appel au chiffre d’affaires',
-    headline2: 'en Six Étapes.',
+    headline2: 'en 6 étapes',
     description: 'Un déploiement structuré qui produit des résultats mesurables dès la mise en service.',
     deploymentLabel: 'déploiement moyen',
     cta: 'Commencez votre appel de découverte gratuit',
@@ -258,10 +258,10 @@ export const fr = {
   // FAQ Section
   faq: {
     headline1: 'Questions fréquentes,',
-    headline2: 'réponses claires.',
+    headline2: 'réponses claires',
     description: 'Tout ce que les leaders immobiliers demandent avant de déployer l\'automatisation IA — réponses claires, sans jargon technique.',
     sidebarLabel: 'Une question spécifique ?',
-    sidebarDesc: 'Parlez directement avec un ingénieur senior MEHANS. Audit d\'Automatisation Gratuit, sans pitch, sans obligation.',
+    sidebarDesc: 'Parlez directement avec un ingénieur senior MEHANS. Analyse gratuite de votre processus, sans engagement.',
     // Questions
     q1: 'À quelle vitesse pouvons-nous être opérationnels ?',
     a1: "La plupart des agences sont entièrement opérationnelles en deux semaines. Nous gérons tous les aspects de l'implémentation — de l'intégration CRM à la formation de l'équipe — pour que votre équipe ne subisse aucune interruption.",
@@ -273,14 +273,14 @@ export const fr = {
     a4: "Oui. Notre Automatisation WhatsApp par IA engage chaque prospect entrant en quelques secondes, qualifie l'intention selon vos critères et oriente les prospects à haute valeur vers le bon agent — de jour comme de nuit.",
     q5: 'L\'IA peut-elle réserver automatiquement des visites de biens ?',
     a5: "Oui. L'IA se connecte au calendrier de votre équipe, propose des créneaux disponibles, confirme les rendez-vous et envoie des rappels — le tout sans aucune intervention humaine.",
-    q6: 'Que signifie concrètement la sécurité de niveau enterprise ?',
+    q6: 'Que signifie concrètement la sécurité de niveau entreprise ?',
     a6: "Tous les systèmes sont construits avec un chiffrement 256-bit, des contrôles d'accès basés sur les rôles et une gestion des données conforme RGPD. Les données de vos clients ne quittent jamais un environnement sécurisé et auditable.",
   },
 
   // CTA Section
   cta: {
     headline1: 'Ne perdez plus de transactions',
-    headline2: 'à cause de réponses trop lentes.',
+    headline2: 'à cause de réponses trop lentes',
     description: "Réservez une session stratégique IA gratuite. Nous analyserons votre pipeline, identifierons les revenus perdus et vous remettrons une feuille de route d’automatisation personnalisée — gratuitement et sans engagement.",
     cta: 'Réservez votre session stratégique IA gratuite',
     proof1: 'Sans engagement requis',
@@ -292,7 +292,7 @@ export const fr = {
   // Contact Section
   contact: {
     headline1: 'Réservez votre session',
-    headline2: 'stratégique IA gratuite.',
+    headline2: 'stratégique IA gratuite',
     description: "Parlez avec un ingénieur MEHANS. Nous analyserons votre pipeline, identifierons les points de perte et vous remettrons une feuille de route personnalisée — gratuitement et sans engagement.",
     // Trust badges
     badge1: 'Session stratégique gratuite',
@@ -307,7 +307,7 @@ export const fr = {
     formMessagePlaceholder: "Décrivez brièvement votre entreprise et le plus grand défi que vous aimeriez résoudre.",
     formCompanyPlaceholder: 'Nom de l\'Entreprise',
     formNote: 'Notre équipe analysera vos besoins et recommandera la meilleure stratégie d\'automatisation IA lors de votre consultation gratuite.',
-    formSubmit: 'Réservez Ma Session Stratégique IA Gratuite',
+    formSubmit: 'Réserver ma session stratégique IA gratuite',
     // Form interests
     interest1: 'IA de génération de prospects',
     interest2: 'Automatisation WhatsApp par IA',
@@ -337,7 +337,7 @@ export const fr = {
   mobileCta: {
     title: 'Consultation IA Gratuite',
     subtitle: 'Réponse sous 24 Heures',
-    button: 'Réserver Consultation Gratuite',
+    button: 'Réserver une consultation gratuite',
   },
 
   // Pricing Section
@@ -370,17 +370,17 @@ export const fr = {
     growthFeature6: 'Optimisation mensuelle',
     growthFeature7: 'Support prioritaire',
     growthCta: 'Réserver une session stratégique',
-    customName: 'niveau entreprise',
+    customName: 'Entreprise',
     customLabel: 'Expérience sur mesure',
     customSetup: '',
     customMonthly: 'Tarification sur mesure',
     customPriceNote: 'Adaptée à votre entreprise',
-    customFeature1: 'Stratégie IA Dédiée',
-    customFeature2: 'Onboarding Privé',
-    customFeature3: 'Automatisations Illimitées',
-    customFeature4: 'Support Dédié',
-    customFeature5: 'Intégrations Personnalisées',
-    customFeature6: 'SLA niveau entreprise',
+    customFeature1: 'Stratégie IA dédiée',
+    customFeature2: 'Accompagnement dédié',
+    customFeature3: 'Automatisations illimitées',
+    customFeature4: 'Support dédié',
+    customFeature5: 'Intégrations personnalisées',
+    customFeature6: 'SLA de niveau entreprise',
     customCta: 'Réserver une consultation',
   },
 
@@ -431,8 +431,8 @@ export const fr = {
 
   dashboard: {
     label: 'Tableau de bord en direct',
-    headline1: 'Visibilité totale.',
-    headline2: 'Zéro approximation.',
+    headline1: 'Visibilité totale',
+    headline2: 'Zéro approximation',
     description: 'Chaque prospect, score et conversation dans un tableau de bord unique. Sachez qui est prêt à acheter avant que votre équipe ne décroche le téléphone.',
     stat1Label: 'Prospects traités aujourd\'hui',
     stat1Suffix: '+',
@@ -473,8 +473,8 @@ export const fr = {
 
   journey: {
     label: 'L\'Expérience de Votre Client',
-    headline1: 'Du premier contact au rendez-vous pris.',
-    headline2: 'En moins de 60 secondes.',
+    headline1: 'Du premier contact au rendez-vous pris',
+    headline2: 'En moins de 60 secondes',
     description: 'Voici ce que vit votre futur client — du premier message au rendez-vous confirmé.',
     chatHeader: 'MEHANS AI',
     chatStatus: 'En ligne — répond en secondes',
