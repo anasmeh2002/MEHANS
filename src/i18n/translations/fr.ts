@@ -66,7 +66,7 @@ export const fr = {
   services: {
     headline1: 'Six systèmes IA',
     headline2: 'Conçus pour transformer les leads en revenus',
-    description: 'Six systèmes essentiels qui relient acquisition, qualification, CRM, WhatsApp, rendez-vous et suivi commercial dans un seul parcours de vente.');
+    description: 'Six systèmes essentiels qui relient acquisition, qualification, CRM, WhatsApp, rendez-vous et suivi commercial dans un seul parcours de vente.',
     note: 'Tous les systèmes sont conçus sur mesure pour votre agence — avec un accompagnement dédié et sans modèles génériques.',
     cta: 'Discutez de vos besoins d\'automatisation',
     // Service tags
