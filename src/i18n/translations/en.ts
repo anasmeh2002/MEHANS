@@ -60,8 +60,8 @@ export const en = {
 services: {
   eyebrow: "AI SALES SYSTEMS",
 
-  headline1: "One AI Sales System.",
-  headline2: "Built for Real Estate.",
+  headline1: "Six AI Sales Systems.",
+  headline2: "Built to Move Leads to Revenue.",
 
   description:
     "MEHANS connects lead capture, AI qualification, WhatsApp follow-up, CRM management, and appointment booking into one sales workflow.",
