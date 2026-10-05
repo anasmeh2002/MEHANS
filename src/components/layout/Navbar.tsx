@@ -54,10 +54,13 @@ export function Navbar() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="group flex items-center gap-3.5 flex-shrink-0"
           >
-            <div className="w-8 h-8 border border-gold-500/90 flex items-center justify-center transition-all duration-400 group-hover:border-gold-400 relative">
-              <div className="w-2.5 h-2.5 bg-gold-500 group-hover:bg-gold-400 transition-colors duration-300" />
-              <div className="absolute -inset-1 border border-gold-500/10 group-hover:border-gold-500/20 transition-colors duration-400" />
-            </div>
+            <img
+              src="https://crm.mehans.space/logo.png"
+              alt="MEHANS"
+              width={32}
+              height={32}
+              className="w-8 h-8 object-contain shrink-0"
+            />
             <div>
               <span className="font-display text-[18px] font-medium tracking-[0.2em] text-stone-100 leading-none">
                 MEHANS
