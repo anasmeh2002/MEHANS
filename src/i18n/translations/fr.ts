@@ -498,9 +498,14 @@ export const fr = {
 
   trust: {
     security: 'Sécurité de niveau entreprise',
-    gdpr: 'Conforme RGPD',
+    gdpr: 'Conforme au RGPD',
     encryption: 'Chiffrement de bout en bout',
     monitoring: 'Surveillance 24/7',
-    cloud: 'Infrastructure Cloud Sécurisée',
+    cloud: 'Infrastructure cloud sécurisée',
+  },
+
+  trustedBy: {
+    title: 'Propulsé par des technologies de référence',
+    description: 'MEHANS connecte les outils et plateformes sur lesquels les équipes immobilières modernes s’appuient déjà.',
   },
 };
