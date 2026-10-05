@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useLanguage } from '../../i18n';
 
 /* Official monochrome SVG logos (Simple Icons / official sources).
    All use viewBox 0 0 24 24 for uniform scaling. */
@@ -85,6 +86,7 @@ function LogoItem({ logo }: { logo: typeof logos[number] }) {
 }
 
 export function TrustedBy() {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -128,13 +130,13 @@ export function TrustedBy() {
       {/* Header — pure CSS fade-up, no Framer Motion */}
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-10 text-center">
         <p className="trusted-fade-up text-[8.5px] font-bold tracking-[0.38em] uppercase text-gold-500 mb-3">
-          Trusted by Industry Leaders
+          {t.trustedBy.title}
         </p>
         <p
           className="trusted-fade-up text-stone-600 text-[13px] max-w-md mx-auto leading-relaxed"
           style={{ animationDelay: '0.1s' }}
         >
-          Technologies and platforms trusted across modern real estate and enterprise businesses.
+          {t.trustedBy.description}
         </p>
       </div>
 
