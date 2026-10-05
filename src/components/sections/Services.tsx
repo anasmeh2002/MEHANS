@@ -60,7 +60,7 @@ export function Services() {
         </div>
 
         {/* Service grid - premium cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-stone-800/20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-stone-800/30">
           {services.map((svc, i) => {
             const Icon = iconMap[svc.icon as keyof typeof iconMap];
             return (
@@ -71,7 +71,7 @@ export function Services() {
                     y: -4
                   }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative bg-stone-950 px-6 py-8 md:px-8 md:py-10 h-full flex flex-col gap-5 md:gap-6 cursor-default
+                  className="group relative bg-stone-950 px-7 py-9 md:px-9 md:py-11 h-full min-h-[310px] flex flex-col gap-6 md:gap-7 cursor-default
                     border border-stone-800/50 hover:border-gold-500/25 transition-all duration-500 relative overflow-hidden"
                 >
                   {/* Corner accent on hover */}
@@ -81,23 +81,23 @@ export function Services() {
                   {/* Number + tag row */}
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] font-semibold tracking-[0.18em] text-stone-600">{String(i + 1).padStart(2, '0')}</span>
-                    <span className="text-[9px] font-bold tracking-[0.3em] uppercase text-stone-700 group-hover:text-stone-500 transition-colors duration-300">
+                    <span className="text-[9px] font-bold tracking-[0.28em] uppercase text-stone-700 group-hover:text-gold-500/70 transition-colors duration-300">
                       {svc.tag}
                     </span>
                   </div>
 
                   {/* Icon - larger on mobile */}
-                  <div className="w-12 h-12 md:w-12 md:h-12 border border-stone-700/60 group-hover:border-gold-500/35 flex items-center justify-center transition-all duration-500 rounded-sm">
+                  <div className="w-14 h-14 md:w-14 md:h-14 border border-stone-700/60 group-hover:border-gold-500/35 flex items-center justify-center transition-all duration-500 rounded-sm">
                     {Icon && (
                       <Icon
-                        size={20}
+                        size={22}
                         strokeWidth={1.5}
                         className="md:hidden text-stone-500 group-hover:text-gold-500 transition-colors duration-500"
                       />
                     )}
                     {Icon && (
                       <Icon
-                        size={18}
+                        size={20}
                         strokeWidth={1.5}
                         className="hidden md:block text-stone-500 group-hover:text-gold-500 transition-colors duration-500"
                       />
@@ -106,10 +106,10 @@ export function Services() {
 
                   {/* Title + description */}
                   <div className="flex flex-col gap-3 flex-1">
-                    <h3 className="text-stone-200 font-medium text-[15px] leading-snug group-hover:text-stone-100 transition-colors duration-300">
+                    <h3 className="text-stone-100 font-medium text-[16px] leading-snug md:text-[17px] group-hover:text-stone-100 transition-colors duration-300">
                       {svc.title}
                     </h3>
-                    <p className="text-stone-500 text-[12px] leading-[1.75] font-light group-hover:text-stone-400 transition-colors duration-400">
+                    <p className="text-stone-500 text-[13px] leading-[1.8] font-light group-hover:text-stone-400 transition-colors duration-400">
                       {svc.description}
                     </p>
                   </div>
