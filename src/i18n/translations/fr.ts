@@ -17,10 +17,10 @@ export const fr = {
 
   // Hero Section
   hero: {
-    eyebrow: 'IA Enterprise pour l\'Immobilier',
+    eyebrow: 'IA de niveau entreprise pour l’immobilier',
     headline1: 'Chaque prospect compte.',
-    headline2: 'Aucun N\'est Jamais Perdu.',
-    subheadline: 'MEHANS conçoit des solutions d\'automatisation IA sur mesure pour les entreprises immobilières qui souhaitent répondre plus vite, conclure davantage de transactions et se développer sans recruter. Chaque prospect répondu en quelques secondes. Chaque relance automatisée. Chaque opportunité captée.',
+    headline2: 'Aucun prospect ne se perd.',
+    subheadline: 'MEHANS conçoit des systèmes d’automatisation IA sur mesure pour les entreprises immobilières qui souhaitent répondre plus vite, conclure davantage de transactions et se développer sans augmenter leurs effectifs. Chaque prospect reçoit une réponse en quelques secondes. Chaque relance est automatisée. Chaque opportunité est prise en charge.',
     badge1: 'Aucun prospect perdu',
     badge2: 'Réponse en moins de 90 secondes',
     badge3: 'Sécurité de niveau entreprise',
@@ -31,7 +31,7 @@ export const fr = {
     stat2Label: 'Moins de tâches manuelles',
     stat3Value: '24/7',
     stat3Label: 'Disponible 24/7',
-    scroll: 'Défiler',
+    scroll: 'Faire défiler',
   },
 
   // Statistics Section
@@ -45,7 +45,7 @@ export const fr = {
     workflow: 'Automatisations des workflows',
     workflowDesc: 'Exécution des suivis et des tâches avec efficacité et précision.',
     enterprise: 'Support dédié',
-    enterpriseValue: 'Enterprise',
+    enterpriseValue: 'niveau entreprise',
     enterpriseDesc: 'Une équipe spécialisée pour garantir des résultats durables.',
   },
 
@@ -75,7 +75,7 @@ export const fr = {
     operations: 'Opérations',
     communication: 'Communication',
     voiceAI: 'IA Vocale',
-    nurturing: 'Nurturing',
+    suivi: 'Nurturing',
     revenue: 'Revenus',
     scheduling: 'Planification',
     efficiency: 'Efficacité',
@@ -90,7 +90,7 @@ export const fr = {
     crmTitle: 'Automatisation CRM',
     crmDesc: 'Éliminez la saisie manuelle. Chaque prospect, chaque relance et chaque mise à jour de statut est géré automatiquement dans votre pipeline.',
     whatsappTitle: 'Automatisation WhatsApp par IA',
-    whatsappDesc: 'Répondez à chaque demande WhatsApp en quelques secondes — même à minuit. L\'IA qualifie et nurture les prospects avant même que votre équipe ne se connecte.',
+    whatsappDesc: 'Répondez à chaque demande WhatsApp en quelques secondes — même à minuit. L\'IA qualifie et assurer le suivi les prospects avant même que votre équipe ne se connecte.',
     voiceTitle: 'Assistant vocal IA',
     voiceDesc: 'Chaque appel entrant est répondu, qualifié, et planifié. Aucun prospect ne tombe sur la messagerie. Aucune opportunité n\'est perdue.',
     emailTitle: 'Automatisation des emails',
@@ -186,11 +186,11 @@ export const fr = {
     calloutStat1Value: '≤ 2 Sem',
     calloutStat1Label: 'Déploiement Moyen',
     calloutStat2Value: '99,9%',
-    calloutStat2Label: 'Uptime Système',
+    calloutStat2Label: 'Disponibilité du système',
     calloutStat3Value: 'Zéro',
-    calloutStat3Label: 'Code Template',
+    calloutStat3Label: 'Code générique',
     calloutStat4Value: 'Complet',
-    calloutStat4Label: 'Sync CRM',
+    calloutStat4Label: 'Synchronisation CRM',
     // Advantages
     adv1Title: 'Chaque prospect reçoit une réponse en quelques secondes',
     adv1Desc: 'Aucun prospect n\'attend. L\'IA répond à chaque demande WhatsApp, email ou web en moins de 90 secondes — à 2h du matin, le week-end et les jours fériés. La première réponse gagne la transaction.',
@@ -212,7 +212,7 @@ export const fr = {
 
   // Testimonials Section
   testimonials: {
-    headline: 'Ce Que Disent les Leaders',
+    headline: 'Ce que disent les professionnels',
     // Testimonial 1
     t1Name: 'Youssef Alaoui',
     t1Role: 'Fondateur, Alaoui Development Group',
@@ -268,7 +268,7 @@ export const fr = {
     q2: 'Avec quels CRM vous intégrez-vous ?',
     a2: "Nous nous intégrons avec Salesforce, HubSpot, Zoho et la plupart des CRM régionaux utilisés au Moyen-Orient et en Afrique du Nord. Des intégrations personnalisées sont disponibles pour les systèmes propriétaires.",
     q3: 'Tout est-il construit sur mesure pour notre agence ?',
-    a3: "Oui — sans exception. Chaque workflow, script de qualification et automatisation est conçu spécifiquement pour le fonctionnement de votre entreprise. Nous n'utilisons pas de templates ni de packages standardisés.",
+    a3: "Oui — sans exception. Chaque workflow, script de qualification et automatisation est conçu spécifiquement pour le fonctionnement de votre entreprise. Nous n'utilisons pas de modèles génériques ni de packages standardisés.",
     q4: 'L\'IA peut-elle répondre automatiquement aux demandes WhatsApp ?',
     a4: "Oui. Notre Automatisation WhatsApp par IA engage chaque prospect entrant en quelques secondes, qualifie l'intention selon vos critères et oriente les prospects à haute valeur vers le bon agent — de jour comme de nuit.",
     q5: 'L\'IA peut-elle réserver automatiquement des visites de biens ?',
@@ -370,17 +370,17 @@ export const fr = {
     growthFeature6: 'Optimisation mensuelle',
     growthFeature7: 'Support prioritaire',
     growthCta: 'Réserver une session stratégique',
-    customName: 'Enterprise',
-    customLabel: 'Expérience Sur Mesure',
+    customName: 'niveau entreprise',
+    customLabel: 'Expérience sur mesure',
     customSetup: '',
-    customMonthly: 'Tarification Sur Mesure',
+    customMonthly: 'Tarification sur mesure',
     customPriceNote: 'Adaptée à votre entreprise',
     customFeature1: 'Stratégie IA Dédiée',
     customFeature2: 'Onboarding Privé',
     customFeature3: 'Automatisations Illimitées',
     customFeature4: 'Support Dédié',
     customFeature5: 'Intégrations Personnalisées',
-    customFeature6: 'SLA Enterprise',
+    customFeature6: 'SLA niveau entreprise',
     customCta: 'Réserver une consultation',
   },
 
@@ -426,7 +426,7 @@ export const fr = {
     step6Title: 'Équipe informée',
     step6Desc: 'Le commercial reçoit le score du prospect, le contexte et les points de discussion avant l\'appel.',
     step7Title: 'Suivi client',
-    step7Desc: 'Des séquences rédigées par l\'IA nurturing le prospect jusqu\'à ce qu\'il soit prêt à conclure.',
+    step7Desc: 'Des séquences rédigées par l\'IA suivi le prospect jusqu\'à ce qu\'il soit prêt à conclure.',
   },
 
   dashboard: {
