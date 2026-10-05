@@ -259,7 +259,7 @@ services: {
     step4Desc: 'Custom-built and tested in staging. Nothing goes live until it performs as designed.',
     step4Duration: '1 Week',
     step5Title: 'Deployment',
-    step5Desc: 'Zero-downtime launch with full team onboarding. Closing more deals from day one.',
+    step5Desc: 'Zero-downtime launch with full team onboarding, so your team can start using the system immediately.',
     step5Duration: '2 Days',
     step6Title: 'Optimization',
     step6Desc: 'Continuous monitoring, reporting, and evolution as your agency scales.',
