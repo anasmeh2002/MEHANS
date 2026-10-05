@@ -24,9 +24,13 @@ export function Footer() {
           {/* Brand */}
           <AnimatedSection delay={0}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 border border-gold-500 flex items-center justify-center">
-                <div className="w-2.5 h-2.5 bg-gold-500" />
-              </div>
+              <img
+                src="https://crm.mehans.space/logo.png"
+                alt="MEHANS"
+                width={32}
+                height={32}
+                className="w-8 h-8 object-contain shrink-0"
+              />
               <span className="font-display text-[17px] font-medium tracking-[0.2em] text-stone-100">MEHANS</span>
             </div>
             <p className="text-stone-700 text-[12px] leading-relaxed">
