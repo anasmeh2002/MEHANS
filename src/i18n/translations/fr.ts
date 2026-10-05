@@ -64,9 +64,9 @@ export const fr = {
 
   // Services Section
   services: {
-    headline1: 'Douze systèmes IA',
-    headline2: 'Chaque fuite de revenus comblée',
-    description: 'Automatisation conçue pour chaque étape du pipeline immobilier — ainsi aucun prospect n\'est perdu, aucune relance n\'est oubliée, et aucune transaction n\'est laissée de côté.',
+    headline1: 'Six systèmes IA',
+    headline2: 'Conçus pour transformer les leads en revenus',
+    description: 'Six systèmes essentiels qui relient acquisition, qualification, CRM, WhatsApp, rendez-vous et suivi commercial dans un seul parcours de vente.');
     note: 'Tous les systèmes sont conçus sur mesure pour votre agence — avec un accompagnement dédié et sans modèles génériques.',
     cta: 'Discutez de vos besoins d\'automatisation',
     // Service tags
