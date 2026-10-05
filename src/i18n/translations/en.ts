@@ -500,4 +500,9 @@ services: {
     monitoring: '24/7 Monitoring',
     cloud: 'Secure Cloud Infrastructure',
   },
+
+  trustedBy: {
+    title: 'Built on technology trusted by industry leaders',
+    description: 'MEHANS connects the tools and platforms modern real estate teams already rely on.',
+  },
 };
