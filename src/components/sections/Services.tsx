@@ -12,13 +12,11 @@ const iconMap = {
 };
 
 const serviceKeys = [
-  'leadGen', 'leadQual', 'crm', 'whatsapp', 'voice', 'email',
-  'sales', 'appointment', 'workflow', 'document', 'analytics', 'agents',
+  'leadGen', 'leadQual', 'whatsapp', 'crm', 'appointment', 'sales',
 ] as const;
 
 const tagKeys = [
-  'acquisition', 'intelligence', 'operations', 'communication', 'voiceAI', 'nurturing',
-  'revenue', 'scheduling', 'efficiency', 'documents', 'reporting', 'custom',
+  'acquisition', 'intelligence', 'communication', 'operations', 'scheduling', 'revenue',
 ] as const;
 
 export function Services() {
