@@ -1,7 +1,6 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
-import { navigate } from '../../router';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -13,13 +12,6 @@ export function Footer() {
     { label: t.nav.scheduleConsultation, href: '#contact' },
   ];
 
-  const SERVICE_LINKS = [
-    { label: t.servicePages.crm.title, slug: 'real-estate-crm' as const },
-    { label: t.servicePages.leadQualification.title, slug: 'ai-lead-qualification' as const },
-    { label: t.servicePages.whatsapp.title, slug: 'whatsapp-automation' as const },
-    { label: t.servicePages.leadCapture.title, slug: 'lead-capture-automation' as const },
-  ];
-
   const go = (href: string) => document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
 
   return (
@@ -27,14 +19,14 @@ export function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold-500/15 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12 pb-12 border-b border-stone-800/20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12 pb-12 border-b border-stone-800/20">
 
           {/* Brand */}
           <AnimatedSection delay={0}>
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/favicon.svg"
-                alt="MEHANS logo"
+                src="https://crm.mehans.space/logo.png"
+                alt="MEHANS"
                 width={32}
                 height={32}
                 className="w-8 h-8 object-contain shrink-0"
@@ -53,19 +45,6 @@ export function Footer() {
               {NAV.map((l) => (
                 <button key={l.href} onClick={() => go(l.href)}
                   className="text-stone-600 hover:text-gold-500 text-[12px] transition-colors duration-300">
-                  {l.label}
-                </button>
-              ))}
-            </div>
-          </AnimatedSection>
-
-          {/* Service links */}
-          <AnimatedSection delay={0.10}>
-            <h4 className="text-[9px] font-bold tracking-[0.3em] uppercase text-stone-700 mb-5">{t.nav.services}</h4>
-            <div className="flex flex-col gap-3">
-              {SERVICE_LINKS.map((l) => (
-                <button key={l.slug} onClick={() => navigate(`/services/${l.slug}`)}
-                  className="text-stone-600 hover:text-gold-500 text-[12px] transition-colors duration-300 text-left">
                   {l.label}
                 </button>
               ))}
