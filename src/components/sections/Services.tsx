@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import { useLanguage } from '../../i18n';
 import { AnimatedSection } from '../ui/AnimatedSection';
+import { navigate, ServiceSlug } from '../../router';
 
 const iconMap = {
   Magnet, Filter, Database, MessageSquare, Phone, Mail,
@@ -19,6 +20,15 @@ const tagKeys = [
   'acquisition', 'intelligence', 'operations', 'communication', 'scheduling', 'revenue',
 ] as const;
 
+const servicePageSlugs: (ServiceSlug | null)[] = [
+  'lead-capture-automation',
+  'ai-lead-qualification',
+  'real-estate-crm',
+  'whatsapp-automation',
+  null,
+  null,
+];
+
 export function Services() {
   const { t } = useLanguage();
 
@@ -27,6 +37,7 @@ export function Services() {
     title: t.services[`${key}Title` as keyof typeof t.services] || key,
     description: t.services[`${key}Desc` as keyof typeof t.services] || key,
     tag: t.services[tagKeys[i]] || tagKeys[i],
+    pageSlug: servicePageSlugs[i],
   }));
 
   return (
@@ -71,8 +82,9 @@ export function Services() {
                     y: -4
                   }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="group relative bg-stone-950 px-7 py-9 md:px-9 md:py-11 h-full min-h-[310px] flex flex-col gap-6 md:gap-7 cursor-default
-                    border border-stone-800/50 hover:border-gold-500/25 transition-all duration-500 relative overflow-hidden"
+                  onClick={() => svc.pageSlug && navigate(`/services/${svc.pageSlug}`)}
+                  className={`group relative bg-stone-950 px-7 py-9 md:px-9 md:py-11 h-full min-h-[310px] flex flex-col gap-6 md:gap-7
+                    border border-stone-800/50 hover:border-gold-500/25 transition-all duration-500 relative overflow-hidden ${svc.pageSlug ? 'cursor-pointer' : 'cursor-default'}`}
                 >
                   {/* Corner accent on hover */}
                   <div className="absolute top-0 left-0 w-12 h-px bg-gold-500/0 group-hover:bg-gold-500/60 transition-all duration-400" />
@@ -114,8 +126,15 @@ export function Services() {
                     </p>
                   </div>
 
-                  {/* Gold line reveal */}
-                  <div className="h-px bg-stone-800/50 group-hover:bg-gradient-to-r group-hover:from-gold-500/40 group-hover:to-transparent transition-all duration-500 w-full" />
+                  {/* Gold line reveal + learn more link */}
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="h-px bg-stone-800/50 group-hover:bg-gradient-to-r group-hover:from-gold-500/40 group-hover:to-transparent transition-all duration-500 flex-1" />
+                    {svc.pageSlug && (
+                      <span className="text-[11px] font-medium tracking-wide text-gold-500/0 group-hover:text-gold-500/70 transition-colors duration-500 whitespace-nowrap">
+                        {t.servicePages.backHome.replace('Back to Home', 'Learn more') === 'Learn more' ? 'Learn more' : '→'}
+                      </span>
+                    )}
+                  </div>
                 </motion.div>
               </AnimatedSection>
             );

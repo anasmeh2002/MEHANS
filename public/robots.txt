@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block nothing - all pages are indexable
+Disallow:
+
+# Sitemap
+Sitemap: https://mehans.space/sitemap.xml

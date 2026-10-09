@@ -62,8 +62,8 @@ export function LoadingScreen() {
               className="relative"
             >
               <img
-                src="https://crm.mehans.space/logo.png"
-                alt="MEHANS"
+                src="/favicon.svg"
+                alt="MEHANS logo"
                 width={96}
                 height={96}
                 className="w-24 h-24 object-contain"

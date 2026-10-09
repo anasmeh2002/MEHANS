@@ -54,8 +54,8 @@ export function Navbar() {
             className="group flex items-center gap-3.5 flex-shrink-0"
           >
             <img
-              src="https://crm.mehans.space/logo.png"
-              alt="MEHANS"
+              src="/favicon.svg"
+              alt="MEHANS logo"
               width={32}
               height={32}
               className="w-8 h-8 object-contain shrink-0"
